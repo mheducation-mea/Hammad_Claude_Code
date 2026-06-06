@@ -23,6 +23,10 @@
 - Created root `CLAUDE.md` (auto-loads every session) and this `memory/` system.
 - Removed the customer-facing comms items from CLAUDE.md section 2: they belong with copywriting standards, not "how to work with Hammad."
 
+### Automation (memory write-back hook)
+- Added a project Stop hook (`.claude/hooks/memory-writeback-check.sh`, wired in `.claude/settings.json`) that nudges Claude to update this log when a session made substantive (non-`memory/`) changes without a write-back. Respects `stop_hook_active` to avoid loops; runs independently of the user-level git-check Stop hook.
+- Added a `SessionStart` companion (`.claude/hooks/session-base.sh`) that records the session's base commit under `.git/claude-memory-hook/<session_id>` so the Stop hook can scope "what changed this session." The base ref is per-session and not committed; the nudge becomes effective from the next session onward.
+
 ### Notion
 - Connector confirmed for **read and write**.
 - Validated the edit-safety pattern: surgical `update_content` (old/new), scoped by heading, then re-fetch to verify.

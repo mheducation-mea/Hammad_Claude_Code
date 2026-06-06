@@ -1,0 +1,26 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$(git rev-parse --show-toplevel 2>/dev/null || pwd)/.claude/hooks/session-base.sh\"",
+            "statusMessage": "Recording session base commit"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$(git rev-parse --show-toplevel 2>/dev/null || pwd)/.claude/hooks/memory-writeback-check.sh\"",
+            "statusMessage": "Checking memory write-back"
+          }
+        ]
+      }
+    ]
+  }
+}
