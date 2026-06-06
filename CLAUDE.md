@@ -22,13 +22,6 @@
 - Anchor to the **current date** when creating or reasoning about records (avoid date drift).
 - He catches precise errors: property-name confusion, date drift, placeholder leakage, conflated formulas. Hold that bar.
 
-### Communication preferences (to confirm with Hammad)
-*These were observed secondhand and are not yet ratified. Confirm before treating as rules.*
-- Lead with a number.
-- Keep briefs tight (around 300 words).
-- Pair every flag or problem with a proposed solution.
-- Every campaign line should pass the "competitor swap" test (if a competitor's name fits, the line is too generic).
-
 ## 3. Copywriting standards (customer-facing copy)
 
 The authoritative source is the **`hammad-b2b-copywriting`** skill. Always apply it to any
@@ -57,8 +50,8 @@ Located in `.claude/skills/`. They auto-invoke from their descriptions.
 - **Notion is the system of record.** Where this repo and Notion disagree, **Notion wins**, then update the repo.
 - **Marketing Team Dashboard ID:** `1be31abc-8070-8038-8742-c15dd49bd26c`
 - Access is via the Notion MCP connector (read and write confirmed).
-- Full architecture, all database IDs, conventions, and API learnings live in Hammad's
-  **Notion Marketing Ops source-of-truth doc** (to be added to `memory/`). Treat that as the deep reference.
+- Full architecture, all database IDs, conventions, and API learnings live in
+  **`memory/notion-marketing-ops-source-of-truth.md`**. Treat that as the deep reference.
 
 ### Notion edit-safety rules (always apply)
 - **Never** use `replace_content` with `allow_deleting_content=true` on hub or dashboard pages, or any page with child pages or databases. It trashes children.
@@ -86,6 +79,4 @@ Located in `.claude/skills/`. They auto-invoke from their descriptions.
 
 ## 8. Pending / to set up
 
-- `memory/` folder (decisions, learnings, project state). Not yet created.
 - Brand assets (logo, exact colours, fonts) for brand-locked outputs. Not yet provided.
-- Confirm the communication preferences in section 2.
