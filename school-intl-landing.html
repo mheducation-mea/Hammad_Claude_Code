@@ -37,7 +37,7 @@
       --mh-grey-line: #DADAE2;
       --mh-grey-bg: #F4F5F8;
 
-      --radius: 10px;
+      --radius: 0;
       --shadow: 0 12px 40px rgba(8, 51, 119, 0.12);
       --shadow-sm: 0 4px 16px rgba(8, 51, 119, 0.08);
       --maxw: 1180px;
@@ -85,7 +85,7 @@
       color: var(--mh-heritage-red); letter-spacing: -0.02em;
     }
     .logo .mark {
-      width: 34px; height: 34px; border-radius: 6px;
+      width: 34px; height: 34px; border-radius: 0;
       background: var(--mh-heritage-red); color: var(--mh-white);
       display: grid; place-items: center; font-size: 16px; font-weight: 800;
     }
@@ -107,11 +107,11 @@
     .hero::before {
       width: 360px; height: 360px; right: -90px; top: -90px;
       background: var(--mh-violet); opacity: 0.35;
-      transform: rotate(45deg); border-radius: 24px;
+      transform: rotate(45deg); border-radius: 0;
     }
     .hero::after {
       width: 200px; height: 200px; right: 180px; bottom: -70px;
-      border: 3px solid rgba(255,255,255,0.18); transform: rotate(45deg); border-radius: 16px;
+      border: 3px solid rgba(255,255,255,0.18); transform: rotate(45deg); border-radius: 0;
     }
     .hero-grid {
       position: relative; z-index: 2;
@@ -121,7 +121,7 @@
     .eyebrow {
       display: inline-block; text-transform: uppercase; letter-spacing: 0.12em;
       font-size: 13px; font-weight: 700; color: var(--mh-violet-pale);
-      background: rgba(95, 20, 193, 0.35); padding: 6px 12px; border-radius: 100px;
+      background: rgba(95, 20, 193, 0.35); padding: 6px 12px; border-radius: 0;
       margin-bottom: 18px;
     }
     .hero h1 { font-size: clamp(32px, 4.4vw, 52px); margin-bottom: 18px; }
@@ -135,7 +135,7 @@
     }
     .hero ul.benefits li::before {
       content: ""; position: absolute; left: 0; top: 3px;
-      width: 20px; height: 20px; border-radius: 5px;
+      width: 20px; height: 20px; border-radius: 0;
       background: var(--mh-white);
       -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M20 6L9 17l-5-5' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/></svg>") center / 14px no-repeat;
       mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M20 6L9 17l-5-5' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/></svg>") center / 14px no-repeat;
@@ -145,7 +145,7 @@
     /* ---------- Lead-magnet cover card ---------- */
     .magnet-card {
       background: var(--mh-white); color: var(--mh-ink);
-      border-radius: var(--radius); box-shadow: var(--shadow);
+      border-radius: 0; box-shadow: var(--shadow);
       overflow: hidden;
     }
     .magnet-cover {
@@ -168,7 +168,7 @@
     .magnet-card ul.toc li::before {
       content: ""; position: absolute; left: 0; top: 12px;
       width: 10px; height: 10px; background: var(--mh-academic-blue);
-      transform: rotate(45deg); border-radius: 2px;
+      transform: rotate(45deg); border-radius: 0;
     }
 
     /* ---------- Form section ---------- */
@@ -183,7 +183,7 @@
     .form-intro .stat .l { font-size: 14px; color: var(--mh-grey); max-width: 160px; }
 
     form.lead {
-      background: var(--mh-white); border-radius: var(--radius);
+      background: var(--mh-white); border-radius: 0;
       box-shadow: var(--shadow-sm); padding: 32px; border-top: 5px solid var(--mh-heritage-red);
     }
     form.lead h3 { font-size: 20px; margin-bottom: 4px; }
@@ -194,7 +194,7 @@
     label .req { color: var(--mh-heritage-red); }
     input, select {
       width: 100%; padding: 11px 13px; font-family: var(--font); font-size: 15px;
-      border: 1px solid var(--mh-grey-line); border-radius: 8px; background: var(--mh-white);
+      border: 1px solid var(--mh-grey-line); border-radius: 0; background: var(--mh-white);
       color: var(--mh-ink); transition: border-color .15s, box-shadow .15s;
     }
     input:focus, select:focus {
@@ -207,7 +207,7 @@
     .btn {
       width: 100%; border: none; cursor: pointer; font-family: var(--font);
       font-weight: 800; font-size: 17px; color: var(--mh-white);
-      background: var(--mh-heritage-red); padding: 15px 20px; border-radius: 8px;
+      background: var(--mh-heritage-red); padding: 15px 20px; border-radius: 0;
       transition: background .15s, transform .05s;
     }
     .btn:hover { background: var(--mh-red-dark); }
@@ -224,7 +224,7 @@
     .success.show { display: block; }
     form.submitted .form-body { display: none; }
     .success .check {
-      width: 64px; height: 64px; margin: 0 auto 18px; border-radius: 50%;
+      width: 64px; height: 64px; margin: 0 auto 18px; border-radius: 0;
       background: var(--mh-academic-blue); display: grid; place-items: center;
     }
     .success .check svg { width: 30px; height: 30px; }
@@ -238,11 +238,11 @@
     .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
     .card {
       background: var(--mh-white); border: 1px solid var(--mh-grey-line);
-      border-radius: var(--radius); padding: 30px 26px; transition: box-shadow .2s, transform .2s;
+      border-radius: 0; padding: 30px 26px; transition: box-shadow .2s, transform .2s;
     }
     .card:hover { box-shadow: var(--shadow); transform: translateY(-3px); }
     .card .icon {
-      width: 50px; height: 50px; border-radius: 10px; display: grid; place-items: center;
+      width: 50px; height: 50px; border-radius: 0; display: grid; place-items: center;
       margin-bottom: 18px; transform: rotate(45deg);
     }
     .card .icon svg { transform: rotate(-45deg); width: 24px; height: 24px; }
@@ -261,7 +261,7 @@
     .trust p { color: rgba(255,255,255,0.85); max-width: 620px; margin: 0 auto 28px; }
     .trust .cta-link {
       display: inline-block; background: var(--mh-white); color: var(--mh-heritage-red);
-      text-decoration: none; font-weight: 800; padding: 14px 30px; border-radius: 8px; font-size: 16px;
+      text-decoration: none; font-weight: 800; padding: 14px 30px; border-radius: 0; font-size: 16px;
     }
 
     /* ---------- Footer ---------- */
@@ -284,6 +284,58 @@
     @media (max-width: 520px) {
       .field.row { grid-template-columns: 1fr; }
       footer.site nav a { margin: 0 18px 0 0; }
+    }
+
+    /* ============================================================
+       Hero motion — GSAP-style eased entrance + ambient float + parallax.
+       Dependency-free; honours prefers-reduced-motion.
+       ============================================================ */
+    /* Smooth expo-out entrance, staggered */
+    @keyframes heroRise {
+      from { opacity: 0; transform: translateY(26px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes cardRise {
+      from { opacity: 0; transform: translateY(34px) scale(0.985); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    /* Ambient float on the Cubic-Grid diamonds (drift along their rotated axis) */
+    @keyframes floatA {
+      0%, 100% { transform: rotate(45deg) translateY(0); }
+      50%      { transform: rotate(45deg) translateY(28px); }
+    }
+    @keyframes floatB {
+      0%, 100% { transform: rotate(45deg) translateY(0); }
+      50%      { transform: rotate(45deg) translateY(-24px); }
+    }
+
+    .hero .eyebrow,
+    .hero h1,
+    .hero p.lede,
+    .hero ul.benefits li,
+    .magnet-card {
+      opacity: 0;
+      animation: heroRise 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    .hero .eyebrow { animation-delay: 0.05s; }
+    .hero h1       { animation-delay: 0.15s; }
+    .hero p.lede   { animation-delay: 0.30s; }
+    .hero ul.benefits li:nth-child(1) { animation-delay: 0.45s; }
+    .hero ul.benefits li:nth-child(2) { animation-delay: 0.55s; }
+    .hero ul.benefits li:nth-child(3) { animation-delay: 0.65s; }
+    .magnet-card { animation-name: cardRise; animation-duration: 1s; animation-delay: 0.35s; }
+
+    .hero::before { animation: floatA 9s ease-in-out infinite; }
+    .hero::after  { animation: floatB 7s ease-in-out infinite; }
+
+    /* Parallax layers (transforms applied by JS via eased lerp) */
+    .hero-copy, .magnet-wrap { will-change: transform; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero .eyebrow, .hero h1, .hero p.lede, .hero ul.benefits li, .magnet-card {
+        animation: none; opacity: 1; transform: none;
+      }
+      .hero::before, .hero::after { animation: none; }
     }
   </style>
 </head>
@@ -319,6 +371,7 @@
       </div>
 
       <!-- Lead-magnet cover -->
+      <div class="magnet-wrap">
       <div class="magnet-card" aria-hidden="false">
         <div class="magnet-cover">
           <span class="tag">McGraw Hill Whitepaper</span>
@@ -335,6 +388,7 @@
             <li>Case studies from national &amp; international schools</li>
           </ul>
         </div>
+      </div>
       </div>
     </div>
   </section>
@@ -541,6 +595,39 @@
         input.addEventListener('input', function () { setError(input, false); });
         input.addEventListener('change', function () { setError(input, false); });
       });
+    })();
+
+    /* Hero parallax — eased cursor-follow (lerp) for a smooth, GSAP-like feel.
+       Skipped for touch/coarse pointers and when reduced motion is requested. */
+    (function () {
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+      var fine = window.matchMedia('(pointer: fine)');
+      if (reduce.matches || !fine.matches) return;
+
+      var hero = document.querySelector('.hero');
+      var copy = document.querySelector('.hero-copy');
+      var card = document.querySelector('.magnet-wrap');
+      if (!hero || !copy || !card) return;
+
+      var tx = 0, ty = 0;   // target (normalised -0.5..0.5)
+      var cx = 0, cy = 0;   // current (eased toward target)
+      var EASE = 0.07;      // lower = smoother / more lag
+
+      hero.addEventListener('pointermove', function (e) {
+        var r = hero.getBoundingClientRect();
+        tx = (e.clientX - r.left) / r.width - 0.5;
+        ty = (e.clientY - r.top) / r.height - 0.5;
+      });
+      hero.addEventListener('pointerleave', function () { tx = 0; ty = 0; });
+
+      (function frame() {
+        cx += (tx - cx) * EASE;
+        cy += (ty - cy) * EASE;
+        // Card sits "closer" (moves more, opposite the cursor); copy drifts gently.
+        card.style.transform = 'translate(' + (cx * -18) + 'px,' + (cy * -14) + 'px)';
+        copy.style.transform = 'translate(' + (cx * 8) + 'px,' + (cy * 6) + 'px)';
+        requestAnimationFrame(frame);
+      })();
     })();
   </script>
 </body>
