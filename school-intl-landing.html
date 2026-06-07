@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Future-Ready English for International Schools | McGraw Hill</title>
+  <meta name="description" content="Download the free McGraw Hill guide to English Language Teaching for international and national schools across Saudi Arabia and the MENA region, aligned to Vision 2030." />
+
+  <!-- Proxima Nova is McGraw Hill's marketing typeface (licensed). Montserrat is loaded as a close,
+       freely available fallback for environments where Proxima Nova is not installed. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================================
+       McGraw Hill Brand Guidelines v6.1 — design tokens
+       ============================================================ */
+    :root {
+      /* Primary */
+      --mh-heritage-red: #E21A23;
+      --mh-red-dark: #B3141B;
+
+      /* Secondary */
+      --mh-academic-blue: #0B48BC;
+      --mh-blue-deep: #083377;
+      --mh-blue-mid: #4E6DBB;
+      --mh-blue-pale: #D9E5FC;
+
+      --mh-violet: #5F14C1;
+      --mh-violet-bright: #8615FF;
+      --mh-violet-pale: #E3B9FC;
+
+      --mh-white: #FFFFFF;
+      --mh-ink: #1A1A1E;
+      --mh-grey: #5A5A66;
+      --mh-grey-line: #DADAE2;
+      --mh-grey-bg: #F4F5F8;
+
+      --radius: 0;
+      --shadow: 0 12px 40px rgba(8, 51, 119, 0.12);
+      --shadow-sm: 0 4px 16px rgba(8, 51, 119, 0.08);
+      --maxw: 1180px;
+      --font: "Proxima Nova", "Montserrat", Arial, "Helvetica Neue", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: var(--font);
+      color: var(--mh-ink);
+      background: var(--mh-white);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden; /* guard against decorative elements forcing horizontal scroll */
+    }
+
+    h1, h2, h3 { line-height: 1.15; margin: 0 0 0.5em; font-weight: 800; letter-spacing: -0.01em; }
+    p { margin: 0 0 1em; }
+    a { color: var(--mh-academic-blue); }
+
+    /* Responsive side gutters: never below 20px, breathe a little on wider screens.
+       Only ever set HORIZONTAL padding here — sections that share this element must
+       not use the `padding` shorthand (it would wipe these gutters out). */
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding-left: clamp(20px, 4vw, 32px); padding-right: clamp(20px, 4vw, 32px); }
+
+    /* ---------- Header ---------- */
+    header.site {
+      background: var(--mh-white);
+      border-bottom: 1px solid var(--mh-grey-line);
+      position: sticky; top: 0; z-index: 50;
+    }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px;
+    }
+    /* Text-based stand-in for the Heritage Red logo lockup.
+       Replace with official artwork from Brand Central on Spark before publishing. */
+    .logo {
+      display: inline-flex; align-items: center; gap: 10px;
+      text-decoration: none; font-weight: 800; font-size: 20px;
+      color: var(--mh-heritage-red); letter-spacing: -0.02em;
+    }
+    .logo .mark {
+      width: 34px; height: 34px; border-radius: 0;
+      background: var(--mh-heritage-red); color: var(--mh-white);
+      display: grid; place-items: center; font-size: 16px; font-weight: 800;
+    }
+    .header-meta { font-size: 14px; color: var(--mh-grey); }
+    .header-meta strong { color: var(--mh-ink); }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      position: relative; overflow: hidden;
+      /* Softer, more modern royal-blue gradient — drops the near-navy corner that read as jarring,
+         stays within the Academic Blue family for brand compliance. */
+      background: linear-gradient(135deg, #2A4C9E 0%, #2F5BBE 55%, #3D6FD6 100%);
+      color: var(--mh-white);
+    }
+    /* Cubic Grid–inspired geometric motif */
+    .hero::before, .hero::after {
+      content: ""; position: absolute; pointer-events: none;
+    }
+    .hero::before {
+      width: 360px; height: 360px; right: -90px; top: -90px;
+      background: var(--mh-violet); opacity: 0.35;
+      transform: rotate(45deg); border-radius: 0;
+    }
+    .hero::after {
+      width: 200px; height: 200px; right: 180px; bottom: -70px;
+      border: 3px solid rgba(255,255,255,0.18); transform: rotate(45deg); border-radius: 0;
+    }
+    .hero-grid {
+      position: relative; z-index: 2;
+      display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px;
+      align-items: center; padding-top: 72px; padding-bottom: 84px; /* horizontal padding comes from .wrap */
+    }
+    .eyebrow {
+      display: inline-block; text-transform: uppercase; letter-spacing: 0.12em;
+      font-size: 13px; font-weight: 700; color: var(--mh-violet-pale);
+      background: rgba(95, 20, 193, 0.35); padding: 6px 12px; border-radius: 0;
+      margin-bottom: 18px;
+    }
+    .hero h1 { font-size: clamp(32px, 4.4vw, 52px); margin-bottom: 18px; }
+    .hero p.lede { font-size: 19px; max-width: 540px; color: rgba(255,255,255,0.92); }
+    .hero ul.benefits {
+      list-style: none; padding: 0; margin: 26px 0 0; max-width: 520px;
+    }
+    .hero ul.benefits li {
+      position: relative; padding-left: 34px; margin-bottom: 12px; font-size: 16px;
+      color: rgba(255,255,255,0.95);
+    }
+    .hero ul.benefits li::before {
+      content: ""; position: absolute; left: 0; top: 3px;
+      width: 20px; height: 20px; border-radius: 0;
+      background: var(--mh-white);
+      -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M20 6L9 17l-5-5' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/></svg>") center / 14px no-repeat;
+      mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M20 6L9 17l-5-5' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/></svg>") center / 14px no-repeat;
+      background: var(--mh-violet-bright);
+    }
+
+    /* ---------- Lead-magnet cover card ---------- */
+    .magnet-card {
+      background: var(--mh-white); color: var(--mh-ink);
+      border-radius: 0; box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .magnet-cover {
+      background: linear-gradient(160deg, var(--mh-heritage-red), var(--mh-red-dark));
+      color: var(--mh-white); padding: 28px 28px 24px; position: relative;
+    }
+    .magnet-cover .tag {
+      font-size: 12px; text-transform: uppercase; letter-spacing: 0.14em;
+      font-weight: 700; opacity: 0.85;
+    }
+    .magnet-cover h3 { font-size: 24px; margin: 8px 0 4px; }
+    .magnet-cover .pages { font-size: 14px; opacity: 0.9; }
+    .magnet-card .body { padding: 22px 28px 26px; }
+    .magnet-card .body p { font-size: 15px; color: var(--mh-grey); margin-bottom: 14px; }
+    .magnet-card ul.toc { list-style: none; padding: 0; margin: 0; }
+    .magnet-card ul.toc li {
+      font-size: 14px; padding: 7px 0 7px 26px; position: relative; border-top: 1px solid var(--mh-grey-line);
+    }
+    .magnet-card ul.toc li:first-child { border-top: none; }
+    .magnet-card ul.toc li::before {
+      content: ""; position: absolute; left: 0; top: 12px;
+      width: 10px; height: 10px; background: var(--mh-academic-blue);
+      transform: rotate(45deg); border-radius: 0;
+    }
+
+    /* ---------- Form section ---------- */
+    .form-section { background: var(--mh-grey-bg); padding: 76px 0; }
+    .form-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start;
+    }
+    .form-intro h2 { font-size: clamp(26px, 3vw, 36px); color: var(--mh-blue-deep); }
+    .form-intro p { font-size: 17px; color: var(--mh-grey); max-width: 480px; }
+    .form-intro .stat-row { display: flex; gap: 32px; margin-top: 28px; flex-wrap: wrap; }
+    .form-intro .stat .n { font-size: 34px; font-weight: 800; color: var(--mh-heritage-red); }
+    .form-intro .stat .l { font-size: 14px; color: var(--mh-grey); max-width: 160px; }
+
+    form.lead {
+      background: var(--mh-white); border-radius: 0;
+      box-shadow: var(--shadow-sm); padding: 32px; border-top: 5px solid var(--mh-heritage-red);
+    }
+    form.lead h3 { font-size: 20px; margin-bottom: 4px; }
+    form.lead .sub { font-size: 14px; color: var(--mh-grey); margin-bottom: 22px; }
+    .field { margin-bottom: 16px; }
+    .field.row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+    label .req { color: var(--mh-heritage-red); }
+    input, select {
+      width: 100%; padding: 11px 13px; font-family: var(--font); font-size: 15px;
+      border: 1px solid var(--mh-grey-line); border-radius: 0; background: var(--mh-white);
+      color: var(--mh-ink); transition: border-color .15s, box-shadow .15s;
+    }
+    input:focus, select:focus {
+      outline: none; border-color: var(--mh-academic-blue);
+      box-shadow: 0 0 0 3px rgba(11, 72, 188, 0.18);
+    }
+    .consent { display: flex; gap: 10px; align-items: flex-start; margin: 6px 0 20px; }
+    .consent input { width: auto; margin-top: 3px; }
+    .consent label { font-weight: 400; font-size: 13px; color: var(--mh-grey); margin: 0; }
+    .btn {
+      width: 100%; border: none; cursor: pointer; font-family: var(--font);
+      font-weight: 800; font-size: 17px; color: var(--mh-white);
+      background: var(--mh-heritage-red); padding: 15px 20px; border-radius: 0;
+      transition: background .15s, transform .05s;
+    }
+    .btn:hover { background: var(--mh-red-dark); }
+    .btn:active { transform: translateY(1px); }
+    .form-foot { font-size: 12px; color: var(--mh-grey); text-align: center; margin-top: 14px; }
+    .err { color: var(--mh-heritage-red); font-size: 12px; margin-top: 5px; display: none; }
+    .field.invalid input, .field.invalid select { border-color: var(--mh-heritage-red); }
+    .field.invalid .err { display: block; }
+
+    /* Success state */
+    .success {
+      display: none; text-align: center; padding: 20px 8px;
+    }
+    .success.show { display: block; }
+    form.submitted .form-body { display: none; }
+    .success .check {
+      width: 64px; height: 64px; margin: 0 auto 18px; border-radius: 0;
+      background: var(--mh-academic-blue); display: grid; place-items: center;
+    }
+    .success .check svg { width: 30px; height: 30px; }
+    .success h3 { color: var(--mh-blue-deep); }
+
+    /* ---------- Value props ---------- */
+    .props { padding: 80px 0; }
+    .props .head { text-align: center; max-width: 680px; margin: 0 auto 50px; }
+    .props .head h2 { font-size: clamp(26px, 3vw, 38px); color: var(--mh-blue-deep); }
+    .props .head p { font-size: 17px; color: var(--mh-grey); }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+    .card {
+      background: var(--mh-white); border: 1px solid var(--mh-grey-line);
+      border-radius: 0; padding: 30px 26px; transition: box-shadow .2s, transform .2s;
+    }
+    .card:hover { box-shadow: var(--shadow); transform: translateY(-3px); }
+    .card .icon {
+      width: 50px; height: 50px; border-radius: 0; display: grid; place-items: center;
+      margin-bottom: 18px; transform: rotate(45deg);
+    }
+    .card .icon svg { transform: rotate(-45deg); width: 24px; height: 24px; }
+    .card:nth-child(1) .icon { background: var(--mh-blue-pale); }
+    .card:nth-child(2) .icon { background: var(--mh-violet-pale); }
+    .card:nth-child(3) .icon { background: #FBD3D5; }
+    .card h3 { font-size: 19px; }
+    .card p { font-size: 15px; color: var(--mh-grey); margin: 0; }
+
+    /* ---------- Trust band ---------- */
+    .trust {
+      background: var(--mh-blue-deep); color: var(--mh-white); text-align: center;
+      padding: 54px 0;
+    }
+    .trust h2 { font-size: clamp(22px, 2.6vw, 30px); max-width: 760px; margin: 0 auto 10px; }
+    .trust p { color: rgba(255,255,255,0.85); max-width: 620px; margin: 0 auto 28px; }
+    .trust .cta-link {
+      display: inline-block; background: var(--mh-white); color: var(--mh-heritage-red);
+      text-decoration: none; font-weight: 800; padding: 14px 30px; border-radius: 0; font-size: 16px;
+    }
+
+    /* ---------- Footer ---------- */
+    footer.site { background: var(--mh-ink); color: rgba(255,255,255,0.7); padding: 48px 0 32px; font-size: 14px; }
+    footer.site .ftop { display: flex; justify-content: space-between; gap: 30px; flex-wrap: wrap; margin-bottom: 26px; }
+    footer.site .logo { color: var(--mh-white); }
+    footer.site .logo .mark { background: var(--mh-white); color: var(--mh-heritage-red); }
+    footer.site p { max-width: 520px; line-height: 1.6; }
+    footer.site nav a { color: rgba(255,255,255,0.8); text-decoration: none; margin-left: 22px; }
+    footer.site nav a:hover { color: var(--mh-white); }
+    footer.site .legal { border-top: 1px solid rgba(255,255,255,0.15); padding-top: 20px; font-size: 12px; color: rgba(255,255,255,0.55); }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 920px) {
+      .hero-grid, .form-grid { grid-template-columns: 1fr; gap: 40px; }
+      .cards { grid-template-columns: 1fr; }
+      .header-meta { display: none; }
+      .hero-grid { padding-top: 52px; padding-bottom: 60px; }
+    }
+    @media (max-width: 520px) {
+      .field.row { grid-template-columns: 1fr; }
+      footer.site nav a { margin: 0 18px 0 0; }
+    }
+
+    /* ============================================================
+       Hero motion — GSAP-style eased entrance + ambient float + parallax.
+       Dependency-free; honours prefers-reduced-motion.
+       ============================================================ */
+    /* Smooth expo-out entrance, staggered */
+    @keyframes heroRise {
+      from { opacity: 0; transform: translateY(26px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes cardRise {
+      from { opacity: 0; transform: translateY(34px) scale(0.985); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    /* Ambient float on the Cubic-Grid diamonds (drift along their rotated axis) */
+    @keyframes floatA {
+      0%, 100% { transform: rotate(45deg) translateY(0); }
+      50%      { transform: rotate(45deg) translateY(28px); }
+    }
+    @keyframes floatB {
+      0%, 100% { transform: rotate(45deg) translateY(0); }
+      50%      { transform: rotate(45deg) translateY(-24px); }
+    }
+
+    .hero .eyebrow,
+    .hero h1,
+    .hero p.lede,
+    .hero ul.benefits li,
+    .magnet-card {
+      opacity: 0;
+      animation: heroRise 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    .hero .eyebrow { animation-delay: 0.05s; }
+    .hero h1       { animation-delay: 0.15s; }
+    .hero p.lede   { animation-delay: 0.30s; }
+    .hero ul.benefits li:nth-child(1) { animation-delay: 0.45s; }
+    .hero ul.benefits li:nth-child(2) { animation-delay: 0.55s; }
+    .hero ul.benefits li:nth-child(3) { animation-delay: 0.65s; }
+    .magnet-card { animation-name: cardRise; animation-duration: 1s; animation-delay: 0.35s; }
+
+    .hero::before { animation: floatA 9s ease-in-out infinite; }
+    .hero::after  { animation: floatB 7s ease-in-out infinite; }
+
+    /* Parallax layers (transforms applied by JS via eased lerp) */
+    .hero-copy, .magnet-wrap { will-change: transform; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero .eyebrow, .hero h1, .hero p.lede, .hero ul.benefits li, .magnet-card {
+        animation: none; opacity: 1; transform: none;
+      }
+      .hero::before, .hero::after { animation: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site">
+    <div class="wrap header-inner">
+      <a class="logo" href="#" aria-label="McGraw Hill home">
+        <span class="mark">MH</span>
+        <span>McGraw Hill</span>
+      </a>
+      <div class="header-meta">International Schools &nbsp;·&nbsp; <strong>MENA &amp; KSA</strong></div>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Free guide for school leaders</span>
+        <h1>Future-ready English for international schools</h1>
+        <p class="lede">
+          As Vision 2030 reshapes education across Saudi Arabia and the wider MENA region,
+          discover how leading schools are building English-medium instruction that holds up
+          to international standards — and keeps learners engaged.
+        </p>
+        <ul class="benefits">
+          <li>A practical framework for English-medium transition</li>
+          <li>Benchmarks aligned to international and national curricula</li>
+          <li>Real implementation lessons from schools across the region</li>
+        </ul>
+      </div>
+
+      <!-- Lead-magnet cover -->
+      <div class="magnet-wrap">
+      <div class="magnet-card" aria-hidden="false">
+        <div class="magnet-cover">
+          <span class="tag">McGraw Hill Whitepaper</span>
+          <h3>The Future-Ready English Playbook</h3>
+          <span class="pages">28-page guide · PDF · 2026 edition</span>
+        </div>
+        <div class="body">
+          <p>What's inside:</p>
+          <ul class="toc">
+            <li>Where Vision 2030 is taking English Language Teaching</li>
+            <li>Designing an English-medium transition that lasts</li>
+            <li>Choosing resources that meet international benchmarks</li>
+            <li>Measuring progress your inspectors will recognise</li>
+            <li>Case studies from national &amp; international schools</li>
+          </ul>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FORM ============ -->
+  <section class="form-section" id="download">
+    <div class="wrap form-grid">
+      <div class="form-intro">
+        <h2>Get your free copy</h2>
+        <p>
+          Tell us where to send the guide and we'll email you the PDF straight away.
+          You'll also be first to hear about new resources and events for international
+          schools in your region.
+        </p>
+        <div class="stat-row">
+          <div class="stat">
+            <div class="n">135+</div>
+            <div class="l">years supporting educators worldwide</div>
+          </div>
+          <div class="stat">
+            <div class="n">80+</div>
+            <div class="l">languages our learning resources reach</div>
+          </div>
+        </div>
+      </div>
+
+      <form class="lead" id="leadForm" novalidate>
+        <div class="form-body">
+          <h3>Download the guide</h3>
+          <p class="sub">All fields marked <span style="color:var(--mh-heritage-red)">*</span> are required.</p>
+
+          <div class="field row">
+            <div>
+              <label for="first">First name <span class="req">*</span></label>
+              <input type="text" id="first" name="first" autocomplete="given-name" required />
+              <span class="err">Please enter your first name.</span>
+            </div>
+            <div>
+              <label for="last">Last name <span class="req">*</span></label>
+              <input type="text" id="last" name="last" autocomplete="family-name" required />
+              <span class="err">Please enter your last name.</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="email">Work email <span class="req">*</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" required />
+            <span class="err">Please enter a valid work email address.</span>
+          </div>
+
+          <div class="field">
+            <label for="role">Job title <span class="req">*</span></label>
+            <input type="text" id="role" name="role" placeholder="e.g. Head of School, Head of English" required />
+            <span class="err">Please enter your job title.</span>
+          </div>
+
+          <div class="field">
+            <label for="school">School / institution <span class="req">*</span></label>
+            <input type="text" id="school" name="school" required />
+            <span class="err">Please enter your school or institution.</span>
+          </div>
+
+          <div class="field">
+            <label for="country">Country <span class="req">*</span></label>
+            <select id="country" name="country" required>
+              <option value="" selected disabled>Select your country</option>
+              <option>Saudi Arabia</option>
+              <option>United Arab Emirates</option>
+              <option>Qatar</option>
+              <option>Kuwait</option>
+              <option>Bahrain</option>
+              <option>Oman</option>
+              <option>Egypt</option>
+              <option>Jordan</option>
+              <option>Other (MENA)</option>
+              <option>Other</option>
+            </select>
+            <span class="err">Please select your country.</span>
+          </div>
+
+          <div class="consent">
+            <input type="checkbox" id="consent" name="consent" />
+            <label for="consent">
+              I'd like McGraw Hill to email me relevant resources, events and updates for
+              international schools. You can unsubscribe at any time.
+            </label>
+          </div>
+
+          <button class="btn" type="submit">Download the free guide</button>
+          <p class="form-foot">
+            We respect your privacy. Read our <a href="https://www.mheducation.com/privacy.html">privacy policy</a>.
+          </p>
+        </div>
+
+        <!-- Success state -->
+        <div class="success" id="success" role="status" aria-live="polite">
+          <div class="check">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Your guide is on its way</h3>
+          <p style="color:var(--mh-grey)">
+            Thank you — we've sent <strong>The Future-Ready English Playbook</strong> to your inbox.
+            If it doesn't arrive within a few minutes, check your spam folder.
+          </p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ VALUE PROPS ============ -->
+  <section class="props">
+    <div class="wrap">
+      <div class="head">
+        <h2>Built for the schools shaping the region's future</h2>
+        <p>Wherever you are on your English-medium journey, this guide meets you with practical, classroom-tested thinking — not theory.</p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l9 4.5-9 4.5-9-4.5L12 3zM3 12l9 4.5 9-4.5M3 16.5L12 21l9-4.5" stroke="#0B48BC" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Standards you can stand behind</h3>
+          <p>Map resources to international and national benchmarks so your provision is ready for inspection and accreditation.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM22 21v-2a4 4 0 00-3-3.87M16 3.13A4 4 0 0119 7" stroke="#5F14C1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Support for every educator</h3>
+          <p>From heads of school to first-year teachers, find guidance that helps your whole team deliver with confidence.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none"><path d="M3 3v18h18M7 14l4-4 3 3 5-6" stroke="#E21A23" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Outcomes you can measure</h3>
+          <p>Track learner progress with clear, evidence-based metrics that make growth visible to leaders and families alike.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TRUST BAND ============ -->
+  <section class="trust">
+    <div class="wrap">
+      <h2>A learning partner, beside you</h2>
+      <p>For more than a century, McGraw Hill has helped educators around the world unlock the potential of every learner. We'd be honoured to support your school's next chapter.</p>
+      <a class="cta-link" href="#download">Get the free guide</a>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site">
+    <div class="wrap">
+      <div class="ftop">
+        <div>
+          <a class="logo" href="#" aria-label="McGraw Hill home" style="margin-bottom:14px;">
+            <span class="mark">MH</span><span>McGraw Hill</span>
+          </a>
+          <p>McGraw Hill is a leading global education company, partnering with millions of educators, learners and professionals around the world. Our resources are available in more than 80 languages.</p>
+        </div>
+        <nav aria-label="Footer">
+          <a href="https://www.mheducation.com/">mheducation.com</a>
+          <a href="https://www.mheducation.com/privacy.html">Privacy</a>
+          <a href="https://www.mheducation.com/terms-use.html">Terms of use</a>
+        </nav>
+      </div>
+      <div class="legal">
+        © 2026 McGraw Hill. All rights reserved. International Schools — MENA &amp; KSA.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var form = document.getElementById('leadForm');
+      var success = document.getElementById('success');
+
+      function setError(input, on) {
+        var field = input.closest('.field');
+        if (field) field.classList.toggle('invalid', on);
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var valid = true;
+        var required = form.querySelectorAll('[required]');
+
+        required.forEach(function (input) {
+          var ok = input.value && input.value.trim() !== '';
+          if (input.type === 'email') {
+            ok = ok && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value);
+          }
+          setError(input, !ok);
+          if (!ok && valid) input.focus();
+          if (!ok) valid = false;
+        });
+
+        if (!valid) return;
+
+        // No backend in this static page — show the success state.
+        // Wire this submit handler to Marketo / Eloqua / your MAP before publishing.
+        form.classList.add('submitted');
+        success.classList.add('show');
+        success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+
+      // Clear an error as soon as the user corrects the field
+      form.querySelectorAll('[required]').forEach(function (input) {
+        input.addEventListener('input', function () { setError(input, false); });
+        input.addEventListener('change', function () { setError(input, false); });
+      });
+    })();
+
+    /* Hero parallax — eased cursor-follow (lerp) for a smooth, GSAP-like feel.
+       Skipped for touch/coarse pointers and when reduced motion is requested. */
+    (function () {
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+      var fine = window.matchMedia('(pointer: fine)');
+      if (reduce.matches || !fine.matches) return;
+
+      var hero = document.querySelector('.hero');
+      var copy = document.querySelector('.hero-copy');
+      var card = document.querySelector('.magnet-wrap');
+      if (!hero || !copy || !card) return;
+
+      var tx = 0, ty = 0;   // target (normalised -0.5..0.5)
+      var cx = 0, cy = 0;   // current (eased toward target)
+      var EASE = 0.07;      // lower = smoother / more lag
+
+      hero.addEventListener('pointermove', function (e) {
+        var r = hero.getBoundingClientRect();
+        tx = (e.clientX - r.left) / r.width - 0.5;
+        ty = (e.clientY - r.top) / r.height - 0.5;
+      });
+      hero.addEventListener('pointerleave', function () { tx = 0; ty = 0; });
+
+      (function frame() {
+        cx += (tx - cx) * EASE;
+        cy += (ty - cy) * EASE;
+        // Card sits "closer" (moves more, opposite the cursor); copy drifts gently.
+        card.style.transform = 'translate(' + (cx * -18) + 'px,' + (cy * -14) + 'px)';
+        copy.style.transform = 'translate(' + (cx * 8) + 'px,' + (cy * 6) + 'px)';
+        requestAnimationFrame(frame);
+      })();
+    })();
+  </script>
+</body>
+</html>
