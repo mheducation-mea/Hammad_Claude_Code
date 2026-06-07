@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Campaign Portal · McGraw Hill International Sales</title>
+<meta name="description" content="Internal sales reference portal for McGraw Hill International nurture campaigns. Internal use only." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+<style>
+/* ============================================================
+   McGraw Hill — Campaign Portal (Internal Sales Reference)
+   Design system: Brand Guidelines v6.1 (March 2026)
+   Heritage Red #E21A23 · Academic Blue #0B48BC · Vibrant Violet #5F14C1
+   Type: Proxima Nova (fallback: Mulish) · Cubic Grid geometry
+   ============================================================ */
+
+:root{
+  /* Brand */
+  --heritage-red:#E21A23;
+  --heritage-red-dark:#B5141B;
+  --academic-blue:#0B48BC;
+  --academic-blue-dark:#083377;
+  --academic-blue-200:#9EBDF9;
+  --academic-blue-050:#D9E5FC;
+  --violet:#5F14C1;
+  --violet-bright:#8615FF;
+  --violet-200:#E3B9FC;
+  --white:#FFFFFF;
+
+  /* Neutrals */
+  --ink:#16181D;
+  --ink-soft:#3A3F4A;
+  --muted:#6A7180;
+  --line:#E4E7EC;
+  --line-soft:#EEF0F4;
+  --surface:#FFFFFF;
+  --canvas:#F6F7F9;
+  --canvas-2:#F0F2F6;
+
+  /* Type */
+  --font: 'Proxima Nova','Mulish','Segoe UI',Arial,Helvetica,sans-serif;
+
+  /* Geometry (Cubic Grid) */
+  --r-sm:6px; --r:10px; --r-lg:16px; --r-xl:22px;
+  --shadow-sm:0 1px 2px rgba(16,24,40,.06),0 1px 3px rgba(16,24,40,.08);
+  --shadow:0 6px 20px rgba(16,24,40,.08),0 2px 6px rgba(16,24,40,.05);
+  --shadow-lg:0 24px 60px rgba(16,24,40,.18),0 8px 24px rgba(16,24,40,.10);
+  --maxw:1180px;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:var(--font);
+  color:var(--ink);
+  background:var(--canvas);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  line-height:1.55;
+}
+h1,h2,h3,h4{margin:0;line-height:1.12;letter-spacing:-.01em;}
+p{margin:0;}
+a{color:var(--academic-blue);text-decoration:none;}
+a:hover{text-decoration:underline;}
+img{max-width:100%;display:block;}
+:focus-visible{outline:3px solid var(--academic-blue-200);outline-offset:2px;border-radius:4px;}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+
+/* ---------- Top bar ---------- */
+.topbar{
+  position:sticky;top:0;z-index:60;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:saturate(150%) blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.topbar .wrap{display:flex;align-items:center;gap:16px;height:64px;}
+.brand{display:flex;align-items:center;gap:12px;}
+.logo-mark{
+  width:40px;height:40px;border-radius:9px;flex:0 0 auto;
+  background:var(--heritage-red);color:#fff;
+  display:grid;place-items:center;font-weight:800;font-size:20px;
+  box-shadow:var(--shadow-sm);position:relative;overflow:hidden;
+}
+.logo-mark::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(255,255,255,.18),rgba(255,255,255,0) 55%);}
+.brand-name{font-weight:800;font-size:18px;letter-spacing:-.02em;color:var(--ink);}
+.brand-name .sub{display:block;font-weight:600;font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted);margin-top:1px;}
+.topbar .spacer{flex:1;}
+.internal-pill{
+  display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;
+  color:var(--heritage-red);background:#FDECEC;border:1px solid #F6C9CB;
+  padding:6px 11px;border-radius:999px;letter-spacing:.02em;
+}
+.internal-pill .dot{width:7px;height:7px;border-radius:50%;background:var(--heritage-red);}
+@media(max-width:720px){.internal-pill .lbl{display:none;}}
+
+/* ---------- Hero ---------- */
+.hero{
+  position:relative;overflow:hidden;color:#fff;
+  background:
+    radial-gradient(1100px 520px at 82% -12%, rgba(134,21,255,.40), transparent 60%),
+    radial-gradient(900px 480px at 8% 8%, rgba(226,26,35,.42), transparent 58%),
+    linear-gradient(135deg,#0B2A6B 0%,#0B48BC 46%,#3B1E8E 100%);
+}
+.hero::before{ /* cubic grid motif */
+  content:"";position:absolute;inset:0;opacity:.18;pointer-events:none;
+  background-image:linear-gradient(rgba(255,255,255,.16) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,255,255,.16) 1px,transparent 1px);
+  background-size:46px 46px;
+  -webkit-mask-image:radial-gradient(120% 90% at 70% 0%,#000 35%,transparent 78%);
+          mask-image:radial-gradient(120% 90% at 70% 0%,#000 35%,transparent 78%);
+}
+.hero .wrap{position:relative;padding:72px 24px 84px;}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;
+  font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:#EAF0FF;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);
+  padding:7px 13px;border-radius:999px;margin-bottom:22px;
+}
+.eyebrow .sq{width:9px;height:9px;border-radius:2px;background:#fff;}
+.hero h1{font-size:clamp(34px,5.4vw,60px);font-weight:800;max-width:16ch;letter-spacing:-.025em;}
+.hero h1 .accent{
+  background:linear-gradient(90deg,#FFD0D2,#FF8A8F);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero .lede{margin-top:20px;font-size:clamp(16px,2vw,20px);max-width:60ch;color:#E7ECFB;font-weight:400;}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px;}
+.btn{
+  display:inline-flex;align-items:center;gap:9px;cursor:pointer;border:none;
+  font-family:inherit;font-weight:700;font-size:15px;border-radius:var(--r);
+  padding:13px 20px;transition:transform .12s ease,box-shadow .12s ease,background .15s ease;
+  text-decoration:none;
+}
+.btn:hover{text-decoration:none;transform:translateY(-1px);}
+.btn-primary{background:var(--heritage-red);color:#fff;box-shadow:0 8px 22px rgba(226,26,35,.35);}
+.btn-primary:hover{background:var(--heritage-red-dark);}
+.btn-ghost{background:rgba(255,255,255,.10);color:#fff;border:1px solid rgba(255,255,255,.30);}
+.btn-ghost:hover{background:rgba(255,255,255,.18);}
+.hero-stats{display:flex;flex-wrap:wrap;gap:14px;margin-top:46px;}
+.stat{
+  background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.20);
+  border-radius:var(--r-lg);padding:16px 20px;min-width:150px;backdrop-filter:blur(4px);
+}
+.stat .n{font-size:30px;font-weight:800;letter-spacing:-.02em;}
+.stat .l{font-size:12.5px;color:#DCE4F7;font-weight:600;margin-top:2px;letter-spacing:.02em;}
+
+/* ---------- Sub-nav (program jump) ---------- */
+.subnav{position:sticky;top:64px;z-index:50;background:#fff;border-bottom:1px solid var(--line);}
+.subnav .wrap{display:flex;align-items:center;gap:8px;height:56px;overflow-x:auto;scrollbar-width:none;}
+.subnav .wrap::-webkit-scrollbar{display:none;}
+.subnav .label{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;
+  letter-spacing:.12em;flex:0 0 auto;margin-right:4px;}
+.chip{
+  flex:0 0 auto;display:inline-flex;align-items:center;gap:8px;white-space:nowrap;
+  font-size:13.5px;font-weight:700;color:var(--ink-soft);background:var(--canvas-2);
+  border:1px solid var(--line);padding:8px 13px;border-radius:999px;cursor:pointer;
+  transition:background .15s,color .15s,border-color .15s;text-decoration:none;
+}
+.chip:hover{background:#fff;color:var(--ink);border-color:var(--academic-blue-200);text-decoration:none;}
+.chip .pdot{width:8px;height:8px;border-radius:2px;}
+
+/* ---------- Section / Program ---------- */
+.section{padding:64px 0 8px;scroll-margin-top:128px;}
+.prog-head{display:flex;flex-wrap:wrap;align-items:flex-start;gap:18px;}
+.prog-eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);}
+.prog-title{font-size:clamp(26px,3.4vw,38px);font-weight:800;letter-spacing:-.02em;margin-top:6px;}
+.prog-title .bar{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:2px;vertical-align:middle;}
+.prog-desc{margin-top:14px;font-size:17px;color:var(--ink-soft);max-width:74ch;}
+.prog-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;align-items:center;}
+.tag{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;
+  padding:6px 11px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink-soft);}
+.tag .c{width:8px;height:8px;border-radius:2px;}
+.status-live{color:#1f7a43;background:#E7F4EC;border-color:#BFE3CC;}
+.status-plan{color:#8a5a00;background:#FFF4E0;border-color:#F4DDA8;}
+.sf-link{margin-left:auto;}
+@media(max-width:720px){.sf-link{margin-left:0;width:100%;}}
+.btn-sf{background:var(--academic-blue);color:#fff;box-shadow:0 6px 16px rgba(11,72,188,.25);}
+.btn-sf:hover{background:var(--academic-blue-dark);}
+.btn-sf.disabled{background:#fff;color:var(--muted);border:1px dashed var(--line);box-shadow:none;cursor:not-allowed;}
+.btn-sf.disabled:hover{transform:none;}
+
+/* ---------- Carousel ---------- */
+.carousel{position:relative;margin-top:26px;}
+.car-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:12px;}
+.car-head .count{font-size:13px;font-weight:700;color:var(--muted);}
+.car-nav{display:flex;gap:8px;}
+.car-btn{
+  width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:#fff;
+  display:grid;place-items:center;cursor:pointer;color:var(--ink);box-shadow:var(--shadow-sm);
+  transition:background .15s,border-color .15s,opacity .15s;
+}
+.car-btn:hover{background:var(--canvas);border-color:var(--academic-blue-200);}
+.car-btn[disabled]{opacity:.35;cursor:not-allowed;}
+.track{
+  display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;
+  padding:6px 4px 22px;scroll-behavior:smooth;scrollbar-width:thin;
+}
+.track::-webkit-scrollbar{height:8px;}
+.track::-webkit-scrollbar-thumb{background:var(--line);border-radius:999px;}
+.track::-webkit-scrollbar-track{background:transparent;}
+
+/* ---------- Email thumbnail card ---------- */
+.ecard{
+  scroll-snap-align:start;flex:0 0 300px;width:300px;background:#fff;border:1px solid var(--line);
+  border-radius:var(--r-lg);overflow:hidden;cursor:pointer;display:flex;flex-direction:column;
+  transition:transform .14s ease,box-shadow .14s ease,border-color .14s ease;box-shadow:var(--shadow-sm);
+}
+.ecard:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--academic-blue-200);}
+.ecard:focus-visible{transform:translateY(-4px);box-shadow:var(--shadow-lg);}
+/* mini email preview (thumbnail) */
+.thumb{position:relative;height:188px;background:var(--canvas-2);overflow:hidden;border-bottom:1px solid var(--line);}
+.thumb .mini{
+  position:absolute;left:18px;right:18px;top:18px;background:#fff;border-radius:8px;
+  box-shadow:0 8px 22px rgba(16,24,40,.12);overflow:hidden;
+  transform:translateZ(0);
+}
+.mini .mini-bar{height:7px;}
+.mini .mini-body{padding:13px 14px 16px;}
+.mini .mini-logo{font-size:9px;font-weight:800;color:var(--heritage-red);letter-spacing:-.01em;margin-bottom:9px;}
+.mini .mini-h{height:9px;width:78%;border-radius:3px;margin-bottom:7px;}
+.mini .mini-l{height:6px;border-radius:3px;background:#EAEDF2;margin-bottom:6px;}
+.mini .mini-l.s{width:92%;}.mini .mini-l.m{width:74%;}.mini .mini-l.x{width:60%;}
+.mini .mini-btn{height:15px;width:46%;border-radius:5px;margin-top:11px;}
+.thumb .seqbadge{
+  position:absolute;left:0;bottom:0;z-index:2;background:#fff;border-top-right-radius:10px;
+  padding:5px 11px 5px 14px;font-size:11px;font-weight:800;letter-spacing:.04em;color:var(--ink);
+  box-shadow:2px -2px 8px rgba(16,24,40,.06);
+}
+.thumb .stagebadge{
+  position:absolute;right:14px;top:14px;z-index:2;font-size:10.5px;font-weight:800;
+  letter-spacing:.06em;text-transform:uppercase;color:#fff;padding:4px 9px;border-radius:999px;
+}
+.thumb .draftbadge{
+  position:absolute;right:14px;bottom:14px;z-index:2;font-size:10px;font-weight:800;
+  letter-spacing:.05em;text-transform:uppercase;color:#8a5a00;background:#FFF4E0;
+  border:1px solid #F4DDA8;padding:3px 8px;border-radius:999px;
+}
+.ecard .body{padding:15px 16px 17px;display:flex;flex-direction:column;flex:1;}
+.ecard .etitle{font-size:16px;font-weight:800;letter-spacing:-.01em;color:var(--ink);}
+.ecard .eblurb{font-size:13.5px;color:var(--muted);margin-top:7px;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+.ecard .efoot{margin-top:auto;padding-top:13px;display:flex;align-items:center;gap:7px;
+  font-size:13px;font-weight:700;color:var(--academic-blue);}
+.ecard:hover .efoot{color:var(--academic-blue-dark);}
+.ecard .efoot .arr{transition:transform .15s;}
+.ecard:hover .efoot .arr{transform:translateX(3px);}
+
+/* ---------- Modal ---------- */
+.modal-overlay{
+  position:fixed;inset:0;z-index:100;background:rgba(13,21,40,.55);backdrop-filter:blur(3px);
+  display:none;align-items:flex-start;justify-content:center;padding:40px 18px;overflow-y:auto;
+}
+.modal-overlay.open{display:flex;}
+.modal{
+  background:#fff;width:100%;max-width:680px;border-radius:var(--r-xl);overflow:hidden;
+  box-shadow:var(--shadow-lg);animation:pop .18s ease;margin:auto 0;
+}
+@keyframes pop{from{opacity:0;transform:translateY(12px) scale(.985);}to{opacity:1;transform:none;}}
+.modal-top{position:relative;padding:22px 24px 18px;color:#fff;}
+.modal-top .mt-stage{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.92;}
+.modal-top .mt-title{font-size:22px;font-weight:800;letter-spacing:-.015em;margin-top:5px;}
+.modal-top .mt-prog{font-size:13px;font-weight:600;opacity:.9;margin-top:3px;}
+.modal-close{
+  position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;
+  background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.30);color:#fff;
+  cursor:pointer;display:grid;place-items:center;font-size:18px;line-height:1;
+}
+.modal-close:hover{background:rgba(255,255,255,.30);}
+.modal-meta{display:flex;flex-direction:column;gap:9px;padding:18px 24px;border-bottom:1px solid var(--line);background:var(--canvas);}
+.metarow{display:flex;gap:10px;font-size:13.5px;}
+.metarow .k{flex:0 0 92px;font-weight:800;color:var(--muted);text-transform:uppercase;font-size:11px;letter-spacing:.06em;padding-top:2px;}
+.metarow .v{color:var(--ink);font-weight:600;}
+
+/* rendered email frame */
+.email-frame{padding:0 0 4px;}
+.email-render{margin:22px 24px;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);}
+.er-bar{height:8px;}
+.er-head{padding:20px 26px 0;}
+.er-logo{font-size:15px;font-weight:800;color:var(--heritage-red);letter-spacing:-.01em;}
+.er-body{padding:18px 26px 26px;color:#222;font-size:15px;line-height:1.62;}
+.er-body p{margin:0 0 14px;}
+.er-body .greet{font-weight:700;color:var(--ink);}
+.er-body .chk{display:flex;gap:9px;margin:0 0 9px;color:#2a2f38;}
+.er-body .chk::before{content:"✓";color:var(--academic-blue);font-weight:800;flex:0 0 auto;}
+.er-body .chk b{font-weight:700;}
+.er-body .li{margin:0 0 7px;padding-left:16px;position:relative;}
+.er-body .li::before{content:"";position:absolute;left:2px;top:9px;width:5px;height:5px;border-radius:50%;background:var(--muted);}
+.er-link{display:inline-block;margin:0 0 8px;padding:9px 15px;border:1px solid var(--academic-blue-200);
+  background:var(--academic-blue-050);color:var(--academic-blue-dark) !important;border-radius:8px;
+  font-weight:700;font-size:14px;text-decoration:none;}
+.er-link:hover{background:#cfe0fb;text-decoration:none;}
+.er-cta{display:inline-block;background:var(--heritage-red);color:#fff !important;font-weight:700;
+  padding:13px 22px;border-radius:8px;margin:6px 0 18px;text-decoration:none;font-size:15px;}
+.er-cta:hover{background:var(--heritage-red-dark);text-decoration:none;}
+.er-sign{color:var(--ink-soft);font-size:14.5px;white-space:pre-line;margin-top:6px;}
+.er-foot{border-top:1px solid var(--line-soft);padding:14px 26px;background:var(--canvas);
+  font-size:11.5px;color:var(--muted);}
+.draft-note{margin:0 24px 22px;padding:14px 16px;border-radius:var(--r);background:#FFF8E8;
+  border:1px solid #F4DDA8;color:#7a5400;font-size:13.5px;}
+.draft-note b{color:#5e4000;}
+.modal-actions{display:flex;flex-wrap:wrap;gap:12px;padding:0 24px 24px;}
+.btn-dl{background:var(--academic-blue);color:#fff;box-shadow:0 6px 16px rgba(11,72,188,.22);}
+.btn-dl:hover{background:var(--academic-blue-dark);}
+.btn-outline{background:#fff;color:var(--ink);border:1px solid var(--line);}
+.btn-outline:hover{background:var(--canvas);}
+
+/* ---------- Footer ---------- */
+.footer{margin-top:70px;background:#0E1530;color:#C7CEDF;}
+.footer .wrap{padding:54px 24px 30px;}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:34px;}
+@media(max-width:860px){.foot-grid{grid-template-columns:1fr 1fr;gap:28px;}}
+@media(max-width:520px){.foot-grid{grid-template-columns:1fr;}}
+.foot-brand .brand-name{color:#fff;}
+.foot-brand p{margin-top:14px;font-size:13.5px;color:#9AA3BC;max-width:34ch;}
+.foot-col h4{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#fff;margin-bottom:14px;}
+.foot-col a{display:flex;gap:9px;align-items:flex-start;color:#C7CEDF;font-size:14px;padding:6px 0;}
+.foot-col a:hover{color:#fff;text-decoration:none;}
+.foot-col a .ic{flex:0 0 auto;margin-top:1px;opacity:.8;}
+.foot-bottom{margin-top:40px;padding-top:22px;border-top:1px solid rgba(255,255,255,.10);
+  display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;font-size:12.5px;color:#8A93AE;}
+.foot-bottom .ipill{display:inline-flex;align-items:center;gap:7px;color:#FF9DA1;font-weight:700;}
+.foot-bottom .ipill .dot{width:7px;height:7px;border-radius:50%;background:var(--heritage-red);}
+
+/* utility */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<header class="topbar">
+  <div class="wrap">
+    <div class="brand">
+      <div class="logo-mark" aria-hidden="true">M</div>
+      <div class="brand-name">McGraw Hill<span class="sub">Campaign Portal</span></div>
+    </div>
+    <div class="spacer"></div>
+    <span class="internal-pill"><span class="dot"></span><span class="lbl">Internal use only — Sales reference</span></span>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow"><span class="sq"></span> Sales Enablement · International K-12</span>
+    <h1>Every nurture program, <span class="accent">in one handy place.</span></h1>
+    <p class="lede" id="heroLede"></p>
+    <div class="hero-cta">
+      <a href="#programs" class="btn btn-primary">Browse the programs <span aria-hidden="true">↓</span></a>
+      <a href="#resources" class="btn btn-ghost">How-to guides &amp; resources</a>
+    </div>
+    <div class="hero-stats" id="heroStats"></div>
+  </div>
+</section>
+
+<!-- SUB NAV -->
+<nav class="subnav" aria-label="Jump to program">
+  <div class="wrap">
+    <span class="label">Programs</span>
+    <div id="chipRow" style="display:flex;gap:8px;"></div>
+  </div>
+</nav>
+
+<!-- PROGRAMS -->
+<main id="programs">
+  <div id="sections"></div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" id="resources">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand">
+          <div class="logo-mark" aria-hidden="true">M</div>
+          <div class="brand-name">McGraw Hill<span class="sub">Campaign Portal</span></div>
+        </div>
+        <p>A living reference for the sales team — every pre-sale nurture program we're running for the coming academic year, in one place.</p>
+      </div>
+      <div class="foot-col" id="footCol1"></div>
+      <div class="foot-col" id="footCol2"></div>
+      <div class="foot-col" id="footCol3"></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr"></span> McGraw Hill. Built on Brand Guidelines v6.1.</span>
+      <span class="ipill"><span class="dot"></span> Internal use only — do not forward externally</span>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="modal" id="modal"></div>
+</div>
+
+<script>
+/* PORTAL_DATA is injected here by scripts/build.py */
+window.PORTAL_DATA = {"config": {"emlBase": "emails/", "heroLede": "Your single reference for every pre-sale email nurture we're running across International K-12 for the coming academic year. Browse each program, see exactly what every email does, preview the full creative, track progress in Salesforce, and grab the .eml whenever you want to send one to your own contacts."}, "products": [{"id": "level-up", "name": "Level Up", "color": "#5F14C1", "status": "In-Progress", "audience": "School leaders & ICT coordinators", "regions": "MEA · Asia · EU · ANZ · CA · SAF · KSA", "salesforceReport": "", "description": "The full K-12 ICT and AI-literacy nurture for ‘Level Up Through Digital Discoveries’. It moves international school leaders and ICT coordinators from the problem (the AI-literacy gap and the failure of patchwork coding tools), through consideration (teacher support, standards alignment, proof), to a decision-stage push to adopt a single progressive K-12 computing curriculum in time for 2026/27. Nine emails across Awareness → Consideration → Decision.", "emails": [{"code": "AW01", "stage": "Awareness", "title": "Is Your ICT Curriculum Ready for AI?", "blurb": "Opens the nurture by framing the AI-literacy gap and the failure of patchwork coding tools, positioning Level Up as the only K-12 ICT curriculum with AI woven in from Grade 1 to 12. Invites readers to explore the program, download the brochure, and request sample lessons.", "subject": "Is your school preparing students for an AI-powered world?", "preview": "", "hasCopy": true, "cta": {"text": "Explore the Full Program", "url": "https://info.mheducation.com/int_ict"}, "greeting": "Hi [First Name],", "body": ["How is your school teaching students to navigate AI?", "If you’re not sure where to start (or if computing education hasn’t been a priority yet) you’re not alone. Research shows that two-thirds of countries still lack comprehensive computing curricula, and AI literacy is rarely integrated at all grade levels.[1]", "But here’s what’s changed: By 2030, 85% of jobs will require some level of AI fluency.[2] The question isn’t whether schools need to teach computing and AI. It’s how to do it well across all grades, not just high school.", "Here’s the problem most schools face: They cobble together free tools. Scratch for elementary, Code.org for middle school, maybe some Python tutorials in high school. But these fragmented approaches lack progression, overwhelm teachers, and fail to prepare students for the AI-driven careers they’ll enter.", "What if there was a better way?", "Level Up Through Digital Discoveries is the only K-12 ICT curriculum that integrates AI literacy from Grade 1 through Grade 12. It’s built on a progressive “spiral learning” model that ensures students don’t just learn to code, but learn to think computationally in an AI-powered world.", "Here’s what makes it different:", "✓ Complete K-12 continuity – Not a patchwork. One seamless curriculum from digital citizenship in kindergarten to machine learning in Grade 12.", "✓ AI integration at every grade – Grade 1 students explore AI basics through Scratch. Grade 7 students dive into generative AI and prompt engineering. Grade 12 students build predictive models and study natural language processing.", "✓ Standards-aligned globally – Independently reviewed to meet ISTE, CSTA, and UN SDG 4 frameworks. Prepares students for Cambridge IGCSE, IB, and AP pathways.", "✓ Teacher support you can rely on – Ready-to-teach lesson plans, pacing guides, and comprehensive teacher editions. No CS degree required.", "✓ Bilingual classroom support – Designed to support diverse language backgrounds and promote equity in learning. Critical for international schools with multilingual students.", "✓ Flexible delivery – Works in traditional, hybrid, or remote settings. Print materials available now, with adaptive digital platform launching later this year.", "I’d like to show you how Level Up can bring comprehensive computing education to your school.", "Here are three ways to learn more:", "[Explore the Full Program →]", "[Download the Program Brochure (PDF) →]", "[See How AI is Integrated Across All Grades (PDF) →]", "Or, if you’d prefer to see sample lessons from specific grade levels, simply reply to this email and let me know which grades you’re most interested in.", "P.S. — If you’re planning curriculum for 2026/27, now is the time to explore your options. Many schools finalize adoptions by May/June. Let’s make sure you have everything you need to make an informed decision."], "signoff": "Best regards,\n{{Sender Name}}\n{{Sender Title}}, McGraw Hill", "eml": "level-up-AW01.eml"}, {"code": "AW02", "stage": "Awareness", "title": "Why Fragmented Coding Tools Are Failing", "blurb": "Dramatizes the pain of the patchwork approach (Scratch, Code.org, YouTube Python) and argues computing deserves the same curricular rigor as maths or science. Offers Grade 2 and Grade 5 sample packages so readers can see real K-12 progression.", "subject": "Why piecing together Scratch + Code.org + Python isn’t working", "preview": "", "hasCopy": true, "cta": {"text": "Explore the Full K-12 Curriculum", "url": "https://info.mheducation.com/int_ict"}, "greeting": "Hi [First Name],", "body": ["You know the drill.", "Grade 3 teachers use Scratch because it’s free and visual.", "Grade 6 switches to Code.org because someone found it online.", "Grade 9 cobbles together Python tutorials from YouTube.", "Grade 12? Good luck finding anything that connects to what came before.", "This is how most international schools teach computing. And it’s breaking down.", "Here’s what happens with the patchwork approach:", "Teachers are overwhelmed. Every year, they’re hunting for new resources, figuring out what to teach next, and wondering if students actually retained anything from last year. There’s no continuity, no scope and sequence, no teacher support.", "Students are confused. They learn Scratch blocks in Grade 6, but when they hit Python in Grade 9, it feels like starting over. The concepts don’t build. The skills don’t transfer. They’re learning tools, not computational thinking.", "Schools can’t measure progress. Without a unified curriculum, how do you know if a Grade 8 student is on track? What does “proficient in computing” even mean when every grade uses different tools with different learning objectives?", "And nobody’s teaching AI literacy. Free platforms like Scratch and Code.org are great for basic coding. But they don’t address the elephant in the room: students graduating into an AI-powered workforce with zero understanding of how AI works, how to use it, or how to evaluate it critically.", "There’s a better way.", "Comprehensive K-12 curricula exist for math, science, and language arts. Why? Because progression matters. Because teacher support matters. Because you can’t build mastery by stitching together random resources.", "Computing deserves the same rigor.", "Level Up Through Digital Discoveries is built like a traditional curriculum, but for the modern computing landscape:", "✓ Spiral learning from K-12 – Concepts introduced early, revisited and deepened every year", "✓ Teacher editions and lesson plans – No hunting for resources or guessing what to teach next", "✓ Integrated assessments – Track student progress across all grades with consistent benchmarks", "✓ AI literacy built in – From Grade 1 awareness to Grade 12 machine learning, progressively integrated", "✓ Standards-aligned – ISTE, CSTA, UN SDG 4 frameworks, independently reviewed every 2 years", "It’s not about replacing the free tools. It’s about having a foundation that actually prepares students for the next grade, the next year, and the careers they’ll enter.", "See what a comprehensive K-12 computing curriculum actually looks like:", "We’ve put together complete teaching packages for Grade 2 and Grade 5 so you can see exactly how Level Up delivers progression, teacher support, and student engagement.", "Grade 2 Sample Package:", "→ Table of Contents", "→ Sample Chapter (Student Edition)", "→ Sample Lesson (Teacher Edition)", "→ Pacing Guide", "Grade 5 Sample Package:", "→ Table of Contents", "→ Sample Chapter (Student Edition)", "→ Sample Lesson (Teacher Edition)", "→ Pacing Guide", "Compare the two and you’ll see how foundational concepts in Grade 2 evolve into more sophisticated computational thinking by Grade 5 — and that’s just the elementary years.", "[Explore the Full K-12 Curriculum →]", "Or reply to this email and let me know which other grade levels you’d like to see. We have sample packages for Grades K-12.", "P.S. — If your school is still piecing together free tools year after year, ask yourself: Would we accept this approach for math? For science? Why do we accept it for computing?"], "signoff": "Best regards,\n{{Sender Name}}\n{{Sender Title}}, McGraw Hill", "eml": "level-up-AW02.eml"}, {"code": "AW03", "stage": "Awareness", "title": "The Full K-12 Journey to AI Mastery", "blurb": "Walks through the complete K-12 progression band by band (digital citizenship through machine learning) to show Level Up's spiral-learning pathway versus restart-every-few-years programs. Drives downloads of the K-12 progression overview and sample lessons.", "subject": "From digital citizenship to AI mastery: The K-12 journey", "preview": "", "hasCopy": true, "cta": {"text": "Download: K-12 Progression Overview (PDF)", "url": "https://info.mheducation.com/int_ict"}, "greeting": "Hi [First Name],", "body": ["Most computing curricula are built for a specific age range.", "You’ve got elementary programs (K-5).", "Middle school programs (6-8).", "High school electives (9-12).", "But they rarely connect. Students finish Grade 5 strong, then start over in Grade 6 with a completely different curriculum. By Grade 9, nobody remembers what they learned in elementary school.", "What if computing education worked like math? Or science? Or language arts?", "Those subjects don’t restart every few years. They build. Concepts introduced in Grade 1 become the foundation for Grade 6, which becomes the foundation for Grade 12.", "That’s how Level Up Through Digital Discoveries is designed.", "Here’s what the full K-12 journey looks like:", "Grades K-2: Digital Citizenship + Foundations", "Students learn what technology is, how to use it responsibly, and begin exploring basic concepts like patterns, sequences, and algorithms through age-appropriate activities.", "Grades 3-5: Computational Thinking + Introduction to Coding", "Students start coding with Scratch, learning loops, conditionals, and variables. They explore how computers process information and begin understanding AI basics through interactive projects.", "Grades 6-8: Application + Creation", "Students transition to text-based coding with Python. They dive into generative AI and prompt engineering (Grade 7 focus). They build real projects, from chatbots to games, understanding how AI tools work and their limitations.", "Grades 9-12: Problem-Solving + Career Readiness", "Students tackle advanced topics: machine learning, natural language processing, image recognition, data science. They study AI ethics, bias, and societal impact. They prepare for Cambridge IGCSE, IB, AP exams, and industry certifications.", "This is spiral learning. Concepts aren’t taught once and forgotten. They’re introduced early, revisited regularly, and deepened over time.", "By Grade 12, students don’t just know how to code. They understand computational thinking. They can work with AI tools critically. They’re prepared for university CS programs and tech-centered careers.", "That’s the difference between a patchwork and a pathway.", "Want to see how this progression works in practice?", "[Download: K-12 Progression Overview (PDF) →]", "[Explore Sample Lessons Across Grade Levels →]", "[See Standards Alignment (ISTE/CSTA) →]", "Or reply to this email with the grade levels most relevant to your school, and I’ll send you specific materials.", "P.S. — If you’re planning curriculum for 2026/27, now is the time to think about progression, not just individual grade levels. Most schools finalize adoptions by May/June. Let’s make sure you have what you need to make the right decision."], "signoff": "Best regards,\n{{Sender Name}}\n{{Sender Title}}, McGraw Hill", "eml": "level-up-AW03.eml"}, {"code": "CO04", "stage": "Consideration", "title": "Teach ICT Without a CS Degree", "blurb": "Addresses the top adoption barrier — ‘our teachers aren’t computer scientists’ — by detailing Level Up's teacher editions, ready-to-teach lesson plans, pacing guides and PD. Drives sample teacher-edition downloads and webinar registration.", "subject": "“I teach science, not computer science. Here’s how I’m teaching coding with confidence.”", "preview": "", "hasCopy": true, "cta": {"text": "Download: Sample Teacher Edition (Grade 5)", "url": "https://info.mheducation.com/int_ict"}, "greeting": "Hi [First Name],", "body": ["Here’s what we hear from international schools all the time:", "“We want to teach computing, but our teachers aren’t computer scientists.”", "It’s the biggest barrier to implementing K-12 computing programs. And it’s completely understandable.", "Most teachers didn’t study computer science in university. They’re science teachers, math teachers, primary generalists. The idea of teaching Python or AI feels overwhelming. So schools either:", "- Hire expensive CS specialists (hard to find, especially internationally)", "- Ask existing teachers to “figure it out” (recipe for stress and burnout)", "- Skip computing altogether (students lose out)", "What if there was a fourth option?", "What if computing could be taught like any other subject: with comprehensive teacher support, ready-to-use lesson plans, and resources that don’t assume you have a CS degree?", "That’s exactly how Level Up Through Digital Discoveries is designed.", "Here’s what teacher support actually looks like in Level Up:", "Comprehensive Teacher Editions — point-of-use guidance for every lesson, background knowledge sections, common student misconceptions and how to address them, extension activities, and answers to all exercises and assessments.", "Ready-to-Teach Lesson Plans — clear learning objectives aligned to standards, a step-by-step teaching sequence, suggested timing and pacing, discussion prompts, and formative assessment checks. No hunting for resources or wondering “what do I teach next?”", "Flexible Pacing Guides — whether you have 1 hour per week or 2, the pacing guides show you exactly how to sequence lessons across the school year. Customize to fit your schedule.", "Professional Development Resources — video tutorials, getting-started guides, and ongoing support to build your confidence. You’re not expected to know everything on Day 1.", "Digital Teacher Dashboard (Launching 2026) — access all resources, track student progress, assign work, and get real-time insights, all in one place.", "Here’s what teachers are saying:", "“I teach science, not computer science. Level Up’s teacher guides made implementation seamless. Everything I needed was right there — no guessing, no scrambling for resources.” — Primary Teacher, International School", "“The point-of-use support in the Teacher Edition was a game-changer. I felt confident teaching topics I’d never taught before.” — ICT Coordinator, Middle East", "You don’t need a CS degree. You need good curriculum and strong support. Level Up provides both.", "Want to see the teacher support resources for yourself?", "[Download: Sample Teacher Edition (Grade 5) →]", "[View: Teacher Support Overview (PDF) →]", "[Register for Webinar: Teaching ICT Without a CS Degree →]", "Or reply to this email and let me know what grade levels you’re most concerned about. I’ll send you the specific teacher resources for those grades.", "P.S. — We’re hosting a live webinar in 2 weeks: “Teaching ICT Without a CS Degree: A Teacher’s Guide.” Register above to join educators from across your region who are making computing accessible in their schools."], "signoff": "Best regards,\n{{Sender Name}}\n{{Sender Title}}, McGraw Hill", "eml": "level-up-CO04.eml"}, {"code": "CO05", "stage": "Consideration", "title": "Standards Alignment: ISTE, CSTA, SDG 4", "blurb": "Answers the ‘how does this align with our standards?’ question by mapping Level Up to ISTE, CSTA K-12, UN SDG 4 and Cambridge/IB/AP pathways, noting independent biennial review. Offers downloadable standards-mapping docs and a leadership pitch brief.", "subject": "How to answer “Is this aligned with ISTE and CSTA?”", "preview": "", "hasCopy": true, "cta": {"text": "Download: Complete ISTE Standards Mapping (PDF)", "url": "https://info.mheducation.com/int_ict"}, "greeting": "Hi [First Name],", "body": ["Every curriculum decision eventually faces this question:", "“How does this align with our standards?”", "School boards want to know. Accreditation bodies require it. Parents ask about it. And rightfully so: standards alignment ensures students are learning what they need to succeed, whether they’re preparing for university, international exams, or future careers.", "For computing education, the key standards are ISTE (International Society for Technology in Education), CSTA K-12 CS (Computer Science Teachers Association), and UN SDG 4 (Quality Education) — plus regional requirements like Cambridge IGCSE, IB, and AP pathways.", "Here’s how Level Up Through Digital Discoveries delivers:", "Independently Reviewed Every 2 Years — Level Up isn’t just self-proclaimed “standards-aligned.” It’s independently reviewed by education experts every two years to ensure alignment with evolving standards and best practices.", "Built on ISTE Standards — every lesson maps to the ISTE standards for students: Empowered Learner, Digital Citizen, Knowledge Constructor, Innovative Designer, Computational Thinker, Creative Communicator, and Global Collaborator.", "Aligned with the CSTA K-12 CS Framework — Level Up covers all five core concepts: Computing Systems; Networks and the Internet; Data and Analysis; Algorithms and Programming; and Impacts of Computing. Progression follows CSTA’s developmental approach.", "Supports UN SDG 4 (Quality Education) — equitable access to computing education, digital literacy as a fundamental skill, and support for bilingual and multilingual learners.", "Prepares Students for Global Pathways — Cambridge IGCSE Computer Science, IB Computer Science (SL/HL), AP Computer Science Principles, and AP Computer Science A.", "Want proof? We’ve created detailed mapping documents that show exactly where each standard is addressed across the K-12 curriculum.", "[Download: Complete ISTE Standards Mapping (PDF) →]", "[Download: Complete CSTA Standards Mapping (PDF) →]", "[Download: How to Pitch Level Up to Your Leadership (1-Page Brief) →]", "These documents are designed for exactly the conversation you’ll have with your school board, head of school, or curriculum committee. They answer the alignment question definitively.", "P.S. — The “How to Pitch Level Up to Your Leadership” brief includes talking points, FAQs, and the business case for comprehensive K-12 computing education. Use it to make the case internally."], "signoff": "Best regards,\n{{Sender Name}}\n{{Sender Title}}, McGraw Hill", "eml": "level-up-CO05.eml"}, {"code": "CO06", "stage": "Consideration", "title": "Athens School Success Story", "blurb": "A case-study email showing how an international school in Athens replaced fragmented tools with Level Up and saw gains for students, teachers and the school. Drives a case study download and an implementation call.", "subject": "Real results: How an Athens school implemented K-12 computing in one year", "preview": "", "hasCopy": true, "cta": {"text": "Download: Complete Case Study (PDF)", "url": "https://info.mheducation.com/int_ict"}, "greeting": "Hi [First Name],", "body": ["Let me introduce you to [School Name] in Athens, Greece. Like many international schools, they were facing a familiar challenge.", "The Problem: Computing education was fragmented. Elementary used Scratch. Middle school had some Code.org activities. High school offered a Python elective. But nothing connected. Teachers were overwhelmed hunting for resources. Students weren’t building on previous learning. And the school had no way to measure computing proficiency across grades.", "Sound familiar?", "The Decision: After evaluating several options, [School Name] decided to implement a comprehensive K-12 computing curriculum and chose Level Up Through Digital Discoveries — for its complete K-12 continuity, built-in teacher support, standards alignment (ISTE, CSTA, Cambridge IGCSE prep), AI literacy across all grades, and flexible implementation.", "The Implementation: [School Name] rolled out Level Up across all grades, starting with professional development and ongoing support. Students transitioned to the new curriculum seamlessly.", "The Results:", "For students — increased engagement in computing classes, successful completion of first machine-learning projects, and stronger performance on Cambridge IGCSE Computer Science.", "For teachers — reduced prep time with ready-to-use lesson plans, and confidence teaching advanced topics they’d never taught before.", "For the school — computing is now a signature program that attracts new families, and leadership can finally track computing proficiency across all grades with integrated assessments.", "Want to see the full story? The case study includes the school’s challenge and decision process, implementation timeline and approach, detailed results and outcomes, lessons learned, and sample student work.", "[Download: Complete Case Study (PDF) →]", "[Schedule a Call: Discuss Implementation at Your School →]", "If you’re facing similar challenges and want to explore what comprehensive K-12 computing education could look like at your school, let’s talk.", "P.S. — [School Name] started with a pilot and expanded from there. You don’t have to implement K-12 all at once. We can work with whatever approach makes sense for your school."], "signoff": "Best regards,\n{{Sender Name}}\n{{Sender Title}}, McGraw Hill", "eml": "level-up-CO06.eml"}, {"code": "DE07", "stage": "Decision", "title": "What's Inside Your Adoption Package", "blurb": "Itemizes everything included in a Level Up adoption — print curriculum, the 2026 digital platform, implementation support, ongoing updates and exam pathways — to show it’s a full ecosystem, not just textbooks. Drives requests for pricing and a 1-on-1 consultation.", "subject": "Everything included in your Level Up adoption package", "preview": "", "hasCopy": true, "cta": {"text": "Request: Detailed Pricing & Implementation Timeline", "url": "https://info.mheducation.com/int_ict"}, "greeting": "Hi [First Name],", "body": ["We’ve spent the past several weeks showing you why comprehensive K-12 computing education matters and how Level Up delivers it. Now let’s talk about what you actually get when you adopt Level Up Through Digital Discoveries. Because it’s more than just textbooks.", "PRINT CURRICULUM (AVAILABLE NOW)", "Student materials: consumable student worktexts for Grades K-12, age-appropriate content with hands-on activities, project-based learning throughout, available in 1-year or multi-year subscriptions.", "Teacher materials: comprehensive Teacher Editions for every grade, point-of-use teaching guidance, lesson plans with flexible pacing, assessment tools and answer keys, and background knowledge for non-CS teachers.", "DIGITAL PLATFORM (LAUNCHING 2026)", "For students: SmartBook® adaptive learning (Grades 6-12), robotics eBook lessons with interactive activities, self-grading assessments, video tutorials, a mobile app with eBook, and a Career Center exploring tech careers (Grades 6-12).", "For teachers: a digital dashboard to track student progress across all grades, assign work and assessments, access all digital resources in one place, and get real-time insights on performance.", "IMPLEMENTATION SUPPORT", "Professional development: getting-started training, grade-level specific workshops, ongoing support, and access to an educator community.", "Curriculum support: scope and sequence documents, standards alignment mapping (ISTE, CSTA), pacing guides for 1-2 hours per week, and implementation timeline planning.", "ONGOING VALUE", "Continuous updates: curriculum reviewed and updated every 2 years, new topics added as technology evolves (AI, emerging tech), and refreshed content to keep pace with industry.", "Flexibility: works in traditional, hybrid, or remote settings, adaptable pacing, multiple subscription options, and bilingual classroom support.", "STANDARDS & PATHWAYS", "Prepares students for Cambridge IGCSE Computer Science, IB Computer Science (SL/HL), AP Computer Science Principles, AP Computer Science A, industry certifications, and university CS programs.", "This isn’t just a curriculum purchase. It’s a complete K-12 computing education ecosystem.", "Ready to discuss what this looks like for your school?", "[Request: Detailed Pricing & Implementation Timeline →]", "[Download: Complete Package Overview (PDF) →]", "[Schedule: 1-on-1 Consultation with an Implementation Specialist →]", "Or reply with your number of students per grade level, preferred start date, and any specific questions, and we’ll send you a customized proposal tailored to your school’s needs.", "P.S. — Schools planning for 2026/27 implementation are finalizing decisions now. Let’s make sure you have all the information you need to move forward confidently."], "signoff": "Best regards,\n{{Sender Name}}\n{{Sender Title}}, McGraw Hill", "eml": "level-up-DE07.eml"}, {"code": "DE08", "stage": "Decision", "title": "Your Peers Are Switching to Level Up", "blurb": "Uses social proof and momentum — international schools across regions adopting Level Up for 2026/27 — plus a tightening regional timeline to spur action. Drives an implementation planning call, customized proposal request, and a decision-criteria download.", "subject": "Schools in [Region] are preparing for 2026/27. Here’s who’s already committed.", "preview": "", "hasCopy": true, "cta": {"text": "Schedule Your Implementation Planning Call", "url": "https://info.mheducation.com/int_ict"}, "greeting": "Hi [First Name],", "body": ["In the past few months, we’ve seen significant momentum: international schools across Europe, Asia, the Middle East, Africa, Australia, and New Zealand are making decisions about their 2026/27 computing curricula. And many are choosing Level Up Through Digital Discoveries.", "Here’s what we’re seeing:", "Schools are moving away from patchwork approaches. The days of cobbling together Scratch + Code.org + random YouTube tutorials are ending. Schools recognize that comprehensive K-12 curricula deliver clearer progression, stronger teacher support, and measurable results.", "AI literacy is now a requirement, not an option. With 85% of future jobs requiring AI fluency, schools can’t afford to treat computing as an afterthought. Level Up’s K-12 AI integration addresses this directly.", "Teachers need support, not just content. Schools are prioritizing curricula with strong teacher editions, lesson plans, and professional development.", "Standards alignment matters to boards and accreditors. ISTE, CSTA, Cambridge IGCSE, IB pathways — Level Up delivers this out of the box.", "What educators are saying:", "“Level Up has transformed our approach to teaching computing. Students are more engaged and ready for future challenges.” — School Leader, Athens", "“The teacher support made all the difference. I felt confident teaching topics I’d never taught before.” — ICT Coordinator, Middle East", "“We needed a curriculum that would take students from kindergarten through Grade 12 with real progression. Level Up was the only option that delivered.” — Primary Coordinator, Asia", "The timeline is tightening:", "- Australia/NZ: schools finalizing Term 1 2027 adoptions by April", "- Middle East/Asia: 2026/27 decisions happening now through May", "- Europe: planning windows for September 2026 start closing in June", "If you’re still evaluating options, now is the time to move forward.", "[Schedule Your Implementation Planning Call →]", "[Request Your Customized Proposal →]", "[Download: Why Schools Choose Level Up (PDF) →]", "Don’t let your students fall behind while other schools move forward.", "P.S. — Schools that wait until June/July often miss their implementation window for 2026/27. Let’s talk this month."], "signoff": "Best regards,\n{{Sender Name}}\n{{Sender Title}}, McGraw Hill", "eml": "level-up-DE08.eml"}, {"code": "DE09", "stage": "Decision", "title": "Final Call for 2026/27 Adoption", "blurb": "The closing, urgency-driven email laying out region-by-region decision deadlines and the cost of waiting another fragmented year. Pushes hard for a 30-minute call to map the school's timeline and confirm next steps.", "subject": "Your 2026/27 window closes in 4-6 weeks", "preview": "", "hasCopy": true, "cta": {"text": "Book a 30-minute call", "url": "https://info.mheducation.com/int_ict"}, "greeting": "Hi [First Name],", "body": ["Your window for 2026/27 implementation is closing. Here's what you need to know.", "The timeline: If you're planning to implement a new computing curriculum for 2026/27, decisions need to happen now.", "Australia/New Zealand: Term 1 2027 starts in late January. You need curriculum decisions finalized within 4-6 weeks to ensure materials arrive, teachers are trained, and you're ready for Day 1.", "Middle East/Asia: the academic year starts in August/September. Procurement, shipping, and teacher training mean decisions need to be finalized by May — that's 8-10 weeks.", "Europe: September 2026 start dates require decisions by June at the latest — that's 10-12 weeks.", "What happens if you wait: You'll miss your 2026/27 window. Your students will spend another year with fragmented tools that don't connect, teachers scrambling between 7+ different platforms, no AI literacy integration, and no measurable computing progression. Another year of \"we'll fix this next year\" — except next year is already here.", "You already know this isn't working. Your students deserve better.", "What comes next: Book a 30-minute call this week. We'll map your specific timeline, show you what 2026/27 looks like for your school, and confirm next steps.", "[Book a 30-minute call →]", "If a call doesn't work right now, reply to this email. Tell me where you are in the decision and I'll personally respond and connect you with the right person to move forward. But please book the call. You're past the research phase — this needs a conversation.", "Let's make 2026/27 the year your school transforms computing education.", "P.S. — If you're not ready to implement now, that's fine. But don't let another year pass without a plan. The decision window is real. Make the call."], "signoff": "Best regards,\n{{Sender Name}}\n{{Sender Title}}, McGraw Hill", "eml": "level-up-DE09.eml"}]}, {"id": "aleks", "name": "ALEKS", "color": "#0B48BC", "status": "Planning", "audience": "School leaders & maths HoDs", "regions": "MEA · Asia · EU · ANZ · UK · CA · KSA · SAF", "salesforceReport": "", "description": "The pre-sale nurture for ALEKS, McGraw Hill's adaptive maths programme, aimed at international school leaders, curriculum coordinators and maths heads of department who are new to ALEKS. It frames the problem of invisible, compounding maths gaps, challenges the ‘more practice’ instinct, paints the vision of personalised learning, and anchors everything in the Knowledge Space Theory research behind ALEKS — before moving into consideration and a free-trial push. Awareness and Consideration emails are authored; later stages are in production.", "emails": [{"code": "AW01", "stage": "Awareness", "title": "The Invisible Maths Gaps Problem", "blurb": "An empathetic, problem-focused opener that frames invisible, compounding maths gaps and names ALEKS and Knowledge Space Theory as the answer. CTA drives a download of the Knowledge Space Theory whitepaper.", "subject": "Your students have maths gaps you can't see yet", "preview": "The gaps are invisible. But they're compounding every term.", "hasCopy": true, "cta": {"text": "Download the Knowledge Space Theory Whitepaper", "url": "https://hub.mheducation.com/share/ALEKS"}, "greeting": "Hi {{First Name}},", "body": ["Right now, students in your school are sitting in maths lessons that assume they understood last year's content. Many of them didn't.", "Research consistently shows that roughly half of students enter a new maths course missing prerequisite knowledge. Not because they weren't taught. Because knowledge gaps from earlier years went undetected, and each new topic made them harder to close.", "These gaps are invisible in a traditional classroom. A student who struggles with fractions won't just struggle with fractions. They'll hit a wall in algebra, then geometry, then everything that follows. The gap doesn't stay the same size. It compounds.", "And without a way to diagnose exactly what each student knows and doesn't know, your teachers are left teaching to the middle of the room. Struggling students fall further behind. Strong students lose the chance to accelerate.", "Knowledge isn't linear. It's a complex web of interrelated topics, and every student navigates it differently. This is the foundation of Knowledge Space Theory, a field of research developed at the University of California. It's also the science behind ALEKS (Assessment and Learning in Knowledge Spaces): an adaptive maths programme that maps each student's unique knowledge state and builds a personalised path from there, with a mastery rate above 90%.", "The whitepaper explains how it works, why traditional approaches miss the mark, and what becomes possible when you can see every student's knowledge map in real time.", "[Download the Knowledge Space Theory Whitepaper →]"], "signoff": "Best regards,\n{{Sender Name}}\n{{Sender Title}}, McGraw Hill", "eml": "aleks-AW01.eml"}, {"code": "AW02", "stage": "Awareness", "title": "Why More Practice Isn't Working", "blurb": "Validates the reader's intervention efforts, then explains why one-size-fits-all practice fails — shifting the thinking from ‘more practice’ to ‘smarter, adaptive practice.’ CTA drives a watch of the 4-minute animated explainer.", "subject": "Why extra practice isn't closing the gap", "preview": "Practice without precision is just repetition. Here's the difference.", "hasCopy": true, "cta": {"text": "Watch the 4-minute explainer", "url": "https://hub.mheducation.com/share/ALEKS"}, "greeting": "Hi {{First Name}},", "body": ["When students fall behind in maths, the instinct is to give them more. More worksheets. More revision sessions. More intervention hours after school.", "It's the right instinct. But it often doesn't work.", "Here's why: practice only helps when it's matched to what the student is genuinely ready to learn. Hand a student more questions on a topic they're already missing the prerequisites for, and they don't get better at it. They get more frustrated. They start to believe they're \"bad at maths.\" The gap stays where it is, sometimes wider than before.", "Meanwhile, the strong students sit through revision they don't need. Disengagement follows.", "This is the limitation of one-size-fits-all practice. It assumes every student in the room is at the same starting point. They never are.", "Adaptive learning works differently. Instead of giving every student the same content, it identifies what each individual student knows, what they don't, and what they're ready to learn next. The practice they receive is precisely matched to their position on their own knowledge map.", "This short animated explainer walks through how adaptive learning differs from traditional practice, and why the shift matters more than most schools realise.", "[Watch the 4-minute explainer →]"], "signoff": "Best regards,\n{{Sender Name}}\n{{Sender Title}}, McGraw Hill", "eml": "aleks-AW02.eml"}, {"code": "AW03", "stage": "Awareness", "title": "What An ALEKS Classroom Looks Like", "blurb": "Bridges from problem to product by painting the vision of personalised learning through the assess–learn–reassess cycle and the student and teacher experience. CTA drives a 3-minute product walkthrough video.", "subject": "What an ALEKS maths classroom actually looks like", "preview": "Assess. Learn. Reassess. The cycle that changes everything.", "hasCopy": true, "cta": {"text": "See ALEKS in action (3-min walkthrough)", "url": "https://hub.mheducation.com/share/ALEKS"}, "greeting": "Hi {{First Name}},", "body": ["Imagine 30 students working on maths at the same time, each on a different topic, each at the right level of challenge, each receiving feedback the moment they need it.", "That's what ALEKS makes possible. Here's how.", "1. Assess. Every student starts with an adaptive Knowledge Check. In a few dozen questions, ALEKS pinpoints exactly what each student knows and doesn't know, mapping their position on the curriculum from a trillion possible knowledge states.", "2. Learn. ALEKS then shows each student a personalised set of topics they are genuinely ready to learn. The student chooses what to work on next. As they practise, they get immediate feedback, step-by-step explanations, and, where relevant, short instructional videos.", "3. Reassess. Periodically, ALEKS checks back to confirm what's been mastered and identify topics that need reinforcement. This is the spaced retrieval practice that turns short-term gains into long-term retention.", "For teachers, the system handles the diagnostic and personalisation work that would be impossible to do manually for 30 individual learners. The teacher dashboard shows exactly where every student is and where they need support, freeing teachers to do what only they can do: targeted small-group instruction, conferencing, and intervention.", "This is what a classroom looks like when every student gets the right work at the right time.", "[See ALEKS in action (3-min walkthrough) →]"], "signoff": "Best regards,\n{{Sender Name}}\n{{Sender Title}}, McGraw Hill", "eml": "aleks-AW03.eml"}, {"code": "AW04", "stage": "Awareness", "title": "The Science Behind 90% Mastery", "blurb": "Establishes scientific credibility, positioning ALEKS as the only adaptive maths platform built on 30+ years of peer-reviewed Knowledge Space Theory research from the University of California with NSF support. CTA re-offers the whitepaper.", "subject": "The science behind 90% maths mastery", "preview": "30+ years of peer-reviewed research. One adaptive learning platform.", "hasCopy": true, "cta": {"text": "Download the Knowledge Space Theory Whitepaper", "url": "https://hub.mheducation.com/share/ALEKS"}, "greeting": "Hi {{First Name}},", "body": ["Most adaptive learning tools are built on rules. If a student gets question A wrong, show them question B. If they get B right, jump to C. It works in a basic way, but it can't tell you anything meaningful about where the student actually is on a curriculum, or what they're genuinely ready to learn next.", "ALEKS is built on something fundamentally different: Knowledge Space Theory.", "Developed over 30 years at the University of California with funding from the National Science Foundation, Knowledge Space Theory is a branch of mathematical cognitive science. It models knowledge not as a linear sequence of topics, but as a vast network of interrelated concepts. For a single maths course, this network contains over a trillion possible \"knowledge states\" — each one a different combination of what a student does and doesn't know.", "ALEKS uses adaptive Knowledge Checks to locate every student's precise position in that network, then identifies the topics in their \"learning fringe\" — the small set of topics they are genuinely ready to learn next.", "This is why ALEKS students master topics at a rate above 90%. They are never asked to learn something they're not ready for, and they are never asked to revisit something they already know.", "The full whitepaper explains the research, the methodology, and the evidence behind the approach. It's the most detailed look at the science underpinning ALEKS, and it's available below.", "[Download the Knowledge Space Theory Whitepaper →]"], "signoff": "Best regards,\n{{Sender Name}}\n{{Sender Title}}, McGraw Hill", "eml": "aleks-AW04.eml"}, {"code": "CO05", "stage": "Consideration", "title": "Less Prep, More Teaching, Better Data", "blurb": "Tackles the top adoption barrier — teacher workload — by showing ALEKS' AI handles diagnostics, personalisation and reassessment, with Insights reports flagging at-risk students, plus the ST4S data-safety badge. CTA drives a free trial sign-up.", "subject": "Less prep. More teaching. Better data.", "preview": "Plus: see why ALEKS holds the ST4S safety badge for schools.", "hasCopy": true, "cta": {"text": "Start Your Free Trial", "url": "https://www.aleks.com/free_trial/instructor"}, "greeting": "Hi {{First Name}},", "body": ["When schools evaluate a new maths programme, the question that decides the outcome is rarely \"is the content good?\" It's almost always: will my teachers have the time to make this work?", "It's a fair concern. Most adaptive tools shift the work from textbook design to teacher configuration: setting up student paths, monitoring progress, deciding what to assign next. The teacher becomes the system administrator.", "ALEKS is built the other way around.", "The AI handles diagnostics. The AI handles personalisation. The AI handles reassessment. Teachers don't decide what each student should work on next. ALEKS does. What teachers see is a clear, real-time picture of where every student is and where they need help.", "And ALEKS goes further: the Insights reports proactively alert teachers when a student is exhibiting one of four risk behaviours: failed topics, decreased learning rate, unusually fast learning (possible copying), or procrastination. Teachers don't have to go looking for problems. ALEKS surfaces them.", "The result is that teachers spend less time managing the platform and more time doing what only they can do: small-group instruction, one-to-one conferencing, and targeted intervention.", "One more thing schools tell us matters: ALEKS holds the Safer Technologies 4 Schools (ST4S) badge, having been independently assessed against the nationally consistent privacy and security framework for school technology. Data safety is verified, not just claimed.", "The fastest way to see how this works in your context is to spend 20 minutes inside ALEKS as both a student and a teacher. The free trial is below.", "[Start Your Free Trial →]"], "signoff": "Best regards,\n{{Sender Name}}\n{{Sender Title}}, McGraw Hill", "eml": "aleks-CO05.eml"}]}, {"id": "reading-labs", "name": "Reading Labs Online", "color": "#E21A23", "status": "In-Progress", "audience": "Literacy & primary coordinators", "regions": "MEA · Asia · EU · ANZ · UK · CA", "salesforceReport": "", "description": "The launch nurture for Reading Labs Online — the international online edition of the proven SRA Reading Labs literacy programme. It targets existing SRA print customers, recent literacy opportunities, and literacy-webinar registrants, moving them from awareness through consideration to decision and driving them to the Reading Labs Online landing page. The nine-email structure is mapped across all three stages; full creative is in production.", "emails": [{"code": "AW01", "stage": "Awareness", "title": "Are Your Reading Interventions Working?", "blurb": "Opens the series by challenging schools on whether their reading interventions truly work for every K-8 student, positioning Reading Labs Online as a globally proven program used by 100M+ students. Drives readers to the overview brochure and landing page.", "subject": "Are your reading interventions actually working for every student?", "preview": "", "hasCopy": false, "cta": {"text": "", "url": "https://info.mheducation.com/int_rlo"}, "draftNote": "Full copy for this email is in production. The summary above captures its role, stage and message in the sequence; the live creative will be added here once approved."}, {"code": "AW02", "stage": "Awareness", "title": "See the Student Reading Journey", "blurb": "Spotlights the student journey and experience inside Reading Labs Online via a student demo. Encourages readers to visit the page to see how the program works for learners.", "subject": "", "preview": "", "hasCopy": false, "cta": {"text": "", "url": "https://info.mheducation.com/int_rlo"}, "draftNote": "Full copy for this email is in production. The summary above captures its role, stage and message in the sequence; the live creative will be added here once approved."}, {"code": "AW03", "stage": "Awareness", "title": "The Systemic Reading Challenge", "blurb": "Frames the systemic challenges schools face in delivering differentiated reading practice at scale, and points to Reading Labs Online as the system-wide solution.", "subject": "", "preview": "", "hasCopy": false, "cta": {"text": "", "url": "https://info.mheducation.com/int_rlo"}, "draftNote": "Full copy for this email is in production. The summary above captures its role, stage and message in the sequence; the live creative will be added here once approved."}, {"code": "CO04", "stage": "Consideration", "title": "Explore the Interactive Showcase", "blurb": "Moves engaged readers into consideration with an interactive showcase/demo of the platform. Invites them to explore the product experience in depth.", "subject": "", "preview": "", "hasCopy": false, "cta": {"text": "", "url": "https://info.mheducation.com/int_rlo"}, "draftNote": "Full copy for this email is in production. The summary above captures its role, stage and message in the sequence; the live creative will be added here once approved."}, {"code": "CO05", "stage": "Consideration", "title": "Inside the Technology Platform", "blurb": "Demonstrates the technology and platform capabilities that power Reading Labs Online. Drives prospects to take a closer look at the product.", "subject": "", "preview": "", "hasCopy": false, "cta": {"text": "", "url": "https://info.mheducation.com/int_rlo"}, "draftNote": "Full copy for this email is in production. The summary above captures its role, stage and message in the sequence; the live creative will be added here once approved."}, {"code": "CO06", "stage": "Consideration", "title": "Resources to Evaluate RLO", "blurb": "Points prospects to a resource page of supporting materials and screenshots for evaluating Reading Labs Online, encouraging deeper research.", "subject": "", "preview": "", "hasCopy": false, "cta": {"text": "", "url": "https://info.mheducation.com/int_rlo"}, "draftNote": "Full copy for this email is in production. The summary above captures its role, stage and message in the sequence; the live creative will be added here once approved."}, {"code": "DE07", "stage": "Decision", "title": "Your RLO Questions Answered", "blurb": "A decision-stage email answering common FAQs and objections about adopting Reading Labs Online, removing purchase barriers for ready buyers.", "subject": "", "preview": "", "hasCopy": false, "cta": {"text": "", "url": "https://info.mheducation.com/int_rlo"}, "draftNote": "Full copy for this email is in production. The summary above captures its role, stage and message in the sequence; the live creative will be added here once approved."}, {"code": "DE08", "stage": "Decision", "title": "Start Your Free Trial / Pilot", "blurb": "Drives conversion by offering a free trial / pilot of Reading Labs Online, prompting decision-stage prospects to experience the program firsthand.", "subject": "", "preview": "", "hasCopy": false, "cta": {"text": "", "url": "https://info.mheducation.com/int_rlo"}, "draftNote": "Full copy for this email is in production. The summary above captures its role, stage and message in the sequence; the live creative will be added here once approved."}, {"code": "DE09", "stage": "Decision", "title": "Final Call to Adopt RLO", "blurb": "The closing email, making a final appeal to commit to Reading Labs Online with urgency and a last conversion push.", "subject": "", "preview": "", "hasCopy": false, "cta": {"text": "", "url": "https://info.mheducation.com/int_rlo"}, "draftNote": "Full copy for this email is in production. The summary above captures its role, stage and message in the sequence; the live creative will be added here once approved."}]}, {"id": "reveal-math-ib", "name": "Reveal Math for IB PYP", "color": "#5F14C1", "status": "In-Progress", "audience": "IB PYP maths educators", "regions": "MEA · Asia · EU · KSA", "salesforceReport": "https://mh.lightning.force.com/lightning/r/Report/00OPB000004Y4rh2AC/view?queryScope=userFolders", "description": "An awareness-stage nurture introducing Reveal Math for IB PYP to IB Primary Years Programme maths educators and decision-makers. The two-email sequence builds interest with supporting assets — a companion guide and a flexible implementation model — each driving recipients to the international landing page. Live progress for this program is tracked in the linked Salesforce report. Email creative is held in Marketo.", "emails": [{"code": "AW01", "stage": "Awareness", "title": "Reveal Math IB PYP: Companion Guide", "blurb": "Awareness email introducing Reveal Math for IB PYP and offering a companion guide as the lead asset. CTA drives recipients to the McGraw Hill international landing page.", "subject": "", "preview": "", "hasCopy": false, "cta": {"text": "", "url": "https://info.mheducation.com/int_ict"}, "draftNote": "The full creative for this email is built in Marketo (email preview / Live Link). This card captures its role in the sequence; track contacts and leads through the program via the Salesforce report above."}, {"code": "AW02", "stage": "Awareness", "title": "A Flexible Implementation Model", "blurb": "Awareness follow-up highlighting a flexible implementation model for Reveal Math for IB PYP. CTA drives recipients to the international landing page.", "subject": "", "preview": "", "hasCopy": false, "cta": {"text": "", "url": "https://info.mheducation.com/int_ict"}, "draftNote": "The full creative for this email is built in Marketo (email preview / Live Link). This card captures its role in the sequence; track contacts and leads through the program via the Salesforce report above."}]}], "resources": [{"title": "How-to guides", "links": [{"label": "Add contacts to a nurture program", "url": "#"}, {"label": "Send a nurture email to your own contacts", "url": "#"}, {"label": "Request a new segment or list", "url": "#"}, {"label": "Marketo program quick-start", "url": "#"}]}, {"title": "Watch & learn (screencasts)", "links": [{"label": "Screencast: adding contacts to a nurture", "url": "#"}, {"label": "Screencast: sending an email to your contacts", "url": "#"}, {"label": "Screencast: reading a Salesforce nurture report", "url": "#"}]}, {"title": "Reference & wiki", "links": [{"label": "Nurture program playbook (Notion)", "url": "https://app.notion.com/p/36531abc807081589995d71ffd41bd62"}, {"label": "Brand Guidelines v6.1 (Notion)", "url": "https://app.notion.com/p/36331abc8070815cb7ceea1740cf1c68"}, {"label": "Campaign naming conventions", "url": "https://app.notion.com/p/35731abc807081a2b0c4d2c7ea267b3a"}, {"label": "Glossary of terms", "url": "https://app.notion.com/p/36231abc807081e69617e7713ed3e1b1"}]}]};
+
+(function(){
+  "use strict";
+  var D = window.PORTAL_DATA || {products:[],resources:[],config:{}};
+  var EML_BASE = (D.config && D.config.emlBase) || "emails/";
+
+  var STAGE = {
+    Awareness:    {abbr:"Awareness",    color:"#0B48BC", soft:"#D9E5FC"},
+    Consideration:{abbr:"Consideration",color:"#5F14C1", soft:"#E3B9FC"},
+    Decision:     {abbr:"Decision",     color:"#E21A23", soft:"#FDECEC"},
+    Other:        {abbr:"Other",        color:"#6A7180", soft:"#EEF0F4"}
+  };
+  function stageInfo(s){return STAGE[s]||STAGE.Other;}
+  function esc(t){return (t==null?"":String(t)).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+  function el(html){var d=document.createElement("div");d.innerHTML=html.trim();return d.firstChild;}
+
+  /* ----- Hero ----- */
+  var totalEmails=0, authored=0;
+  D.products.forEach(function(p){
+    (p.emails||[]).forEach(function(e){ totalEmails++; if(e.hasCopy) authored++; });
+  });
+  document.getElementById("heroLede").textContent = D.config.heroLede ||
+    ("Your reference for every pre-sale email nurture we're running. Browse each program, read what each email does, preview the full creative, and grab the .eml when you want to send one to your own contacts.");
+  var stats=[
+    {n:D.products.length, l:"Nurture programs"},
+    {n:totalEmails, l:"Email touchpoints"},
+    {n:"AW·CO·DE", l:"Funnel stages covered"},
+    {n:"FY27", l:"Academic year"}
+  ];
+  document.getElementById("heroStats").innerHTML = stats.map(function(s){
+    return '<div class="stat"><div class="n">'+esc(s.n)+'</div><div class="l">'+esc(s.l)+'</div></div>';
+  }).join("");
+
+  /* ----- Sub-nav chips ----- */
+  document.getElementById("chipRow").innerHTML = D.products.map(function(p){
+    return '<a class="chip" href="#'+esc(p.id)+'"><span class="pdot" style="background:'+esc(p.color)+'"></span>'+esc(p.name)+'</a>';
+  }).join("");
+
+  /* ----- Mini email thumbnail ----- */
+  function miniThumb(e,color){
+    return ''+
+    '<div class="mini">'+
+      '<div class="mini-bar" style="background:'+color+'"></div>'+
+      '<div class="mini-body">'+
+        '<div class="mini-logo">McGraw Hill</div>'+
+        '<div class="mini-h" style="background:'+color+'"></div>'+
+        '<div class="mini-l s"></div><div class="mini-l"></div><div class="mini-l m"></div>'+
+        '<div class="mini-l x"></div>'+
+        '<div class="mini-btn" style="background:'+color+'"></div>'+
+      '</div>'+
+    '</div>';
+  }
+
+  /* ----- Email card ----- */
+  function emailCard(p,e,idx){
+    var si=stageInfo(e.stage), color=si.color;
+    var card=document.createElement("button");
+    card.className="ecard";
+    card.setAttribute("type","button");
+    card.setAttribute("aria-label","Open email: "+(e.title||""));
+    card.innerHTML=''+
+      '<div class="thumb">'+
+        miniThumb(e,color)+
+        '<span class="stagebadge" style="background:'+color+'">'+esc(si.abbr)+'</span>'+
+        (e.code?'<span class="seqbadge">'+esc(e.code)+'</span>':'')+
+        (e.hasCopy?'':'<span class="draftbadge">Draft</span>')+
+      '</div>'+
+      '<div class="body">'+
+        '<div class="etitle">'+esc(e.title)+'</div>'+
+        '<div class="eblurb">'+esc(e.blurb)+'</div>'+
+        '<div class="efoot">'+(e.hasCopy?'Preview full email':'View details')+' <span class="arr" aria-hidden="true">→</span></div>'+
+      '</div>';
+    card.addEventListener("click",function(){openModal(p,e);});
+    return card;
+  }
+
+  /* ----- Carousel ----- */
+  function buildCarousel(p){
+    var car=document.createElement("div");car.className="carousel";
+    var emails=(p.emails||[]);
+    car.innerHTML=''+
+      '<div class="car-head">'+
+        '<span class="count">'+emails.length+' email'+(emails.length===1?'':'s')+' · Awareness → Consideration → Decision</span>'+
+        '<div class="car-nav">'+
+          '<button class="car-btn prev" aria-label="Scroll left">‹</button>'+
+          '<button class="car-btn next" aria-label="Scroll right">›</button>'+
+        '</div>'+
+      '</div>';
+    var track=document.createElement("div");track.className="track";
+    emails.forEach(function(e,i){track.appendChild(emailCard(p,e,i));});
+    car.appendChild(track);
+    var prev=car.querySelector(".prev"),next=car.querySelector(".next");
+    function step(){return Math.min(track.clientWidth*0.9, 636);}
+    prev.addEventListener("click",function(){track.scrollBy({left:-step(),behavior:"smooth"});});
+    next.addEventListener("click",function(){track.scrollBy({left:step(),behavior:"smooth"});});
+    function upd(){
+      prev.disabled = track.scrollLeft<=4;
+      next.disabled = track.scrollLeft+track.clientWidth>=track.scrollWidth-4;
+    }
+    track.addEventListener("scroll",upd);window.addEventListener("resize",upd);setTimeout(upd,60);
+    return car;
+  }
+
+  /* ----- Program section ----- */
+  function buildSection(p){
+    var sec=document.createElement("section");sec.className="section";sec.id=p.id;
+    var head=document.createElement("div");head.className="wrap";
+    var sf=p.salesforceReport
+      ? '<a class="btn btn-sf" href="'+esc(p.salesforceReport)+'" target="_blank" rel="noopener">View Salesforce report <span aria-hidden="true">↗</span></a>'
+      : '<span class="btn btn-sf disabled" title="Report link will be added once the program is live in Salesforce">Salesforce report — coming soon</span>';
+    var statusCls = (p.status && /plan/i.test(p.status))?'status-plan':'status-live';
+    head.innerHTML=''+
+      '<div class="prog-head">'+
+        '<div style="flex:1;min-width:260px;">'+
+          '<div class="prog-eyebrow">Nurture program</div>'+
+          '<h1 class="prog-title"><span class="bar" style="background:'+esc(p.color)+'"></span> '+esc(p.name)+'</h1>'+
+          '<p class="prog-desc">'+esc(p.description)+'</p>'+
+          '<div class="prog-meta">'+
+            '<span class="tag '+statusCls+'"><span class="c" style="background:currentColor"></span>'+esc(p.status||'In-Progress')+'</span>'+
+            (p.audience?'<span class="tag">'+esc(p.audience)+'</span>':'')+
+            (p.regions?'<span class="tag">'+esc(p.regions)+'</span>':'')+
+            '<span class="sf-link">'+sf+'</span>'+
+          '</div>'+
+        '</div>'+
+      '</div>';
+    sec.appendChild(head);
+    var carWrap=document.createElement("div");carWrap.className="wrap";
+    carWrap.appendChild(buildCarousel(p));
+    sec.appendChild(carWrap);
+    return sec;
+  }
+
+  var sectionsEl=document.getElementById("sections");
+  D.products.forEach(function(p){sectionsEl.appendChild(buildSection(p));});
+
+  /* ----- Modal ----- */
+  var overlay=document.getElementById("overlay"), modalBox=document.getElementById("modal"), lastFocus=null;
+
+  function formatLine(raw,ctaUrl){
+    var line=(raw==null?"":String(raw)).trim();
+    if(!line) return "";
+    var m=line.match(/^\[(.+?)\]$/);                 // [Explore the Full Program →]
+    if(m){var lbl=m[1].replace(/\s*[→\-–]+\s*$/,"").trim();
+      return '<a class="er-link" href="'+esc(ctaUrl||"#")+'" target="_blank" rel="noopener">'+esc(lbl)+' ↗</a>';}
+    if(/^✓\s?/.test(line)){var t=line.replace(/^✓\s?/,"");
+      var parts=t.split(" – ");
+      if(parts.length>1) return '<div class="chk"><span><b>'+esc(parts.shift())+'</b> – '+esc(parts.join(" – "))+'</span></div>';
+      return '<div class="chk"><span>'+esc(t)+'</span></div>';}
+    if(/^[-→•]\s?/.test(line)) return '<div class="li">'+esc(line.replace(/^[-→•]\s?/,""))+'</div>';
+    return '<p>'+esc(line)+'</p>';
+  }
+  function renderedEmail(p,e){
+    var color=stageInfo(e.stage).color;
+    var ctaUrl=(e.cta&&e.cta.url)||"#";
+    var bodyHtml=(e.body||[]).map(function(par){return formatLine(par,ctaUrl);}).join("");
+    var greet = e.greeting?'<p class="greet">'+esc(e.greeting)+'</p>':'';
+    var cta = e.cta && e.cta.text
+      ? '<a class="er-cta" href="'+esc(e.cta.url||'#')+'" target="_blank" rel="noopener">'+esc(e.cta.text)+'</a>'
+      : '';
+    var sign = e.signoff?'<div class="er-sign">'+esc(e.signoff)+'</div>':'';
+    return ''+
+      '<div class="email-render">'+
+        '<div class="er-bar" style="background:'+color+'"></div>'+
+        '<div class="er-head"><div class="er-logo">McGraw Hill</div></div>'+
+        '<div class="er-body">'+greet+bodyHtml+cta+sign+'</div>'+
+        '<div class="er-foot">McGraw Hill International · You are receiving this because you engaged with McGraw Hill. Manage preferences or unsubscribe anytime.</div>'+
+      '</div>';
+  }
+
+  function openModal(p,e){
+    lastFocus=document.activeElement;
+    var si=stageInfo(e.stage), color=si.color;
+    var headBg='linear-gradient(135deg,'+color+','+shade(color)+')';
+    var meta=''+
+      '<div class="modal-meta">'+
+        (e.subject?metaRow("Subject",e.subject):'')+
+        (e.preview?metaRow("Preview",e.preview):'')+
+        (e.code?metaRow("Sequence",e.code+" · "+si.abbr+" stage"):'')+
+        (e.cta&&e.cta.text?metaRow("Offer / CTA",e.cta.text):'')+
+      '</div>';
+    var content;
+    if(e.hasCopy){
+      content=renderedEmail(p,e);
+    } else {
+      var noteExtra = e.draftNote || "The full creative for this email lives in Marketo / is still being written. The summary above captures its role, offer and message in the sequence.";
+      content='<div class="draft-note"><b>Preview coming soon.</b> '+esc(noteExtra)+'</div>';
+    }
+    var actions='<div class="modal-actions">';
+    if(e.eml){actions+='<a class="btn btn-dl" href="'+esc(EML_BASE+e.eml)+'" download>Download .eml <span aria-hidden="true">↓</span></a>';}
+    if(p.salesforceReport){actions+='<a class="btn btn-outline" href="'+esc(p.salesforceReport)+'" target="_blank" rel="noopener">Open Salesforce report ↗</a>';}
+    actions+='<button class="btn btn-outline" data-close type="button">Close</button>';
+    actions+='</div>';
+
+    modalBox.innerHTML=''+
+      '<div class="modal-top" style="background:'+headBg+'">'+
+        '<button class="modal-close" data-close aria-label="Close">×</button>'+
+        '<div class="mt-stage">'+esc(p.name)+' · '+esc(si.abbr)+'</div>'+
+        '<div class="mt-title" id="mTitle">'+esc(e.title)+'</div>'+
+        '<div class="mt-prog">'+esc(e.blurb)+'</div>'+
+      '</div>'+
+      meta+
+      '<div class="email-frame">'+content+'</div>'+
+      actions;
+
+    overlay.classList.add("open");
+    document.body.style.overflow="hidden";
+    modalBox.querySelectorAll("[data-close]").forEach(function(b){b.addEventListener("click",closeModal);});
+    var c=modalBox.querySelector(".modal-close");if(c)c.focus();
+  }
+  function metaRow(k,v){return '<div class="metarow"><div class="k">'+esc(k)+'</div><div class="v">'+esc(v)+'</div></div>';}
+  function closeModal(){overlay.classList.remove("open");document.body.style.overflow="";if(lastFocus)lastFocus.focus();}
+  overlay.addEventListener("click",function(ev){if(ev.target===overlay)closeModal();});
+  document.addEventListener("keydown",function(ev){if(ev.key==="Escape"&&overlay.classList.contains("open"))closeModal();});
+
+  function shade(hex){ /* darken for gradient */
+    var c=hex.replace("#","");var n=parseInt(c,16);
+    var r=Math.max(0,((n>>16)&255)-38),g=Math.max(0,((n>>8)&255)-38),b=Math.max(0,(n&255)-38);
+    return "rgb("+r+","+g+","+b+")";
+  }
+
+  /* ----- Footer resources ----- */
+  var cols=[document.getElementById("footCol1"),document.getElementById("footCol2"),document.getElementById("footCol3")];
+  (D.resources||[]).forEach(function(group,i){
+    var c=cols[i%3];if(!c)return;
+    var h='<h4>'+esc(group.title)+'</h4>';
+    h+=group.links.map(function(l){
+      return '<a href="'+esc(l.url||'#')+'"'+(l.url&&l.url!=='#'?' target="_blank" rel="noopener"':'')+'><span class="ic" aria-hidden="true">›</span><span>'+esc(l.label)+'</span></a>';
+    }).join("");
+    c.innerHTML+=h;
+  });
+  document.getElementById("yr").textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
