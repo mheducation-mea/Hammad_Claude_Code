@@ -30,7 +30,9 @@ def body(raw):
 # =====================================================================
 
 CONFIG = {
-    "emlBase": "emails/",
+    # Absolute so .eml downloads resolve from the live preview link AND when pasted into Marketo.
+    # For a same-origin host (GitHub Pages / Marketo with co-located files) you can set this back to "emails/".
+    "emlBase": "https://raw.githubusercontent.com/mheducation-mea/Hammad_Claude_Code/refs/heads/claude/practical-mccarthy-73Pbo/emails/",
     "heroLede": ("Your single reference for every pre-sale email nurture we're running across International K-12 "
                  "for the coming academic year. Browse each program, see exactly what every email does, preview the "
                  "full creative, track progress in Salesforce, and grab the .eml whenever you want to send one to your own contacts."),
