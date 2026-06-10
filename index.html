@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>McGraw Hill K-12 International — School Catalog 2026</title>
+<meta name="description" content="Explore McGraw Hill's K-12 International School Catalog. Research-based literacy, math, science and social studies programs for international schools worldwide."/>
+<link rel="icon" type="image/vnd.microsoft.icon" href="https://www.mheducation.com/etc/designs/unitas/favicon.ico"/>
+
+<!-- Proxima Nova (brand font) with system fallbacks -->
+<link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin/>
+<link href="https://fonts.cdnfonts.com/css/proxima-nova-2" rel="stylesheet"/>
+
+<style>
+/* ============================================================
+   McGRAW HILL K-12 INTERNATIONAL — BRAND SYSTEM
+   Sharp geometry. No rounded corners. Red / Navy / White.
+   ============================================================ */
+:root{
+  --red:#E21A23;
+  --red-dark:#B5151C;
+  --red-soft:#FF5A61;
+  --navy:#0D1B2A;
+  --navy-2:#142A40;
+  --white:#FFFFFF;
+  --grey-bg:#F5F5F5;
+  --grey-mid:#6B6B6B;
+  --grey-line:#E4E4E4;
+  --black:#1A1A1A;
+  --font:'Proxima Nova','proxima-nova','Helvetica Neue',Helvetica,Arial,sans-serif;
+  --ease:cubic-bezier(.77,0,.18,1);
+}
+
+*{box-sizing:border-box;margin:0;padding:0;border-radius:0!important}
+html{scroll-behavior:auto}
+html,body{overscroll-behavior:none}
+body{
+  font-family:var(--font);
+  background:var(--white);
+  color:var(--black);
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+::selection{background:var(--red);color:var(--white)}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{font-family:inherit;cursor:pointer}
+
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+h1,h2,h3,h4{font-weight:800;line-height:1.05;letter-spacing:-.02em}
+
+/* ---------- custom cursor (desktop) ---------- */
+.cursor-dot{
+  position:fixed;top:0;left:0;width:8px;height:8px;background:var(--red);
+  pointer-events:none;z-index:9999;transform:translate(-50%,-50%);
+  mix-blend-mode:normal;
+}
+.cursor-ring{
+  position:fixed;top:0;left:0;width:36px;height:36px;border:1px solid var(--red);
+  pointer-events:none;z-index:9998;transform:translate(-50%,-50%);
+  transition:width .25s var(--ease),height .25s var(--ease),background .25s,border-color .25s;
+}
+.cursor-ring.is-hover{width:64px;height:64px;background:rgba(226,26,35,.08)}
+@media (hover:none),(max-width:900px){.cursor-dot,.cursor-ring{display:none}}
+
+/* ---------- preloader ---------- */
+#loader{
+  position:fixed;inset:0;z-index:1000;background:var(--navy);
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:28px;
+}
+#loader .l-mark{display:flex;align-items:baseline;gap:0;overflow:hidden}
+#loader .l-mark span{
+  display:inline-block;font-weight:800;font-size:clamp(2rem,6vw,4rem);
+  color:var(--white);letter-spacing:-.03em;transform:translateY(110%);
+}
+#loader .l-mark span.r{color:var(--red)}
+#loader .l-bar{width:min(320px,60vw);height:2px;background:rgba(255,255,255,.15);overflow:hidden}
+#loader .l-bar i{display:block;width:100%;height:100%;background:var(--red);transform:scaleX(0);transform-origin:left}
+#loader .l-pct{font-size:.72rem;font-weight:700;letter-spacing:.3em;color:rgba(255,255,255,.5);text-transform:uppercase}
+
+/* ---------- scroll progress ---------- */
+.progress{position:fixed;top:0;left:0;height:3px;width:100%;z-index:200;pointer-events:none}
+.progress i{display:block;height:100%;background:var(--red);transform:scaleX(0);transform-origin:left}
+
+/* ---------- header ---------- */
+header.top{
+  position:fixed;top:0;left:0;right:0;z-index:150;
+  background:rgba(13,27,42,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  transition:transform .45s var(--ease);
+}
+header.top.is-hidden{transform:translateY(-100%)}
+.top-inner{max-width:1240px;margin:0 auto;padding:0 32px;height:72px;display:flex;align-items:center;gap:28px}
+.brand{display:flex;align-items:center;gap:14px;flex:0 0 auto}
+.brand .mark{
+  width:40px;height:40px;background:var(--red);display:grid;place-items:center;
+  font-weight:800;font-size:.95rem;color:#fff;letter-spacing:-.02em;
+}
+.brand .name{color:#fff;font-weight:700;font-size:.95rem;line-height:1.15}
+.brand .name small{display:block;font-size:.66rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#8FA3B5}
+nav.anchors{margin-left:auto;display:flex;gap:2px}
+nav.anchors a{
+  position:relative;color:#C3D0DB;font-size:.8rem;font-weight:600;letter-spacing:.04em;
+  text-transform:uppercase;padding:8px 14px;transition:color .2s;
+}
+nav.anchors a::after{
+  content:"";position:absolute;left:14px;right:14px;bottom:2px;height:2px;
+  background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease);
+}
+nav.anchors a:hover{color:#fff}
+nav.anchors a:hover::after{transform:scaleX(1)}
+.btn{
+  display:inline-flex;align-items:center;gap:12px;position:relative;overflow:hidden;
+  font-weight:700;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;
+  padding:14px 26px;border:1px solid transparent;white-space:nowrap;isolation:isolate;
+}
+.btn .arr{transition:transform .3s var(--ease)}
+.btn:hover .arr{transform:translateX(5px)}
+.btn::before{
+  content:"";position:absolute;inset:0;z-index:-1;transform:scaleX(0);transform-origin:left;
+  transition:transform .35s var(--ease);
+}
+.btn-red{background:var(--red);color:#fff}
+.btn-red::before{background:var(--navy)}
+.btn-red:hover::before{transform:scaleX(1)}
+.btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+.btn-ghost::before{background:#fff}
+.btn-ghost:hover{color:var(--navy);border-color:#fff}
+.btn-ghost:hover::before{transform:scaleX(1)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy::before{background:var(--red)}
+.btn-navy:hover::before{transform:scaleX(1)}
+.top .btn{padding:11px 20px}
+.nav-burger{display:none}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;
+  background:linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 70%,#10243A 100%);
+  color:#fff;overflow:hidden;padding:160px 0 0;
+}
+.hero-grid-bg{
+  position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+  background-size:96px 96px;
+}
+.hero-shape{position:absolute;pointer-events:none}
+.hero-shape.s1{top:14%;right:8%;width:220px;height:220px;border:1px solid rgba(226,26,35,.5)}
+.hero-shape.s2{top:24%;right:14%;width:220px;height:220px;background:rgba(226,26,35,.12)}
+.hero-shape.s3{bottom:30%;left:-60px;width:160px;height:160px;border:1px solid rgba(255,255,255,.12)}
+.hero .eyebrow{
+  display:inline-flex;align-items:center;gap:12px;font-size:.72rem;font-weight:700;
+  letter-spacing:.32em;text-transform:uppercase;color:#fff;margin-bottom:34px;
+}
+.hero .eyebrow::before{content:"";width:44px;height:2px;background:var(--red)}
+.hero h1{font-size:clamp(2.8rem,7.4vw,6.4rem);max-width:1100px;text-transform:uppercase}
+.hero h1 .line{display:block;overflow:hidden}
+.hero h1 .line > span{display:inline-block;transform:translateY(110%)}
+.hero h1 .red{color:var(--red-soft)}
+.hero h1 .outline{
+  color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.85);
+}
+.hero .lede{
+  margin-top:34px;max-width:620px;font-size:1.12rem;line-height:1.65;color:#B8C7D4;font-weight:500;
+}
+.hero .hero-cta{display:flex;gap:16px;margin-top:42px;flex-wrap:wrap}
+.hero-stats{
+  margin-top:84px;border-top:1px solid rgba(255,255,255,.14);
+  display:grid;grid-template-columns:repeat(4,1fr);
+}
+.hero-stats .stat{
+  padding:34px 32px 44px;border-right:1px solid rgba(255,255,255,.14);position:relative;overflow:hidden;
+}
+.hero-stats .stat:last-child{border-right:none}
+.hero-stats .stat::after{
+  content:"";position:absolute;left:0;top:0;height:3px;width:100%;background:var(--red);
+  transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease);
+}
+.hero-stats .stat:hover::after{transform:scaleX(1)}
+.hero-stats .n{font-size:clamp(2rem,3.4vw,3rem);font-weight:800;letter-spacing:-.02em;color:#fff}
+.hero-stats .n em{font-style:normal;color:var(--red-soft)}
+.hero-stats .l{margin-top:8px;font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8FA3B5}
+.scroll-hint{
+  position:absolute;right:32px;bottom:130px;display:flex;flex-direction:column;align-items:center;gap:14px;
+  font-size:.62rem;font-weight:700;letter-spacing:.34em;text-transform:uppercase;color:#8FA3B5;
+  writing-mode:vertical-rl;
+}
+.scroll-hint i{width:1px;height:56px;background:rgba(255,255,255,.3);position:relative;overflow:hidden}
+.scroll-hint i::after{content:"";position:absolute;left:0;top:-100%;width:100%;height:100%;background:var(--red);animation:drip 1.8s var(--ease) infinite}
+@keyframes drip{to{top:100%}}
+
+/* ---------- marquee ---------- */
+.marquee{
+  background:var(--red);color:#fff;overflow:hidden;padding:20px 0;
+  border-top:1px solid var(--red-dark);border-bottom:1px solid var(--red-dark);
+}
+.marquee-track{display:flex;width:max-content;will-change:transform}
+.marquee-track span{
+  font-size:1.05rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;
+  padding:0 28px;white-space:nowrap;display:flex;align-items:center;gap:56px;
+}
+.marquee-track span::after{content:"";width:10px;height:10px;background:#fff;flex:0 0 auto}
+
+/* ---------- section scaffolding ---------- */
+section{position:relative}
+.sec-head{display:grid;grid-template-columns:auto 1fr;gap:24px 64px;align-items:end;margin-bottom:64px}
+.sec-tag{
+  display:inline-flex;align-items:center;gap:12px;font-size:.72rem;font-weight:700;
+  letter-spacing:.3em;text-transform:uppercase;color:var(--red);
+}
+.sec-tag::before{content:"";width:36px;height:2px;background:var(--red)}
+.sec-head h2{font-size:clamp(2rem,4.6vw,3.6rem);text-transform:uppercase;max-width:760px}
+.sec-head .sec-sub{grid-column:2;max-width:560px;color:var(--grey-mid);font-size:1.02rem;font-weight:500;justify-self:end;text-align:left}
+.sec-num{
+  position:absolute;top:64px;right:32px;font-size:.78rem;font-weight:700;letter-spacing:.2em;
+  color:var(--grey-mid);
+}
+.sec-num b{color:var(--red)}
+/* split-line reveal helper */
+.reveal-lines .line{display:block;overflow:hidden}
+.reveal-lines .line > span{display:inline-block;transform:translateY(110%)}
+
+/* ---------- programs grid ---------- */
+#programs{background:var(--white);padding:120px 0 0}
+.prog-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--grey-line);
+  border-left:1px solid var(--grey-line);
+}
+.prog-tile{
+  position:relative;border-right:1px solid var(--grey-line);border-bottom:1px solid var(--grey-line);
+  padding:36px 30px 30px;min-height:330px;display:flex;flex-direction:column;background:var(--white);
+  overflow:hidden;cursor:pointer;
+}
+.prog-tile .fill{
+  position:absolute;inset:0;background:var(--navy);transform:translateY(101%);
+  transition:transform .5s var(--ease);
+}
+.prog-tile > *{position:relative;z-index:1}
+.prog-tile .idx{
+  font-size:.74rem;font-weight:700;letter-spacing:.18em;color:var(--red);
+  transition:color .4s;
+}
+.prog-tile .subj{
+  margin-top:auto;font-size:.7rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--grey-mid);transition:color .4s;
+}
+.prog-tile h3{
+  font-size:1.65rem;margin-top:10px;text-transform:uppercase;letter-spacing:-.01em;
+  transition:color .4s;
+}
+.prog-tile p{
+  margin-top:14px;font-size:.92rem;line-height:1.6;color:var(--grey-mid);font-weight:500;
+  transition:color .4s;
+}
+.prog-tile .go{
+  margin-top:22px;display:inline-flex;align-items:center;gap:10px;font-size:.74rem;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--navy);transition:color .4s;
+}
+.prog-tile .go .arr{transition:transform .35s var(--ease)}
+.prog-tile:hover .fill{transform:translateY(0)}
+.prog-tile:hover .subj{color:#8FA3B5}
+.prog-tile:hover h3,.prog-tile:hover .go{color:#fff}
+.prog-tile:hover p{color:#B8C7D4}
+.prog-tile:hover .go .arr{transform:translateX(6px)}
+.prog-tile.is-feature{background:var(--red)}
+.prog-tile.is-feature .idx{color:#fff}
+.prog-tile.is-feature .subj{color:rgba(255,255,255,.7)}
+.prog-tile.is-feature h3,.prog-tile.is-feature .go{color:#fff}
+.prog-tile.is-feature p{color:rgba(255,255,255,.85)}
+
+/* ---------- spotlight (pinned horizontal scroll) ---------- */
+#spotlight{background:var(--navy);color:#fff;overflow:hidden}
+.spot-pin{height:100svh;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.spot-head{padding:0 32px;max-width:1240px;margin:0 auto 48px;width:100%}
+.spot-head .sec-tag{color:var(--red-soft)}
+.spot-head .sec-tag::before{background:var(--red)}
+.spot-head h2{font-size:clamp(1.9rem,4vw,3.2rem);text-transform:uppercase;color:#fff}
+.spot-track{display:flex;gap:0;will-change:transform;padding-left:max(32px,calc((100vw - 1240px)/2 + 32px))}
+.spot-card{
+  flex:0 0 auto;width:min(560px,82vw);margin-right:28px;background:var(--navy-2);
+  border:1px solid rgba(255,255,255,.12);padding:44px 44px 40px;display:flex;flex-direction:column;
+  min-height:420px;position:relative;overflow:hidden;
+}
+.spot-card::before{
+  content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:var(--red);
+  transform:scaleX(0);transform-origin:left;transition:transform .6s var(--ease);
+}
+.spot-card:hover::before{transform:scaleX(1)}
+.spot-card .k{font-size:5.4rem;font-weight:800;letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.3);line-height:1}
+.spot-card h3{font-size:1.9rem;text-transform:uppercase;margin-top:18px;color:#fff}
+.spot-card .tag{
+  display:inline-block;margin-top:10px;font-size:.68rem;font-weight:700;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--red-soft);
+}
+.spot-card p{margin-top:18px;color:#B8C7D4;font-size:.98rem;line-height:1.65;font-weight:500}
+.spot-card ul{margin-top:auto;padding-top:26px}
+.spot-card li{
+  font-size:.85rem;font-weight:600;padding:10px 0 10px 26px;border-top:1px solid rgba(255,255,255,.1);
+  position:relative;color:#DCE6EE;
+}
+.spot-card li::before{content:"";position:absolute;left:2px;top:16px;width:10px;height:10px;background:var(--red)}
+.spot-end{
+  flex:0 0 auto;width:min(420px,70vw);display:flex;align-items:center;justify-content:center;margin-right:96px;
+}
+.spot-end a{
+  display:flex;flex-direction:column;align-items:center;gap:18px;color:#fff;font-weight:800;
+  font-size:1.3rem;text-transform:uppercase;letter-spacing:.04em;text-align:center;
+}
+.spot-end .ring{
+  width:120px;height:120px;border:1px solid rgba(255,255,255,.3);display:grid;place-items:center;
+  font-size:1.8rem;transition:background .3s,border-color .3s;
+}
+.spot-end a:hover .ring{background:var(--red);border-color:var(--red)}
+
+/* ---------- numbers band ---------- */
+#impact{background:var(--grey-bg);padding:120px 0}
+.impact-grid{display:grid;grid-template-columns:repeat(3,1fr);border-left:1px solid var(--grey-line)}
+.impact-cell{
+  border-right:1px solid var(--grey-line);padding:18px 36px 6px;position:relative;
+}
+.impact-cell .big{font-size:clamp(3.4rem,7vw,5.6rem);font-weight:800;letter-spacing:-.04em;color:var(--navy);line-height:1}
+.impact-cell .big em{font-style:normal;color:var(--red)}
+.impact-cell .cap{margin-top:14px;font-size:.8rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--grey-mid);max-width:240px;line-height:1.7}
+
+/* ---------- approach / steps ---------- */
+#approach{padding:120px 0;background:var(--white)}
+.steps{border-top:1px solid var(--grey-line)}
+.step{
+  display:grid;grid-template-columns:140px 1fr 1.2fr auto;gap:40px;align-items:center;
+  padding:44px 0;border-bottom:1px solid var(--grey-line);position:relative;overflow:hidden;
+}
+.step .bg{position:absolute;inset:0;background:var(--grey-bg);transform:scaleY(0);transform-origin:bottom;transition:transform .45s var(--ease);z-index:0}
+.step > *{position:relative;z-index:1}
+.step:hover .bg{transform:scaleY(1)}
+.step .no{
+  font-size:1rem;font-weight:800;color:var(--red);letter-spacing:.1em;padding-left:8px;
+}
+.step h3{font-size:clamp(1.4rem,2.6vw,2.1rem);text-transform:uppercase}
+.step p{color:var(--grey-mid);font-size:.96rem;font-weight:500;max-width:480px}
+.step .arr-big{
+  font-size:1.6rem;color:var(--navy);padding-right:12px;transition:transform .35s var(--ease),color .3s;
+}
+.step:hover .arr-big{transform:translateX(10px);color:var(--red)}
+
+/* ---------- catalog CTA ---------- */
+#catalog{background:var(--navy);color:#fff;padding:130px 0;position:relative;overflow:hidden}
+#catalog .giant{
+  position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);
+  font-size:clamp(6rem,18vw,16rem);font-weight:800;letter-spacing:-.04em;text-transform:uppercase;
+  color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.07);white-space:nowrap;pointer-events:none;
+  line-height:1;
+}
+.cat-inner{position:relative;display:grid;grid-template-columns:1.2fr 1fr;gap:72px;align-items:center}
+.cat-inner h2{font-size:clamp(2.2rem,5vw,4rem);text-transform:uppercase}
+.cat-inner h2 .red{color:var(--red-soft)}
+.cat-inner p{margin-top:22px;color:#B8C7D4;font-size:1.05rem;font-weight:500;max-width:520px;line-height:1.65}
+.cat-inner .cat-cta{margin-top:36px;display:flex;gap:16px;flex-wrap:wrap}
+.cat-form{
+  background:#fff;color:var(--black);padding:44px;border-top:6px solid var(--red);
+}
+.cat-form h3{font-size:1.3rem;text-transform:uppercase}
+.cat-form .hint{font-size:.84rem;color:var(--grey-mid);font-weight:500;margin-top:6px}
+.cat-form form{margin-top:26px;display:grid;gap:14px}
+.cat-form .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cat-form input,.cat-form select{
+  width:100%;font-family:inherit;font-size:.92rem;font-weight:500;padding:14px 16px;
+  border:1px solid var(--grey-line);background:var(--grey-bg);color:var(--black);outline:none;
+  transition:border-color .2s,background .2s;appearance:none;
+}
+.cat-form input:focus,.cat-form select:focus{border-color:var(--navy);background:#fff}
+.cat-form .btn{justify-content:center;width:100%;margin-top:6px}
+.cat-form .fine{font-size:.7rem;color:var(--grey-mid);font-weight:500;margin-top:4px}
+
+/* ---------- footer ---------- */
+footer{background:#0A1521;color:#8FA3B5;padding:80px 0 0;border-top:4px solid var(--red)}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:56px;padding-bottom:64px}
+.foot-grid .brand .name{color:#fff}
+.foot-grid p{font-size:.88rem;font-weight:500;line-height:1.7;margin-top:18px;max-width:320px}
+.foot-grid h4{color:#fff;font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;margin-bottom:20px}
+.foot-grid li{margin-bottom:12px}
+.foot-grid li a{font-size:.9rem;font-weight:600;color:#8FA3B5;transition:color .2s;position:relative}
+.foot-grid li a:hover{color:#fff}
+.foot-bottom{
+  border-top:1px solid rgba(255,255,255,.08);padding:26px 0;display:flex;gap:24px;align-items:center;
+  justify-content:space-between;font-size:.74rem;font-weight:600;letter-spacing:.06em;flex-wrap:wrap;
+}
+.foot-bottom .legal{display:flex;gap:24px}
+.foot-bottom a:hover{color:#fff}
+
+.to-top{
+  position:fixed;right:28px;bottom:28px;z-index:140;width:52px;height:52px;background:var(--navy);
+  color:#fff;border:none;font-size:1.1rem;display:grid;place-items:center;opacity:0;pointer-events:none;
+  transition:opacity .3s,background .3s;
+}
+.to-top.is-on{opacity:1;pointer-events:auto}
+.to-top:hover{background:var(--red)}
+
+/* ---------- responsive ---------- */
+@media(max-width:1100px){
+  .prog-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-stats{grid-template-columns:repeat(2,1fr)}
+  .hero-stats .stat{border-bottom:1px solid rgba(255,255,255,.14)}
+  .impact-grid{grid-template-columns:1fr;border-left:none}
+  .impact-cell{border-right:none;border-bottom:1px solid var(--grey-line);padding:34px 8px}
+  .step{grid-template-columns:70px 1fr;gap:14px 24px}
+  .step p{grid-column:2}
+  .step .arr-big{display:none}
+  .cat-inner{grid-template-columns:1fr;gap:56px}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:40px}
+  .sec-head{grid-template-columns:1fr}
+  .sec-head .sec-sub{grid-column:1;justify-self:start}
+}
+@media(max-width:760px){
+  nav.anchors{display:none}
+  .top .btn{margin-left:auto}
+  .prog-grid{grid-template-columns:1fr}
+  .scroll-hint{display:none}
+  .wrap{padding:0 20px}
+  .top-inner{padding:0 20px}
+  .hero{padding-top:120px}
+  .spot-card{padding:30px 26px}
+  .cat-form{padding:30px 22px}
+  .cat-form .row2{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- custom cursor -->
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+
+<!-- preloader -->
+<div id="loader" aria-hidden="true">
+  <div class="l-mark">
+    <span>MCGRAW</span><span>&nbsp;</span><span class="r">HILL</span>
+  </div>
+  <div class="l-bar"><i></i></div>
+  <div class="l-pct">K-12 International</div>
+</div>
+
+<!-- scroll progress -->
+<div class="progress" aria-hidden="true"><i></i></div>
+
+<!-- ============ HEADER ============ -->
+<header class="top" id="siteTop">
+  <div class="top-inner">
+    <a class="brand" href="#" aria-label="McGraw Hill K-12 International">
+      <span class="mark">MH</span>
+      <span class="name">McGraw Hill<small>K-12 International</small></span>
+    </a>
+    <nav class="anchors" aria-label="Primary">
+      <a href="#programs">Programs</a>
+      <a href="#spotlight">Spotlight</a>
+      <a href="#impact">Impact</a>
+      <a href="#approach">Partnership</a>
+      <a href="#catalog">Catalog</a>
+    </nav>
+    <a class="btn btn-red" href="#catalog">Request a Sample <span class="arr">&rarr;</span></a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="hero-grid-bg" aria-hidden="true"></div>
+  <div class="hero-shape s1" aria-hidden="true"></div>
+  <div class="hero-shape s2" aria-hidden="true"></div>
+  <div class="hero-shape s3" aria-hidden="true"></div>
+
+  <div class="wrap">
+    <p class="eyebrow">School Catalog &middot; 2026 Edition</p>
+    <h1 aria-label="Every learner. Every classroom. Everywhere.">
+      <span class="line"><span>Every learner.</span></span>
+      <span class="line"><span class="outline">Every classroom.</span></span>
+      <span class="line"><span><span class="red">Everywhere.</span></span></span>
+    </h1>
+    <p class="lede">
+      Research-based literacy, mathematics, science and social studies programs —
+      built for international schools, trusted by educators in more than 100 countries,
+      and designed so every student can show what they know.
+    </p>
+    <div class="hero-cta">
+      <a class="btn btn-red" href="#programs">Explore Programs <span class="arr">&rarr;</span></a>
+      <a class="btn btn-ghost" href="#catalog">Download the Catalog <span class="arr">&darr;</span></a>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat"><div class="n"><span class="count" data-to="135">0</span><em>+</em></div><div class="l">Countries served</div></div>
+    <div class="stat"><div class="n"><span class="count" data-to="6">0</span><em>M+</em></div><div class="l">Students reached yearly</div></div>
+    <div class="stat"><div class="n"><span class="count" data-to="135">0</span><em> yrs</em></div><div class="l">Of learning science</div></div>
+    <div class="stat"><div class="n"><span class="count" data-to="40">0</span><em>+</em></div><div class="l">PreK-12 programs</div></div>
+  </div>
+
+  <div class="scroll-hint" aria-hidden="true">Scroll <i></i></div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marqueeTrack">
+    <span>Literacy</span><span>Mathematics</span><span>Science</span><span>Social Studies</span>
+    <span>Intervention</span><span>Advanced Placement</span><span>World Languages</span><span>Professional Development</span>
+  </div>
+</div>
+
+<!-- ============ PROGRAMS ============ -->
+<section id="programs">
+  <span class="sec-num"><b>01</b> / 05</span>
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="sec-tag">The 2026 Catalog</p>
+        <h2 class="reveal-lines">
+          <span class="line"><span>Programs built on</span></span>
+          <span class="line"><span>learning science</span></span>
+        </h2>
+      </div>
+      <p class="sec-sub">
+        Every program in the international catalog pairs rigorous, standards-aligned
+        content with adaptive digital tools — so teachers teach more and prep less.
+      </p>
+    </div>
+  </div>
+
+  <div class="prog-grid" id="progGrid">
+    <article class="prog-tile">
+      <div class="fill" aria-hidden="true"></div>
+      <span class="idx">01</span>
+      <h3>Wonders</h3>
+      <p>A comprehensive PreK-6 literacy program grounded in the science of reading, with rich texts that connect learners to the wider world.</p>
+      <span class="subj">Literacy &middot; PreK-6</span>
+      <span class="go">View Program <span class="arr">&rarr;</span></span>
+    </article>
+    <article class="prog-tile">
+      <div class="fill" aria-hidden="true"></div>
+      <span class="idx">02</span>
+      <h3>StudySync</h3>
+      <p>Award-winning ELA for grades 6-12 — dynamic media, powerful texts and collaborative tasks that make readers and writers of every student.</p>
+      <span class="subj">ELA &middot; Grades 6-12</span>
+      <span class="go">View Program <span class="arr">&rarr;</span></span>
+    </article>
+    <article class="prog-tile is-feature">
+      <div class="fill" aria-hidden="true"></div>
+      <span class="idx">03</span>
+      <h3>Reveal Math</h3>
+      <p>A K-12 core math program built around productive struggle, rich classroom discourse and a growth mindset for every learner.</p>
+      <span class="subj">Mathematics &middot; K-12</span>
+      <span class="go">View Program <span class="arr">&rarr;</span></span>
+    </article>
+    <article class="prog-tile">
+      <div class="fill" aria-hidden="true"></div>
+      <span class="idx">04</span>
+      <h3>ALEKS</h3>
+      <p>Adaptive, AI-driven math practice that meets each student exactly where they are — and proves what they truly know.</p>
+      <span class="subj">Adaptive Math &middot; 3-12</span>
+      <span class="go">View Program <span class="arr">&rarr;</span></span>
+    </article>
+    <article class="prog-tile">
+      <div class="fill" aria-hidden="true"></div>
+      <span class="idx">05</span>
+      <h3>Inspire Science</h3>
+      <p>Phenomena-driven K-8 science that sparks curiosity through hands-on investigation and real-world engineering challenges.</p>
+      <span class="subj">Science &middot; K-8</span>
+      <span class="go">View Program <span class="arr">&rarr;</span></span>
+    </article>
+    <article class="prog-tile">
+      <div class="fill" aria-hidden="true"></div>
+      <span class="idx">06</span>
+      <h3>IMPACT</h3>
+      <p>Inquiry-based social studies that develops critical thinkers and active citizens through evidence, sources and civic action.</p>
+      <span class="subj">Social Studies &middot; K-8</span>
+      <span class="go">View Program <span class="arr">&rarr;</span></span>
+    </article>
+    <article class="prog-tile">
+      <div class="fill" aria-hidden="true"></div>
+      <span class="idx">07</span>
+      <h3>Achieve3000</h3>
+      <p>Differentiated literacy instruction with content at twelve levels of complexity — accelerating growth for every reading level.</p>
+      <span class="subj">Differentiation &middot; 2-12</span>
+      <span class="go">View Program <span class="arr">&rarr;</span></span>
+    </article>
+    <article class="prog-tile">
+      <div class="fill" aria-hidden="true"></div>
+      <span class="idx">08</span>
+      <h3>AP, Honors &amp; Electives</h3>
+      <p>College-level rigor for secondary classrooms — from AP sciences and calculus to economics, computer science and beyond.</p>
+      <span class="subj">Advanced &middot; 9-12</span>
+      <span class="go">View Program <span class="arr">&rarr;</span></span>
+    </article>
+  </div>
+</section>
+
+<!-- ============ SPOTLIGHT (horizontal scroll) ============ -->
+<section id="spotlight">
+  <div class="spot-pin">
+    <div class="spot-head">
+      <p class="sec-tag">Platform Spotlight</p>
+      <h2>One ecosystem.<br/>Every classroom connected.</h2>
+    </div>
+    <div class="spot-track" id="spotTrack">
+      <article class="spot-card">
+        <div class="k">K-12</div>
+        <h3>McGraw Hill Portal</h3>
+        <span class="tag">Single Sign-On &middot; LMS Ready</span>
+        <p>One login for students and teachers across every McGraw Hill program — with rostering, analytics and seamless LMS integration out of the box.</p>
+        <ul>
+          <li>Google Classroom, Canvas, Schoology &amp; more</li>
+          <li>Class-level and student-level insights</li>
+          <li>Works on any device, online or offline</li>
+        </ul>
+      </article>
+      <article class="spot-card">
+        <div class="k">AI</div>
+        <h3>ALEKS Adaptive Engine</h3>
+        <span class="tag">Personalized Learning Paths</span>
+        <p>Three decades of machine-learning research determine precisely what each student is ready to learn next — no guesswork, no gaps.</p>
+        <ul>
+          <li>Knowledge-space theory, proven at scale</li>
+          <li>Real-time mastery reporting for teachers</li>
+          <li>Built-in motivation and goal setting</li>
+        </ul>
+      </article>
+      <article class="spot-card">
+        <div class="k">12&times;</div>
+        <h3>Achieve3000 Literacy</h3>
+        <span class="tag">Differentiation at Scale</span>
+        <p>The same lesson, twelve levels of text complexity — so a whole class reads together while every student is stretched at exactly the right level.</p>
+        <ul>
+          <li>Lexile-based personalized text levels</li>
+          <li>Daily news and nonfiction relevance</li>
+          <li>Measurable reading growth, term over term</li>
+        </ul>
+      </article>
+      <article class="spot-card">
+        <div class="k">PD</div>
+        <h3>Professional Learning</h3>
+        <span class="tag">Implementation &amp; Coaching</span>
+        <p>From launch-day onboarding to ongoing coaching, our international team makes sure your investment changes practice — not just shelves.</p>
+        <ul>
+          <li>Virtual and on-site training options</li>
+          <li>Regional consultants in your time zone</li>
+          <li>Year-round support and office hours</li>
+        </ul>
+      </article>
+      <div class="spot-end">
+        <a href="#catalog"><span class="ring">&rarr;</span>See it all in the catalog</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ IMPACT ============ -->
+<section id="impact">
+  <span class="sec-num"><b>03</b> / 05</span>
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="sec-tag">Why McGraw Hill</p>
+        <h2 class="reveal-lines">
+          <span class="line"><span>Proof, not</span></span>
+          <span class="line"><span>promises</span></span>
+        </h2>
+      </div>
+      <p class="sec-sub">
+        For over a century, schools have trusted McGraw Hill to turn learning science
+        into classroom results. The numbers tell the story.
+      </p>
+    </div>
+    <div class="impact-grid">
+      <div class="impact-cell">
+        <div class="big"><span class="count" data-to="98">0</span><em>%</em></div>
+        <p class="cap">of US top-100 school districts use McGraw Hill programs</p>
+      </div>
+      <div class="impact-cell">
+        <div class="big"><span class="count" data-to="14">0</span><em>K+</em></div>
+        <p class="cap">educators engaged in professional learning each year</p>
+      </div>
+      <div class="impact-cell">
+        <div class="big"><em>#</em><span class="count" data-to="1">0</span></div>
+        <p class="cap">in adaptive learning with ALEKS, backed by 30 years of research</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ APPROACH ============ -->
+<section id="approach">
+  <span class="sec-num"><b>04</b> / 05</span>
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="sec-tag">Partnership, Not Procurement</p>
+        <h2 class="reveal-lines">
+          <span class="line"><span>How we work with</span></span>
+          <span class="line"><span>your school</span></span>
+        </h2>
+      </div>
+      <p class="sec-sub">
+        Adopting a new program is a journey. Our international team walks
+        it with you — from the first conversation to full implementation.
+      </p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="bg" aria-hidden="true"></div>
+        <span class="no">/ 01</span>
+        <h3>Consult</h3>
+        <p>Your regional representative learns your curriculum framework, languages of instruction and goals — then maps the right programs to them.</p>
+        <span class="arr-big">&rarr;</span>
+      </div>
+      <div class="step">
+        <div class="bg" aria-hidden="true"></div>
+        <span class="no">/ 02</span>
+        <h3>Pilot &amp; Sample</h3>
+        <p>Teachers get hands-on access — digital trials and print samples — so adoption decisions are made in classrooms, not conference rooms.</p>
+        <span class="arr-big">&rarr;</span>
+      </div>
+      <div class="step">
+        <div class="bg" aria-hidden="true"></div>
+        <span class="no">/ 03</span>
+        <h3>Implement</h3>
+        <p>Onboarding, rostering, LMS integration and launch-day training — handled by specialists who have done it for international schools worldwide.</p>
+        <span class="arr-big">&rarr;</span>
+      </div>
+      <div class="step">
+        <div class="bg" aria-hidden="true"></div>
+        <span class="no">/ 04</span>
+        <h3>Grow Together</h3>
+        <p>Ongoing coaching, data reviews and professional learning keep the program improving — year after year, cohort after cohort.</p>
+        <span class="arr-big">&rarr;</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CATALOG CTA ============ -->
+<section id="catalog">
+  <div class="giant" aria-hidden="true">CATALOG 2026 &middot; CATALOG 2026</div>
+  <div class="wrap cat-inner">
+    <div>
+      <p class="sec-tag" style="color:var(--red-soft)">Get the Catalog</p>
+      <h2 class="reveal-lines" style="margin-top:10px">
+        <span class="line"><span>Your classroom&rsquo;s</span></span>
+        <span class="line"><span class="red">next chapter</span></span>
+        <span class="line"><span>starts here.</span></span>
+      </h2>
+      <p>
+        Download the complete 2026 K-12 International School Catalog, or request
+        print and digital samples for your teaching team. A regional representative
+        will follow up within two business days.
+      </p>
+      <div class="cat-cta">
+        <a class="btn btn-red" href="https://www.mheducation.com/prek-12/explore/international.html" target="_blank" rel="noopener">Visit International Site <span class="arr">&rarr;</span></a>
+      </div>
+    </div>
+    <div class="cat-form">
+      <h3>Request Samples</h3>
+      <p class="hint">Tell us about your school — we&rsquo;ll do the rest.</p>
+      <form onsubmit="event.preventDefault();this.innerHTML='<p style=\'font-weight:700;padding:30px 0;text-align:center\'>Thank you — your regional representative will be in touch shortly.</p>';">
+        <div class="row2">
+          <input type="text" name="firstName" placeholder="First name" required aria-label="First name"/>
+          <input type="text" name="lastName" placeholder="Last name" required aria-label="Last name"/>
+        </div>
+        <input type="email" name="email" placeholder="School email" required aria-label="School email"/>
+        <input type="text" name="school" placeholder="School name" required aria-label="School name"/>
+        <div class="row2">
+          <select name="country" required aria-label="Country">
+            <option value="" disabled selected>Country / Region</option>
+            <option>United Arab Emirates</option><option>Saudi Arabia</option><option>Qatar</option>
+            <option>Egypt</option><option>India</option><option>Singapore</option><option>China</option>
+            <option>United Kingdom</option><option>Mexico</option><option>Brazil</option><option>Other</option>
+          </select>
+          <select name="interest" required aria-label="Subject of interest">
+            <option value="" disabled selected>Subject of interest</option>
+            <option>Literacy / ELA</option><option>Mathematics</option><option>Science</option>
+            <option>Social Studies</option><option>Advanced Placement</option><option>Whole-school</option>
+          </select>
+        </div>
+        <button class="btn btn-navy" type="submit">Send Request <span class="arr">&rarr;</span></button>
+        <p class="fine">By submitting, you agree to be contacted by McGraw Hill regarding products and services.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#" aria-label="McGraw Hill">
+          <span class="mark">MH</span>
+          <span class="name" style="color:#fff">McGraw Hill<small>K-12 International</small></span>
+        </a>
+        <p>Because learning changes everything.&trade; Supporting international schools with research-based programs for more than a century.</p>
+      </div>
+      <div>
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="#programs">Literacy &amp; ELA</a></li>
+          <li><a href="#programs">Mathematics</a></li>
+          <li><a href="#programs">Science</a></li>
+          <li><a href="#programs">Social Studies</a></li>
+          <li><a href="#programs">AP, Honors &amp; Electives</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Platforms</h4>
+        <ul>
+          <li><a href="#spotlight">McGraw Hill Portal</a></li>
+          <li><a href="#spotlight">ALEKS</a></li>
+          <li><a href="#spotlight">Achieve3000</a></li>
+          <li><a href="#spotlight">Professional Learning</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#catalog">Request Samples</a></li>
+          <li><a href="#catalog">Find Your Representative</a></li>
+          <li><a href="https://www.mheducation.com" target="_blank" rel="noopener">mheducation.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 McGraw Hill. All rights reserved.</span>
+      <span class="legal">
+        <a href="https://www.mheducation.com/privacy.html" target="_blank" rel="noopener">Privacy</a>
+        <a href="https://www.mheducation.com/terms-use.html" target="_blank" rel="noopener">Terms of Use</a>
+        <a href="https://www.mheducation.com/accessibility.html" target="_blank" rel="noopener">Accessibility</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top">&uarr;</button>
+
+<!-- ============ GSAP ============ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  "use strict";
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var hasGsap = typeof gsap !== "undefined";
+  if (hasGsap) gsap.registerPlugin(ScrollTrigger);
+
+  /* ---------- graceful fallback when GSAP is unavailable or motion reduced ---------- */
+  function staticState(){
+    document.getElementById("loader").style.display = "none";
+    document.querySelectorAll(".hero h1 .line > span, .reveal-lines .line > span")
+      .forEach(function(el){ el.style.transform = "none"; });
+    document.querySelectorAll(".count").forEach(function(el){
+      el.textContent = el.getAttribute("data-to");
+    });
+  }
+  if (!hasGsap || reduced){ staticState(); }
+
+  /* ---------- custom cursor ---------- */
+  if (hasGsap && window.matchMedia("(hover:hover)").matches){
+    var dot = document.querySelector(".cursor-dot"),
+        ring = document.querySelector(".cursor-ring");
+    var xDot = gsap.quickTo(dot,"x",{duration:.08,ease:"power2.out"}),
+        yDot = gsap.quickTo(dot,"y",{duration:.08,ease:"power2.out"}),
+        xRing = gsap.quickTo(ring,"x",{duration:.32,ease:"power3.out"}),
+        yRing = gsap.quickTo(ring,"y",{duration:.32,ease:"power3.out"});
+    window.addEventListener("mousemove",function(e){
+      xDot(e.clientX); yDot(e.clientY); xRing(e.clientX); yRing(e.clientY);
+    });
+    document.querySelectorAll("a,button,.prog-tile,.step").forEach(function(el){
+      el.addEventListener("mouseenter",function(){ ring.classList.add("is-hover"); });
+      el.addEventListener("mouseleave",function(){ ring.classList.remove("is-hover"); });
+    });
+  }
+
+  if (!hasGsap) return;
+
+  /* ---------- preloader -> hero intro ---------- */
+  var intro = gsap.timeline({defaults:{ease:"power4.out"}});
+  if (!reduced){
+    intro
+      .to("#loader .l-mark span",{y:0,duration:.9,stagger:.07,ease:"power4.out"})
+      .to("#loader .l-bar i",{scaleX:1,duration:.9,ease:"power2.inOut"},"-=.5")
+      .to("#loader",{yPercent:-100,duration:.8,ease:"power4.inOut",delay:.15})
+      .set("#loader",{display:"none"})
+      .from(".top-inner",{y:-30,opacity:0,duration:.7},"-=.5")
+      .to(".hero h1 .line > span",{y:0,duration:1.1,stagger:.12,ease:"power4.out"},"-=.6")
+      .from(".hero .eyebrow",{x:-30,opacity:0,duration:.7},"-=.9")
+      .from(".hero .lede",{y:24,opacity:0,duration:.8},"-=.7")
+      .from(".hero .hero-cta .btn",{y:20,opacity:0,duration:.6,stagger:.1},"-=.6")
+      .from(".hero-stats .stat",{y:30,opacity:0,duration:.7,stagger:.08},"-=.5")
+      .from(".hero-shape",{scale:.6,opacity:0,duration:1,stagger:.15,ease:"power3.out"},"-=.9");
+  }
+
+  /* ---------- scroll progress + header hide ---------- */
+  gsap.to(".progress i",{
+    scaleX:1,ease:"none",
+    scrollTrigger:{trigger:document.body,start:"top top",end:"bottom bottom",scrub:.3}
+  });
+  var lastY = 0, header = document.getElementById("siteTop");
+  ScrollTrigger.create({
+    start:0,end:"max",
+    onUpdate:function(self){
+      var y = self.scroll();
+      if (y > 120 && y > lastY) header.classList.add("is-hidden");
+      else header.classList.remove("is-hidden");
+      lastY = y;
+      document.getElementById("toTop").classList.toggle("is-on", y > 600);
+    }
+  });
+  document.getElementById("toTop").addEventListener("click",function(){
+    window.scrollTo({top:0,behavior:reduced?"auto":"smooth"});
+  });
+
+  /* ---------- smooth anchor scrolling ---------- */
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener("click",function(e){
+      var id = a.getAttribute("href");
+      if (id.length < 2) return;
+      var t = document.querySelector(id);
+      if (!t) return;
+      e.preventDefault();
+      t.scrollIntoView({behavior:reduced?"auto":"smooth"});
+    });
+  });
+
+  /* ---------- hero parallax shapes ---------- */
+  if (!reduced){
+    gsap.to(".hero-shape.s1",{y:-90,rotation:8,scrollTrigger:{trigger:".hero",start:"top top",end:"bottom top",scrub:1}});
+    gsap.to(".hero-shape.s2",{y:-150,scrollTrigger:{trigger:".hero",start:"top top",end:"bottom top",scrub:1}});
+    gsap.to(".hero-grid-bg",{yPercent:14,scrollTrigger:{trigger:".hero",start:"top top",end:"bottom top",scrub:1}});
+  }
+
+  /* ---------- marquee (seamless loop) ---------- */
+  (function(){
+    var track = document.getElementById("marqueeTrack");
+    track.innerHTML += track.innerHTML;             // duplicate for seamless wrap
+    var half = track.scrollWidth / 2;
+    var loop = gsap.to(track,{x:-half,duration:26,ease:"none",repeat:-1});
+    if (reduced) loop.pause();
+    var marquee = document.querySelector(".marquee");
+    marquee.addEventListener("mouseenter",function(){ gsap.to(loop,{timeScale:.25,duration:.4}); });
+    marquee.addEventListener("mouseleave",function(){ gsap.to(loop,{timeScale:1,duration:.4}); });
+  })();
+
+  /* ---------- generic line reveals ---------- */
+  if (!reduced){
+    document.querySelectorAll(".reveal-lines").forEach(function(el){
+      gsap.to(el.querySelectorAll(".line > span"),{
+        y:0,duration:1,stagger:.1,ease:"power4.out",
+        scrollTrigger:{trigger:el,start:"top 85%"}
+      });
+    });
+    gsap.utils.toArray(".sec-tag, .sec-sub").forEach(function(el){
+      gsap.from(el,{y:24,opacity:0,duration:.8,ease:"power3.out",
+        scrollTrigger:{trigger:el,start:"top 88%"}});
+    });
+  }
+
+  /* ---------- program tiles stagger ---------- */
+  if (!reduced){
+    gsap.from(".prog-tile",{
+      y:50,opacity:0,duration:.8,ease:"power3.out",
+      stagger:{each:.07,grid:[2,4],from:"start"},
+      scrollTrigger:{trigger:"#progGrid",start:"top 80%"}
+    });
+  }
+
+  /* ---------- spotlight: pinned horizontal scroll ---------- */
+  (function(){
+    var track = document.getElementById("spotTrack");
+    function dist(){ return Math.max(0, track.scrollWidth - window.innerWidth); }
+    if (reduced){
+      track.style.overflowX = "auto";
+      return;
+    }
+    gsap.to(track,{
+      x:function(){ return -dist(); },
+      ease:"none",
+      scrollTrigger:{
+        trigger:"#spotlight",
+        start:"top top",
+        end:function(){ return "+=" + (dist() + window.innerHeight * .4); },
+        pin:true,
+        scrub:1,
+        invalidateOnRefresh:true,
+        anticipatePin:1
+      }
+    });
+    gsap.from(".spot-card",{
+      opacity:0,x:80,duration:.8,stagger:.12,ease:"power3.out",
+      scrollTrigger:{trigger:"#spotlight",start:"top 70%"}
+    });
+  })();
+
+  /* ---------- counters ---------- */
+  document.querySelectorAll(".count").forEach(function(el){
+    var to = parseFloat(el.getAttribute("data-to"));
+    if (reduced){ el.textContent = to; return; }
+    var obj = {v:0};
+    gsap.to(obj,{
+      v:to,duration:1.6,ease:"power2.out",
+      scrollTrigger:{trigger:el,start:"top 92%",once:true},
+      onUpdate:function(){ el.textContent = Math.round(obj.v); }
+    });
+  });
+
+  /* ---------- steps + impact reveals ---------- */
+  if (!reduced){
+    gsap.from(".step",{
+      y:40,opacity:0,duration:.7,stagger:.12,ease:"power3.out",
+      scrollTrigger:{trigger:".steps",start:"top 82%"}
+    });
+    gsap.from(".impact-cell",{
+      y:40,opacity:0,duration:.8,stagger:.15,ease:"power3.out",
+      scrollTrigger:{trigger:".impact-grid",start:"top 85%"}
+    });
+    gsap.from(".cat-form",{
+      y:60,opacity:0,duration:.9,ease:"power3.out",
+      scrollTrigger:{trigger:"#catalog",start:"top 70%"}
+    });
+    gsap.to("#catalog .giant",{
+      xPercent:-12,ease:"none",
+      scrollTrigger:{trigger:"#catalog",start:"top bottom",end:"bottom top",scrub:1}
+    });
+  }
+
+  /* ---------- magnetic buttons ---------- */
+  if (window.matchMedia("(hover:hover)").matches && !reduced){
+    document.querySelectorAll(".btn").forEach(function(btn){
+      var qx = gsap.quickTo(btn,"x",{duration:.35,ease:"power3.out"}),
+          qy = gsap.quickTo(btn,"y",{duration:.35,ease:"power3.out"});
+      btn.addEventListener("mousemove",function(e){
+        var r = btn.getBoundingClientRect();
+        qx((e.clientX - (r.left + r.width/2)) * .18);
+        qy((e.clientY - (r.top + r.height/2)) * .28);
+      });
+      btn.addEventListener("mouseleave",function(){ qx(0); qy(0); });
+    });
+  }
+
+  window.addEventListener("load",function(){ ScrollTrigger.refresh(); });
+})();
+</script>
+</body>
+</html>
