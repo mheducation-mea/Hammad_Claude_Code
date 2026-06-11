@@ -6,8 +6,8 @@
 <title>Back to School 2026 — Beside Every Path to Growth | McGraw Hill</title>
 <meta name="description" content="Your programs, your team, your platform. All ready before day one. McGraw Hill — beside every path to growth.">
 <link rel="preload" href="assets/img/hero.jpg" as="image">
-<link rel="preload" href="assets/fonts/ProximaNova-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/ProximaNova-Light.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/ProximaNova-Semibold.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 /* ---------- Proxima Nova ---------- */
 @font-face{font-family:"Proxima Nova";src:url("assets/fonts/ProximaNova-Light.woff2") format("woff2");font-weight:300;font-style:normal;font-display:swap;}
@@ -18,11 +18,11 @@
 @font-face{font-family:"Proxima Nova";src:url("assets/fonts/ProximaNova-Extrabold.woff2") format("woff2");font-weight:800;font-style:normal;font-display:swap;}
 
 :root{
-  --red:#E31C25;
+  --red:#E31B22;          /* Figma stroke/fill exact */
+  --red-icon:#D81313;     /* accordion crosses */
   --red-dark:#C2161E;
-  --ink:#222326;
-  --body:#58595B;
-  --muted:#6E6E6E;
+  --ink:#000000;
+  --eyebrow:#6E6E6E;
   --line:#E3E3E3;
   --panel:#E8E8E8;
   --white:#FFFFFF;
@@ -31,8 +31,8 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;scroll-padding-top:120px;}
 body{
-  font-family:var(--font);color:var(--body);background:var(--white);
-  font-size:16px;line-height:1.6;overflow-x:hidden;
+  font-family:var(--font);color:var(--ink);background:var(--white);
+  font-size:18px;font-weight:300;line-height:1.5;overflow-x:hidden;
   -webkit-font-smoothing:antialiased;padding-top:102px;
 }
 img{display:block;max-width:100%;}
@@ -40,7 +40,7 @@ a{color:inherit;text-decoration:none;}
 button{font-family:inherit;cursor:pointer;}
 .container{max-width:1328px;margin:0 auto;padding:0 32px;position:relative;}
 @media (min-width:1392px){.container{padding:0;}}
-.skip-link{position:absolute;left:-9999px;top:0;background:var(--red);color:#fff;padding:10px 18px;z-index:300;font-weight:700;}
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--red);color:#fff;padding:10px 18px;z-index:300;font-weight:600;}
 .skip-link:focus{left:0;}
 :focus-visible{outline:2px solid var(--red);outline-offset:2px;}
 
@@ -53,12 +53,13 @@ button{font-family:inherit;cursor:pointer;}
 .main-nav{margin-left:auto;}
 .main-nav ul{display:flex;list-style:none;align-items:center;}
 .main-nav li{display:flex;align-items:center;}
-.main-nav li+li::before{content:"|";color:#D9D9D9;font-size:13px;margin:0 4px;}
-.main-nav a{display:block;padding:6px 10px;font-size:15.5px;font-weight:400;color:#3B3C3E;transition:color .2s ease;}
-.main-nav a:hover,.main-nav a.is-active{color:var(--red);}
-.header-cta{display:flex;align-items:center;gap:24px;}
-.bts-tag{font-size:15px;font-weight:600;color:var(--red);white-space:nowrap;}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:0 24px;height:46px;border:1px solid var(--red);border-radius:0;transition:background .2s ease,color .2s ease;white-space:nowrap;}
+.main-nav li+li::before{content:"|";color:#C9C9C9;font-size:15px;font-weight:300;margin:0 6px;}
+.main-nav a{display:block;padding:6px 10px;font-size:18px;font-weight:300;color:var(--ink);transition:color .2s ease;}
+.main-nav a:hover{color:var(--red);}
+.main-nav a.is-active{font-weight:700;}
+.header-cta{display:flex;align-items:center;gap:26px;}
+.bts-tag{font-size:18px;font-weight:600;color:var(--red);white-space:nowrap;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-size:18px;font-weight:600;text-transform:uppercase;padding:0 22px;height:46px;border:1px solid var(--red);border-radius:0;transition:background .2s ease,color .2s ease;white-space:nowrap;}
 .btn-solid{background:var(--red);color:#fff;}
 .btn-solid:hover{background:var(--red-dark);border-color:var(--red-dark);}
 .btn-outline{background:transparent;color:var(--red);}
@@ -69,169 +70,164 @@ button{font-family:inherit;cursor:pointer;}
 .nav-toggle span::before{top:-7px;left:0;}
 .nav-toggle span::after{top:7px;left:0;}
 
-/* ---------- Path device ---------- */
+/* ---------- Path device (15px Heritage Red, butt caps, miter joins) ---------- */
 .path-svg{position:absolute;pointer-events:none;overflow:visible;z-index:1;}
-.path-svg path{fill:none;stroke:var(--red);stroke-width:20;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;}
-.card-layer{position:relative;z-index:2;}
+.path-svg path{fill:none;stroke:var(--red);stroke-width:15;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;}
 
 /* ---------- Hero ---------- */
-.hero{position:relative;height:calc(100vw * 924 / 1728);max-height:none;overflow:hidden;background:#F2F2F2;}
+.hero{position:relative;height:calc(100vw * 924 / 1728);overflow:hidden;background:#F5F5F5;}
 .hero-stage{position:absolute;top:0;left:0;width:1728px;height:924px;transform-origin:0 0;}
 .hero-canvas{position:absolute;inset:0;display:block;}
 .path-hero{position:absolute;top:0;left:0;width:1728px;height:924px;z-index:3;pointer-events:none;overflow:visible;}
-.path-hero path{fill:none;stroke:var(--red);stroke-width:20;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;}
-.hero-card{position:absolute;left:200px;top:201px;width:465px;z-index:2;background:var(--white);padding:54px 52px 56px;box-shadow:0 14px 44px rgba(0,0,0,.13);}
-.hero-eyebrow{font-size:14px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);}
-.hero-dash{width:58px;height:3px;background:var(--red);margin:20px 0 26px;}
-.hero-title{font-size:54px;font-weight:400;line-height:1.16;color:#333538;letter-spacing:-.01em;}
-.hero-title strong{font-weight:700;color:var(--red);}
-.hero-sub{font-size:16px;line-height:1.55;color:var(--body);margin-top:22px;max-width:330px;}
-.hero-actions{display:flex;flex-direction:column;gap:22px;margin-top:34px;}
-.hero-actions .btn{width:100%;}
+.path-hero path{fill:none;stroke:var(--red);stroke-width:15;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;}
+.hero-card{position:absolute;left:200px;top:303px;width:465px;z-index:2;background:var(--white);padding:34px 47px 38px;box-shadow:0 14px 44px rgba(0,0,0,.13);}
+.kicker{font-size:18px;font-weight:600;letter-spacing:3.6px;text-transform:uppercase;color:var(--eyebrow);line-height:1;}
+.kicker-dash{width:58px;height:3px;background:var(--red);margin-top:16px;}
+.hero-title{font-size:60px;font-weight:300;line-height:63px;color:var(--ink);letter-spacing:-1.2px;margin-top:28px;}
+.hero-title strong{font-weight:600;color:var(--red);}
+.hero-sub{font-size:18px;font-weight:300;line-height:27px;margin-top:12px;max-width:350px;}
+.hero-actions{display:flex;flex-direction:column;gap:10px;margin-top:24px;}
+.hero-actions .btn{width:360px;max-width:100%;}
 
 /* ---------- Sections ---------- */
 section{position:relative;}
-.section-pad{padding:104px 0 96px;}
-.kicker{font-size:14px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--muted);}
-.kicker-dash{width:58px;height:3px;background:var(--red);margin:22px 0 0;}
-h1,h2,h3,h4{color:var(--ink);}
-.section-title{font-size:50px;font-weight:300;line-height:1.18;letter-spacing:-.005em;margin:34px 0 18px;max-width:860px;color:#252629;}
-.section-lede{max-width:700px;font-size:17px;line-height:1.6;}
-.link-arrow{display:inline-flex;align-items:center;gap:9px;font-size:13.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red);}
-.link-arrow .arr{transition:transform .25s ease;display:inline-block;font-size:16px;}
-.link-arrow:hover .arr{transform:translateX(5px);}
+.section-pad{padding:104px 0 0;}
+.section-title{font-size:60px;font-weight:300;line-height:60px;letter-spacing:-1.2px;margin:47px 0 0;max-width:900px;color:var(--ink);}
+.section-title-gap{margin-top:36px;}
+.section-lede{max-width:860px;font-size:18px;font-weight:300;line-height:27px;margin-top:34px;}
+/* text link with the 17x2 dash (the design's "arrow") */
+.link-dash{display:inline-flex;align-items:center;gap:9px;font-size:18px;font-weight:600;text-transform:uppercase;color:var(--red);line-height:27px;}
+.link-dash .dash{display:inline-block;width:17px;height:2px;background:var(--red);transition:width .25s ease;}
+.link-dash:hover .dash{width:26px;}
 
 /* ---------- What's new cards ---------- */
-.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:64px;position:relative;}
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:78px;position:relative;}
 .card{background:var(--white);border:1px solid var(--line);border-radius:0;display:flex;flex-direction:column;position:relative;z-index:2;}
 .card-media{height:264px;overflow:hidden;}
 .card-media img{width:100%;height:100%;object-fit:cover;}
-.card-body{padding:30px 32px 34px;display:flex;flex-direction:column;flex:1;}
-.card-body h3{font-size:20px;font-weight:600;line-height:1.4;margin-bottom:14px;}
-.card-body p{font-size:15px;line-height:1.65;flex:1;}
-.card-body .link-arrow{margin-top:24px;}
+.card-body{padding:32px 38px 34px;display:flex;flex-direction:column;flex:1;}
+.card-body h3{font-size:24px;font-weight:600;line-height:30px;margin-bottom:17px;}
+.card-body p{font-size:18px;font-weight:300;line-height:27px;flex:1;}
+.card-body .link-dash{margin-top:28px;}
 
 /* ---------- Program resources ---------- */
-.logo-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:22px;margin-top:60px;}
+.logo-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:22px;margin-top:78px;}
 .logo-tile{background:var(--white);border:1px solid var(--line);height:118px;display:flex;align-items:center;justify-content:center;padding:20px;transition:border-color .25s ease,box-shadow .25s ease;}
 .logo-tile img{max-height:72px;max-width:78%;object-fit:contain;}
 .logo-tile:hover{border-color:#C9C9C9;box-shadow:0 8px 24px rgba(0,0,0,.07);}
 
 /* ---------- Platform ---------- */
-.duo-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:64px;}
+.duo-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:78px;}
 .duo-item .duo-media{position:relative;height:348px;overflow:hidden;background:var(--panel);}
 .duo-item .duo-media img{width:100%;height:118%;object-fit:cover;}
-.duo-overlay{position:absolute;left:34px;bottom:28px;color:#fff;font-size:24px;font-weight:600;line-height:1.3;max-width:62%;text-shadow:0 2px 14px rgba(0,0,0,.55);z-index:2;}
+.duo-overlay{position:absolute;left:50px;bottom:34px;color:#fff;font-size:36px;font-weight:600;line-height:39.6px;letter-spacing:-0.72px;max-width:64%;text-shadow:0 2px 14px rgba(0,0,0,.55);z-index:2;}
 .duo-shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.45),rgba(0,0,0,0) 55%);}
-.duo-item h3{font-size:21px;font-weight:600;margin:26px 0 12px;}
-.duo-item p{font-size:15px;line-height:1.65;}
-.duo-item .link-arrow{margin-top:20px;}
+.duo-item h3{font-size:24px;font-weight:600;line-height:30px;margin:30px 0 12px;}
+.duo-item p{font-size:18px;font-weight:300;line-height:27px;}
+.duo-item .link-dash{margin-top:22px;}
 
 /* ---------- Accordions ---------- */
-.accordion{margin-top:78px;border-top:1px solid var(--line);}
+.accordion{margin-top:84px;border-top:1px solid var(--line);}
 .acc-item{border-bottom:1px solid var(--line);}
-.acc-head{width:100%;background:none;border:none;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:25px 4px;text-align:left;font-size:19px;font-weight:600;color:var(--ink);transition:color .2s ease;}
+.acc-head{width:100%;background:none;border:none;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:21px 4px;text-align:left;font-size:24px;font-weight:600;line-height:30px;color:var(--ink);transition:color .2s ease;}
 .acc-head:hover{color:var(--red);}
-.acc-icon{position:relative;width:18px;height:18px;flex:0 0 18px;}
-.acc-icon::before,.acc-icon::after{content:"";position:absolute;background:var(--red);transition:transform .3s ease;}
-.acc-icon::before{left:0;top:8px;width:18px;height:2px;}
-.acc-icon::after{left:8px;top:0;width:2px;height:18px;}
+.acc-icon{position:relative;width:24px;height:24px;flex:0 0 24px;}
+.acc-icon::before,.acc-icon::after{content:"";position:absolute;background:var(--red-icon);transition:transform .3s ease;}
+.acc-icon::before{left:0;top:11px;width:24px;height:2px;}
+.acc-icon::after{left:11px;top:0;width:2px;height:24px;}
 .acc-item.open .acc-icon::after{transform:scaleY(0);}
 .acc-panel{overflow:hidden;height:0;}
-.acc-panel-inner{padding:2px 4px 28px;}
+.acc-panel-inner{padding:4px 4px 30px;}
 .acc-panel-inner ul{list-style:none;display:flex;flex-direction:column;gap:12px;}
-.acc-panel-inner a{display:inline-flex;gap:10px;align-items:baseline;font-size:15px;color:var(--body);transition:color .2s ease;}
-.acc-panel-inner a::before{content:"→";color:var(--red);font-weight:700;}
+.acc-panel-inner a{display:inline-flex;gap:12px;align-items:center;font-size:18px;font-weight:300;color:var(--ink);transition:color .2s ease;}
+.acc-panel-inner a::before{content:"";width:17px;height:2px;background:var(--red);flex:0 0 17px;}
 .acc-panel-inner a:hover{color:var(--red);}
 
 /* ---------- Webinars ---------- */
-.fw-wrap{position:relative;margin-top:64px;}
+.fw-wrap{position:relative;margin-top:78px;}
 .featured-webinar{display:grid;grid-template-columns:380px 1fr;background:var(--white);border:1px solid var(--line);position:relative;z-index:2;}
-.fw-media{overflow:hidden;min-height:320px;}
+.fw-media{overflow:hidden;min-height:330px;}
 .fw-media img{width:100%;height:115%;object-fit:cover;}
-.fw-body{padding:42px 46px 38px;display:flex;flex-direction:column;}
-.fw-body h3{font-size:24px;font-weight:600;margin-bottom:16px;}
-.fw-body>p{font-size:15px;line-height:1.65;max-width:680px;}
-.fw-meta{margin-top:24px;display:flex;flex-direction:column;gap:8px;font-size:15px;}
-.fw-meta .row{display:flex;gap:14px;}
-.fw-meta dt{font-weight:700;color:var(--ink);min-width:50px;}
-.fw-foot{display:flex;justify-content:flex-end;margin-top:auto;padding-top:18px;}
-.session-table{margin-top:54px;border-top:1px solid #D8D8D8;}
-.st-head,.session-row{display:grid;grid-template-columns:1fr 280px 280px 46px;gap:24px;align-items:center;padding:19px 8px;}
-.st-head{font-size:13px;font-weight:700;letter-spacing:.05em;color:var(--ink);border-bottom:1px solid #D8D8D8;padding-top:24px;}
-.session-row{border-bottom:1px solid var(--line);font-size:15px;color:var(--body);transition:background .2s ease;}
+.fw-body{padding:35px 46px 32px;display:flex;flex-direction:column;}
+.fw-body h3{font-size:24px;font-weight:600;line-height:30px;margin-bottom:19px;}
+.fw-body>p{font-size:18px;font-weight:300;line-height:27px;max-width:760px;}
+.fw-meta{margin-top:20px;display:flex;flex-direction:column;gap:0;font-size:18px;font-weight:300;line-height:27px;}
+.fw-meta .row{display:flex;gap:24px;}
+.fw-meta dt{min-width:54px;}
+.fw-foot{display:flex;justify-content:flex-end;margin-top:auto;padding-top:14px;}
+.session-table{margin-top:60px;border-top:1px solid #D8D8D8;}
+.st-head,.session-row{display:grid;grid-template-columns:597px 358px 1fr 46px;gap:0;align-items:center;}
+.st-head{font-size:18px;font-weight:600;color:var(--ink);border-bottom:1px solid #D8D8D8;padding:22px 8px 12px;}
+.session-row{border-bottom:1px solid var(--line);font-size:18px;font-weight:300;color:var(--ink);padding:18px 8px;transition:background .2s ease;}
 .session-row:hover{background:#FAFAFA;}
-.session-row .st-title{font-weight:600;color:var(--ink);font-size:15.5px;}
-.session-row .st-go{justify-self:end;color:var(--red);font-weight:700;font-size:19px;transition:transform .25s ease;}
-.session-row:hover .st-go{transform:translateX(5px);}
+.session-row .st-go{justify-self:end;width:17px;height:2px;background:var(--red);transition:width .25s ease;}
+.session-row:hover .st-go{width:26px;}
 .session-row.is-hidden{display:none;}
-.load-more-wrap{display:flex;justify-content:center;margin-top:38px;}
-.btn-loadmore{height:42px;padding:0 28px;font-size:12.5px;}
-.sub-block{margin-top:96px;}
-.sub-block h3{font-size:23px;font-weight:700;margin-bottom:14px;}
-.sub-block .section-lede{font-size:15.5px;}
-.sub-block .session-table{margin-top:34px;}
+.load-more-wrap{display:flex;justify-content:center;margin-top:44px;}
+.sub-block{margin-top:100px;}
+.sub-block h3{font-size:24px;font-weight:600;line-height:30px;margin-bottom:12px;}
+.sub-block .section-lede{margin-top:0;}
+.sub-block .session-table{margin-top:40px;}
 
 /* ---------- Community ---------- */
 .community-wrap{position:relative;}
-.community-card{display:grid;grid-template-columns:1fr 1fr;background:var(--white);border:1px solid var(--line);position:relative;z-index:2;min-height:540px;}
+.community-card{display:grid;grid-template-columns:453px 1fr;background:var(--white);border:1px solid var(--line);position:relative;z-index:2;min-height:543px;}
 .community-media{overflow:hidden;}
 .community-media img{width:100%;height:115%;object-fit:cover;}
-.community-body{padding:74px 70px;display:flex;flex-direction:column;justify-content:center;}
-.community-body .section-title{font-size:40px;margin:30px 0 18px;}
-.community-body .section-lede{font-size:15.5px;}
-.community-body .link-arrow{margin-top:28px;}
+.community-body{padding:100px 75px 65px 0;display:flex;flex-direction:column;}
+.community-grid-gap{width:0;}
+.community-body-inner{padding-left:75px;}
+.community-body .section-title{margin-top:47px;max-width:880px;}
+.community-body .section-lede{margin-top:30px;}
+.community-body .link-dash{margin-top:32px;}
 
 /* ---------- Team ---------- */
-.tabs{display:flex;gap:38px;margin:52px 0 46px;border-bottom:1px solid var(--line);}
-.tab-btn{background:none;border:none;padding:0 2px 15px;font-size:17px;font-weight:700;color:#9A9A9A;border-bottom:3px solid transparent;margin-bottom:-1px;transition:color .2s ease,border-color .2s ease;}
-.tab-btn.is-active{color:var(--ink);border-bottom-color:var(--red);}
-.tab-btn:hover{color:var(--ink);}
+.tabs{display:flex;gap:42px;margin:60px 0 52px;border-bottom:1px solid var(--line);}
+.tab-btn{background:none;border:none;padding:0 2px 16px;font-size:24px;font-weight:600;line-height:30px;color:var(--ink);border-bottom:3px solid transparent;margin-bottom:-1px;transition:color .2s ease,border-color .2s ease;}
+.tab-btn.is-active{border-bottom-color:var(--red);}
+.tab-btn:hover{color:var(--red);}
 .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
-.person-card{border:1px solid var(--line);background:var(--white);padding:30px 28px;display:flex;gap:20px;align-items:flex-start;}
+.person-card{border:1px solid var(--line);background:var(--white);padding:32px 30px;display:flex;gap:22px;align-items:flex-start;}
 .person-card img{width:72px;height:72px;flex:0 0 72px;border-radius:50%;object-fit:cover;}
-.person-card h4{font-size:18px;font-weight:700;line-height:1.3;}
-.person-card .role{font-size:14px;color:var(--body);margin-top:4px;line-height:1.45;}
-.person-card .region{font-size:14px;color:var(--muted);margin-top:2px;}
-.person-card .link-arrow{margin-top:14px;font-size:12.5px;}
+.person-card h4{font-size:24px;font-weight:600;line-height:30px;}
+.person-card .role{font-size:18px;font-weight:300;line-height:27px;margin-top:2px;}
+.person-card .region{font-size:18px;font-weight:300;line-height:27px;}
+.person-card .link-dash{margin-top:10px;}
 
 /* ---------- Open webinars ---------- */
-.recording-grid{display:grid;grid-template-columns:repeat(2,minmax(0,420px));gap:28px;margin-top:60px;}
-.recording-card{border:1px solid var(--line);background:var(--white);padding:32px 30px;}
-.recording-card h3{font-size:20px;font-weight:600;line-height:1.35;margin-bottom:18px;}
-.recording-card dl{display:grid;grid-template-columns:84px 1fr;gap:7px 12px;font-size:14.5px;}
-.recording-card dt{font-weight:600;color:var(--muted);}
-.recording-card dd{color:var(--body);}
-.recording-card .link-arrow{margin-top:22px;}
+.recording-grid{display:grid;grid-template-columns:repeat(2,310px);gap:30px;margin-top:78px;}
+.recording-card{border:1px solid var(--line);background:var(--white);padding:35px 31px 32px;}
+.recording-card h3{font-size:24px;font-weight:600;line-height:30px;margin-bottom:14px;}
+.recording-card dl{display:grid;grid-template-columns:91px 1fr;gap:0 0;font-size:18px;font-weight:300;line-height:27px;}
+.recording-card .link-dash{margin-top:20px;}
 
 /* ---------- Activities ---------- */
-.activity-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:60px;position:relative;}
-.activity-card{border:1px solid var(--line);background:var(--white);padding:34px 32px;display:flex;flex-direction:column;position:relative;z-index:2;}
-.activity-card h3{font-size:20px;font-weight:600;margin-bottom:14px;}
-.activity-card p{font-size:15px;line-height:1.65;flex:1;}
-.activity-card .link-arrow{margin-top:26px;}
+.activity-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:78px;position:relative;}
+.activity-card{border:1px solid var(--line);background:var(--white);padding:35px 39px 30px;display:flex;flex-direction:column;position:relative;z-index:2;}
+.activity-card h3{font-size:24px;font-weight:600;line-height:30px;margin-bottom:21px;}
+.activity-card p{font-size:18px;font-weight:300;line-height:27px;flex:1;}
+.activity-card .link-dash{margin-top:26px;}
 
 /* ---------- Insights carousel ---------- */
-.ic-wrap{position:relative;margin-top:64px;}
-.insight-carousel{display:grid;grid-template-columns:380px 1fr;border:1px solid var(--line);background:var(--white);min-height:300px;position:relative;z-index:2;}
+.ic-wrap{position:relative;margin-top:78px;}
+.insight-carousel{display:grid;grid-template-columns:380px 1fr;border:1px solid var(--line);background:var(--white);min-height:342px;position:relative;z-index:2;}
 .ic-media{background:var(--panel);}
-.ic-body{padding:42px 48px 36px;display:flex;flex-direction:column;}
-.ic-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px;}
-.ic-date{font-size:15px;color:var(--body);}
+.ic-body{padding:35px 48px 32px;display:flex;flex-direction:column;}
+.ic-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:26px;}
+.ic-date{font-size:18px;font-weight:300;line-height:27px;}
 .ic-date::after{content:"";display:block;width:34px;height:3px;background:var(--red);margin-top:12px;}
-.ic-dots{display:flex;gap:8px;padding-top:6px;}
+.ic-dots{display:flex;gap:8px;padding-top:8px;}
 .ic-dots button{width:9px;height:9px;border-radius:50%;border:1px solid var(--red);background:transparent;padding:0;transition:background .2s;}
 .ic-dots button.is-active{background:var(--red);}
-.ic-body h3{font-size:23px;font-weight:600;line-height:1.4;max-width:620px;}
-.ic-body p{margin-top:12px;font-size:15px;line-height:1.6;max-width:620px;}
-.ic-foot{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:28px;}
+.ic-body h3{font-size:24px;font-weight:600;line-height:30px;max-width:660px;}
+.ic-body p{margin-top:14px;font-size:18px;font-weight:300;line-height:27px;max-width:660px;}
+.ic-foot{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:26px;}
 .ic-arrows{display:flex;gap:14px;}
 .ic-arrows button{width:48px;height:48px;border-radius:50%;border:1px solid #D9D9D9;background:var(--white);color:var(--red);font-size:18px;transition:border-color .2s,background .2s,color .2s;}
 .ic-arrows button:hover{border-color:var(--red);background:var(--red);color:#fff;}
 
 /* ---------- Case study ---------- */
-.case-grid{display:grid;grid-template-columns:1fr 1.18fr;gap:70px;align-items:center;}
-.case-grid .section-title{font-size:44px;}
+.case-grid{display:grid;grid-template-columns:1fr 472px;gap:84px;align-items:center;}
 .case-media{position:relative;overflow:hidden;min-height:380px;}
 .case-media img{position:absolute;inset:0;width:100%;height:115%;object-fit:cover;}
 .case-media .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;cursor:pointer;}
@@ -240,32 +236,35 @@ h1,h2,h3,h4{color:var(--ink);}
 .play-btn::after{content:"";border-style:solid;border-width:9px 0 9px 15px;border-color:transparent transparent transparent #fff;margin-left:4px;}
 
 /* ---------- Contact ---------- */
-.contact-grid{display:grid;grid-template-columns:340px 1fr;gap:90px;}
-.contact-aside h2{font-size:42px;font-weight:300;line-height:1.22;margin:32px 0 22px;color:#252629;}
-.contact-aside p{font-size:15px;line-height:1.65;}
-.contact-tagline{margin-top:26px;font-style:italic;font-weight:600;color:var(--red);font-size:15px;line-height:1.55;}
+#contact .section-pad{padding-bottom:0;}
+.contact-grid{display:grid;grid-template-columns:400px 1fr;gap:53px;}
+.contact-aside h2{font-size:60px;font-weight:300;line-height:60px;letter-spacing:-1.2px;margin:47px 0 26px;color:var(--ink);}
+.contact-aside p{font-size:18px;font-weight:300;line-height:27px;}
+.contact-tagline{margin-top:28px;font-style:italic;font-weight:600;color:var(--red);font-size:18px;line-height:27px;}
 .contact-form{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
-.contact-form input[type=text],.contact-form input[type=email],.contact-form textarea{width:100%;border:1px solid #D9D9D9;border-radius:0;background:var(--white);padding:15px 16px;font-family:inherit;font-size:14.5px;color:var(--ink);transition:border-color .2s ease;appearance:none;}
+.contact-form input[type=text],.contact-form input[type=email],.contact-form textarea{width:100%;border:1px solid #D9D9D9;border-radius:0;background:var(--white);padding:13px 15px;font-family:inherit;font-size:18px;font-weight:300;color:var(--ink);transition:border-color .2s ease;appearance:none;}
 .contact-form input:focus,.contact-form textarea:focus{border-color:var(--red);outline:none;}
-.contact-form ::placeholder{color:#9B9B9B;}
-.form-radios{grid-column:1/-1;display:flex;gap:36px;padding:2px 2px;}
-.radio{display:flex;align-items:center;gap:10px;font-size:14px;cursor:pointer;color:var(--body);}
-.radio input{appearance:none;width:16px;height:16px;border-radius:50%;border:1px solid #B5B5B5;background:#fff;display:grid;place-content:center;cursor:pointer;}
-.radio input::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--red);transform:scale(0);transition:transform .15s;}
+.contact-form ::placeholder{color:#757575;font-weight:300;}
+.form-radios{grid-column:1/-1;display:flex;gap:40px;padding:4px 2px;}
+.radio{display:flex;align-items:center;gap:12px;font-size:18px;font-weight:300;cursor:pointer;color:var(--ink);}
+.radio input{appearance:none;width:17px;height:17px;border-radius:50%;border:1px solid #B5B5B5;background:#fff;display:grid;place-content:center;cursor:pointer;}
+.radio input::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--red);transform:scale(0);transition:transform .15s;}
 .radio input:checked{border-color:var(--red);}
 .radio input:checked::before{transform:scale(1);}
 .form-message{grid-column:1/-1;}
-.form-message textarea{min-height:160px;resize:vertical;}
-.form-submit{grid-column:1/-1;display:flex;justify-content:flex-end;margin-top:-6px;}
-.submit-link{background:none;border:none;display:inline-flex;align-items:center;gap:9px;font-size:13.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red);}
-.submit-link:hover .arr{transform:translateX(5px);}
-.submit-link .arr{transition:transform .25s ease;font-size:16px;}
-.form-success{grid-column:1/-1;display:none;align-items:center;gap:14px;border:1px solid var(--red);padding:16px 20px;color:var(--ink);font-weight:600;font-size:15px;}
+.form-message textarea{min-height:120px;resize:vertical;}
+.form-submit{grid-column:1/-1;display:flex;justify-content:flex-end;}
+.submit-link{background:none;border:none;display:inline-flex;align-items:center;gap:9px;font-size:18px;font-weight:600;text-transform:uppercase;color:var(--red);line-height:27px;}
+.submit-link .dash{display:inline-block;width:17px;height:2px;background:var(--red);transition:width .25s ease;}
+.submit-link:hover .dash{width:26px;}
+.form-success{grid-column:1/-1;display:none;align-items:center;gap:14px;border:1px solid var(--red);padding:16px 20px;color:var(--ink);font-weight:600;font-size:16px;}
 .form-success .cube{width:13px;height:13px;background:var(--red);flex:0 0 13px;}
 
 /* ---------- Footer ---------- */
-.site-footer{border-top:1px solid var(--line);padding:34px 0 40px;margin-top:20px;}
-.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:13.5px;color:var(--body);}
+.site-footer{border-top:1px solid var(--line);padding:38px 0 44px;margin-top:104px;}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:18px;color:var(--ink);}
+.footer-inner .f-links{font-weight:400;}
+.footer-inner .f-copy{font-weight:300;}
 .footer-inner a{text-decoration:underline;text-underline-offset:3px;}
 .footer-inner a:hover{color:var(--red);}
 
@@ -276,41 +275,50 @@ h1,h2,h3,h4{color:var(--ink);}
 /* ---------- Responsive ---------- */
 @media (max-width:1200px){
   .path-svg{display:none;}
+  .st-head,.session-row{grid-template-columns:1fr 230px 250px 40px;}
 }
 @media (max-width:1080px){
-  .st-head,.session-row{grid-template-columns:1fr 210px 230px 36px;gap:16px;}
   .logo-grid{grid-template-columns:repeat(3,1fr);}
-  .section-title{font-size:42px;}
+  .section-title,.contact-aside h2{font-size:46px;line-height:1.1;}
 }
 @media (max-width:920px){
-  body{padding-top:78px;}
+  body{padding-top:78px;font-size:16px;}
   .header-inner{height:78px;}
-  .path-svg,.path-hero{display:none;}
+  .path-hero{display:none;}
   .main-nav{position:fixed;top:78px;right:0;left:0;background:#fff;box-shadow:0 18px 30px rgba(0,0,0,.1);display:none;}
   .main-nav.open{display:block;}
   .main-nav ul{flex-direction:column;align-items:flex-start;padding:18px 24px;gap:2px;}
   .main-nav li+li::before{content:none;}
   .nav-toggle{display:block;margin-left:auto;}
   .bts-tag{display:none;}
-  /* hero falls back to natural flow */
+  .btn{font-size:15px;}
   .hero{height:auto;background:none;}
   .hero-stage{position:static;width:auto;height:auto;transform:none!important;}
   .hero-canvas{position:static;width:100%;height:auto;aspect-ratio:1728/924;}
-  .hero-card{position:static;width:auto;margin:-72px 20px 0;padding:40px 30px;}
-  .hero-title{font-size:38px;}
+  .hero-card{position:static;width:auto;margin:-72px 20px 0;padding:36px 28px;}
+  .hero-title{font-size:38px;line-height:1.1;}
+  .kicker{font-size:14px;letter-spacing:2.8px;}
+  .section-title,.contact-aside h2{font-size:34px;line-height:1.15;letter-spacing:-0.5px;}
+  .section-lede,.card-body p,.duo-item p,.fw-body>p,.activity-card p,.ic-body p,.contact-aside p{font-size:16px;line-height:1.55;}
+  .card-body h3,.duo-item h3,.acc-head,.fw-body h3,.tab-btn,.person-card h4,.recording-card h3,.activity-card h3,.ic-body h3,.sub-block h3{font-size:19px;line-height:1.35;}
+  .link-dash,.submit-link{font-size:15px;}
+  .duo-overlay{font-size:24px;line-height:1.25;}
   .card-grid,.team-grid,.activity-grid,.duo-grid{grid-template-columns:1fr;}
-  .featured-webinar,.insight-carousel,.community-card,.case-grid,.contact-grid,.recording-grid{grid-template-columns:1fr;}
+  .featured-webinar,.insight-carousel,.community-card,.case-grid,.contact-grid{grid-template-columns:1fr;}
+  .recording-grid{grid-template-columns:1fr;max-width:420px;}
   .fw-media{min-height:230px;}
   .ic-media{min-height:160px;}
   .st-head{display:none;}
-  .session-row{grid-template-columns:1fr;gap:6px;}
+  .session-row{grid-template-columns:1fr;gap:6px;padding:16px 8px;}
   .session-row .st-go{display:none;}
-  .community-body{padding:42px 28px;}
+  .session-row,.recording-card dl{font-size:15px;}
+  .community-body{padding:38px 0 38px;}
+  .community-body-inner{padding-left:28px;padding-right:28px;}
   .case-media{min-height:260px;}
-  .section-title{font-size:34px;}
   .contact-grid{gap:48px;}
   .contact-form{grid-template-columns:1fr;}
-  .footer-inner{flex-direction:column;align-items:flex-start;}
+  .footer-inner{flex-direction:column;align-items:flex-start;font-size:14px;}
+  .person-card .role,.person-card .region{font-size:15px;line-height:1.45;}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto;}
@@ -349,22 +357,28 @@ h1,h2,h3,h4{color:var(--ink);}
 <section class="hero" id="top">
   <div class="hero-stage" id="heroStage">
     <svg class="hero-canvas" viewBox="0 0 1728 924" width="1728" height="924" aria-label="A teacher sitting on the classroom floor, reading together with two young children" role="img">
-      <image href="assets/img/hero.jpg" x="0" y="0" width="1728" height="924" preserveAspectRatio="xMidYMid slice"/>
+      <defs>
+        <linearGradient id="fadeWhite" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#FFFFFF" stop-opacity="0"/>
+          <stop offset="1" stop-color="#FFFFFF" stop-opacity="1"/>
+        </linearGradient>
+      </defs>
+      <image href="assets/img/hero.jpg" x="0" y="0" width="1728" height="924" preserveAspectRatio="xMidYMax slice"/>
+      <rect x="0" y="779" width="1728" height="145" fill="url(#fadeWhite)"/>
     </svg>
-    <!-- The Cubic Path: frames the message card, then travels beside the figures (passing behind them, as in the KV). -->
+    <!-- The Cubic Path: one continuous line framing the card, weaving beside the figures -->
     <svg class="path-hero" viewBox="0 0 1728 924" aria-hidden="true" overflow="visible">
-      <path class="hp" d="M -10 191 H 655 V 588 H 700"/>
-      <path class="hp" d="M 806 588 H 904 V 387 H 1030"/>
-      <path class="hp" d="M 1366 387 H 1738"/>
+      <path class="hp" d="M -2 191 H 655 V 645 H 904 V 387 H 1032"/>
+      <path class="hp" d="M 1368 387 H 1740"/>
     </svg>
     <div class="hero-card" id="heroCard">
-      <p class="hero-eyebrow">Back to School 2026</p>
-      <div class="hero-dash"></div>
+      <p class="kicker">Back to School 2026</p>
+      <div class="kicker-dash"></div>
       <h1 class="hero-title"><strong>Beside</strong> every<br>path to growth</h1>
       <p class="hero-sub">Your programs, your team, your platform. All ready before day one.</p>
       <div class="hero-actions">
-        <a href="#program" class="btn btn-solid">Find Your Program</a>
-        <a href="#whats-new" class="btn btn-outline">Explore What's Available</a>
+        <a href="#program" class="btn btn-solid">Find your&nbsp;program</a>
+        <a href="#whats-new" class="btn btn-outline">Explore what's available</a>
       </div>
     </div>
   </div>
@@ -378,7 +392,6 @@ h1,h2,h3,h4{color:var(--ink);}
     <h2 class="section-title" data-reveal>Three things that change the start<br>of your year</h2>
     <p class="section-lede" data-reveal>Your programs keep getting better. Here's what's changed since last year.</p>
     <div class="card-grid">
-      <!-- path passes behind the cards, then drops behind the third card and exits right -->
       <svg class="path-svg path-draw" style="left:0;top:0;width:100%;height:100%;" viewBox="0 0 1328 474" preserveAspectRatio="none" aria-hidden="true" overflow="visible">
         <path d="M -3000 310 H 1167 V 641 H 4000" vector-effect="non-scaling-stroke"/>
       </svg>
@@ -387,15 +400,15 @@ h1,h2,h3,h4{color:var(--ink);}
         <div class="card-body">
           <h3>Open Learning: New Teacher Assessment Preview</h3>
           <p>Quickly view the full text of each question along with its aligned standards and Depth of Knowledge (DOK) level, so you can evaluate content rigor at a glance.</p>
-          <a href="#contact" class="link-arrow">Learn More <span class="arr">→</span></a>
+          <a href="#contact" class="link-dash">Learn More <span class="dash"></span></a>
         </div>
       </article>
       <article class="card" data-reveal>
         <div class="card-media"><img src="assets/img/whatsnew-kahoot.jpg" alt="Kahoot!" loading="lazy"></div>
         <div class="card-body">
-          <h3>McGraw Hill + Kahoot! Integration</h3>
+          <h3>McGraw&#8239;Hill + Kahoot! Integration</h3>
           <p>Now you can seamlessly bring Kahoot! activities into science and social studies lessons and create interactive moments students look forward to.</p>
-          <a href="#contact" class="link-arrow">Learn More <span class="arr">→</span></a>
+          <a href="#contact" class="link-dash">Learn More <span class="dash"></span></a>
         </div>
       </article>
       <article class="card" data-reveal>
@@ -403,7 +416,7 @@ h1,h2,h3,h4{color:var(--ink);}
         <div class="card-body">
           <h3>Support for Individual Learning Needs</h3>
           <p>Teachers can now adjust access to tools like text-to-speech and calculators for specific students without changing settings for the whole class.</p>
-          <a href="#contact" class="link-arrow">Learn More <span class="arr">→</span></a>
+          <a href="#contact" class="link-dash">Learn More <span class="dash"></span></a>
         </div>
       </article>
     </div>
@@ -445,11 +458,11 @@ h1,h2,h3,h4{color:var(--ink);}
         <div class="duo-media">
           <img src="assets/img/platform-video.jpg" alt="Open Learning Platform and ConnectED video tutorial" loading="lazy" data-parallax>
           <div class="duo-shade"></div>
-          <p class="duo-overlay">Open Learning Platform &amp; ConnectED</p>
+          <p class="duo-overlay">Open Learning Platform &amp; ConnectEd</p>
         </div>
         <h3>Overview and Rostering Tutorial</h3>
         <p>Get up and running with your McGraw Hill digital platform. Learn how to log in, navigate key tools, and roster your students in OLP or ConnectED.</p>
-        <a href="#contact" class="link-arrow">Learn More <span class="arr">→</span></a>
+        <a href="#contact" class="link-dash">Learn More <span class="dash"></span></a>
       </div>
       <div class="duo-item" data-reveal>
         <div class="duo-media">
@@ -457,7 +470,7 @@ h1,h2,h3,h4{color:var(--ink);}
         </div>
         <h3>Admin Guide to Direct Login and Manual Rostering</h3>
         <p>Set up accounts, manually roster students, and manage login access — everything you need to get your school up and running.</p>
-        <a href="#contact" class="link-arrow">Learn More <span class="arr">→</span></a>
+        <a href="#contact" class="link-dash">Learn More <span class="dash"></span></a>
       </div>
     </div>
 
@@ -521,7 +534,6 @@ h1,h2,h3,h4{color:var(--ink);}
     <p class="section-lede" data-reveal>Free webinars on every McGraw Hill program, led by our academic specialists and curriculum experts. Join live or catch the recording.</p>
 
     <div class="fw-wrap">
-      <!-- path enters from the right, drops into the featured card, exits to the left edge -->
       <svg class="path-svg path-draw" style="left:0;top:0;width:100px;height:100px;" viewBox="0 0 100 100" aria-hidden="true" overflow="visible">
         <path d="M 4000 -345 H 1124 V 125 H -3000"/>
       </svg>
@@ -537,7 +549,7 @@ h1,h2,h3,h4{color:var(--ink);}
             <div class="row"><dt>Time:</dt><dd>4pm Dubai &nbsp;|&nbsp; 8pm Singapore &nbsp;|&nbsp; 12pm London</dd></div>
           </div>
           <div class="fw-foot">
-            <a href="#contact" class="link-arrow">Register Now <span class="arr">→</span></a>
+            <a href="#contact" class="link-dash">Register Now <span class="dash"></span></a>
           </div>
         </div>
       </article>
@@ -545,21 +557,21 @@ h1,h2,h3,h4{color:var(--ink);}
 
     <div class="session-table" data-reveal>
       <div class="st-head"><span>Title</span><span>Date</span><span>Time</span><span></span></div>
-      <a href="#contact" class="session-row"><span class="st-title">AI or Your Students? You Don't Have to Choose</span><span>Wednesday &nbsp;|&nbsp; 03 June 2026</span><span>4pm GST &nbsp;|&nbsp; 8pm SGT &nbsp;|&nbsp; 1pm BST</span><span class="st-go">→</span></a>
-      <a href="#contact" class="session-row"><span class="st-title">AI or Your Students? You Don't Have...</span><span>Wednesday &nbsp;|&nbsp; 03 June 2026</span><span>4pm GST &nbsp;|&nbsp; 8pm SGT &nbsp;|&nbsp; 1pm BST</span><span class="st-go">→</span></a>
-      <a href="#contact" class="session-row"><span class="st-title">AI or Your Students? You Don't Have...</span><span>Wednesday &nbsp;|&nbsp; 03 June 2026</span><span>4pm GST &nbsp;|&nbsp; 8pm SGT &nbsp;|&nbsp; 1pm BST</span><span class="st-go">→</span></a>
-      <a href="#contact" class="session-row"><span class="st-title">AI or Your Students? You Don't Have...</span><span>Wednesday &nbsp;|&nbsp; 03 June 2026</span><span>4pm GST &nbsp;|&nbsp; 8pm SGT &nbsp;|&nbsp; 1pm BST</span><span class="st-go">→</span></a>
-      <a href="#contact" class="session-row"><span class="st-title">AI or Your Students? You Don't Have...</span><span>Wednesday &nbsp;|&nbsp; 03 June 2026</span><span>4pm GST &nbsp;|&nbsp; 8pm SGT &nbsp;|&nbsp; 1pm BST</span><span class="st-go">→</span></a>
-      <a href="#contact" class="session-row"><span class="st-title">AI or Your Students? You Don't Have...</span><span>Wednesday &nbsp;|&nbsp; 03 June 2026</span><span>4pm GST &nbsp;|&nbsp; 8pm SGT &nbsp;|&nbsp; 1pm BST</span><span class="st-go">→</span></a>
-      <a href="#contact" class="session-row"><span class="st-title">AI or Your Students? You Don't Have...</span><span>Wednesday &nbsp;|&nbsp; 03 June 2026</span><span>4pm GST &nbsp;|&nbsp; 8pm SGT &nbsp;|&nbsp; 1pm BST</span><span class="st-go">→</span></a>
-      <a href="#contact" class="session-row"><span class="st-title">AI or Your Students? You Don't Have...</span><span>Wednesday &nbsp;|&nbsp; 03 June 2026</span><span>4pm GST &nbsp;|&nbsp; 8pm SGT &nbsp;|&nbsp; 1pm BST</span><span class="st-go">→</span></a>
-      <a href="#contact" class="session-row is-hidden"><span class="st-title">AI or Your Students? You Don't Have...</span><span>Wednesday &nbsp;|&nbsp; 03 June 2026</span><span>4pm GST &nbsp;|&nbsp; 8pm SGT &nbsp;|&nbsp; 1pm BST</span><span class="st-go">→</span></a>
-      <a href="#contact" class="session-row is-hidden"><span class="st-title">AI or Your Students? You Don't Have...</span><span>Wednesday &nbsp;|&nbsp; 03 June 2026</span><span>4pm GST &nbsp;|&nbsp; 8pm SGT &nbsp;|&nbsp; 1pm BST</span><span class="st-go">→</span></a>
-      <a href="#contact" class="session-row is-hidden"><span class="st-title">AI or Your Students? You Don't Have...</span><span>Wednesday &nbsp;|&nbsp; 03 June 2026</span><span>4pm GST &nbsp;|&nbsp; 8pm SGT &nbsp;|&nbsp; 1pm BST</span><span class="st-go">→</span></a>
-      <a href="#contact" class="session-row is-hidden"><span class="st-title">AI or Your Students? You Don't Have...</span><span>Wednesday &nbsp;|&nbsp; 03 June 2026</span><span>4pm GST &nbsp;|&nbsp; 8pm SGT &nbsp;|&nbsp; 1pm BST</span><span class="st-go">→</span></a>
+      <a href="#contact" class="session-row"><span class="st-title">AI or Your Students? You Don't Have to Choose</span><span>Wednesday &nbsp;|&nbsp; 03 June 2026</span><span>4pm GST &nbsp;|&nbsp; 8pm SGT &nbsp;|&nbsp; 1pm BST</span><span class="st-go"></span></a>
+      <a href="#contact" class="session-row"><span class="st-title">AI or Your Students? You Don't Have...</span><span>Wednesday &nbsp;|&nbsp; 03 June 2026</span><span>4pm GST &nbsp;|&nbsp; 8pm SGT &nbsp;|&nbsp; 1pm BST</span><span class="st-go"></span></a>
+      <a href="#contact" class="session-row"><span class="st-title">AI or Your Students? You Don't Have...</span><span>Wednesday &nbsp;|&nbsp; 03 June 2026</span><span>4pm GST &nbsp;|&nbsp; 8pm SGT &nbsp;|&nbsp; 1pm BST</span><span class="st-go"></span></a>
+      <a href="#contact" class="session-row"><span class="st-title">AI or Your Students? You Don't Have...</span><span>Wednesday &nbsp;|&nbsp; 03 June 2026</span><span>4pm GST &nbsp;|&nbsp; 8pm SGT &nbsp;|&nbsp; 1pm BST</span><span class="st-go"></span></a>
+      <a href="#contact" class="session-row"><span class="st-title">AI or Your Students? You Don't Have...</span><span>Wednesday &nbsp;|&nbsp; 03 June 2026</span><span>4pm GST &nbsp;|&nbsp; 8pm SGT &nbsp;|&nbsp; 1pm BST</span><span class="st-go"></span></a>
+      <a href="#contact" class="session-row"><span class="st-title">AI or Your Students? You Don't Have...</span><span>Wednesday &nbsp;|&nbsp; 03 June 2026</span><span>4pm GST &nbsp;|&nbsp; 8pm SGT &nbsp;|&nbsp; 1pm BST</span><span class="st-go"></span></a>
+      <a href="#contact" class="session-row"><span class="st-title">AI or Your Students? You Don't Have...</span><span>Wednesday &nbsp;|&nbsp; 03 June 2026</span><span>4pm GST &nbsp;|&nbsp; 8pm SGT &nbsp;|&nbsp; 1pm BST</span><span class="st-go"></span></a>
+      <a href="#contact" class="session-row"><span class="st-title">AI or Your Students? You Don't Have...</span><span>Wednesday &nbsp;|&nbsp; 03 June 2026</span><span>4pm GST &nbsp;|&nbsp; 8pm SGT &nbsp;|&nbsp; 1pm BST</span><span class="st-go"></span></a>
+      <a href="#contact" class="session-row is-hidden"><span class="st-title">AI or Your Students? You Don't Have...</span><span>Wednesday &nbsp;|&nbsp; 03 June 2026</span><span>4pm GST &nbsp;|&nbsp; 8pm SGT &nbsp;|&nbsp; 1pm BST</span><span class="st-go"></span></a>
+      <a href="#contact" class="session-row is-hidden"><span class="st-title">AI or Your Students? You Don't Have...</span><span>Wednesday &nbsp;|&nbsp; 03 June 2026</span><span>4pm GST &nbsp;|&nbsp; 8pm SGT &nbsp;|&nbsp; 1pm BST</span><span class="st-go"></span></a>
+      <a href="#contact" class="session-row is-hidden"><span class="st-title">AI or Your Students? You Don't Have...</span><span>Wednesday &nbsp;|&nbsp; 03 June 2026</span><span>4pm GST &nbsp;|&nbsp; 8pm SGT &nbsp;|&nbsp; 1pm BST</span><span class="st-go"></span></a>
+      <a href="#contact" class="session-row is-hidden"><span class="st-title">AI or Your Students? You Don't Have...</span><span>Wednesday &nbsp;|&nbsp; 03 June 2026</span><span>4pm GST &nbsp;|&nbsp; 8pm SGT &nbsp;|&nbsp; 1pm BST</span><span class="st-go"></span></a>
     </div>
     <div class="load-more-wrap" data-reveal>
-      <button class="btn btn-outline btn-loadmore" id="loadMore">Load More</button>
+      <button class="btn btn-outline" id="loadMore">Load More</button>
     </div>
 
     <div class="sub-block" data-reveal>
@@ -567,11 +579,11 @@ h1,h2,h3,h4{color:var(--ink);}
       <p class="section-lede">For school coordinators and administrators. Platform setup, rostering, and student management, walked through with you by the McGraw Hill Customer Success team. One hour. One log-in.<br>Ready to go.</p>
       <div class="session-table">
         <div class="st-head"><span>Speakers</span><span>Date</span><span>Time</span><span></span></div>
-        <a href="#contact" class="session-row"><span class="st-title">AI or Your Students? You Don't Have to Choose</span><span>Wednesday &nbsp;|&nbsp; 03 June 2026</span><span>4pm GST &nbsp;|&nbsp; 8pm SGT &nbsp;|&nbsp; 1pm BST</span><span class="st-go">→</span></a>
-        <a href="#contact" class="session-row"><span class="st-title">AI or Your Students? You Don't Have...</span><span>Wednesday &nbsp;|&nbsp; 03 June 2026</span><span>4pm GST &nbsp;|&nbsp; 8pm SGT &nbsp;|&nbsp; 1pm BST</span><span class="st-go">→</span></a>
-        <a href="#contact" class="session-row"><span class="st-title">AI or Your Students? You Don't Have...</span><span>Wednesday &nbsp;|&nbsp; 03 June 2026</span><span>4pm GST &nbsp;|&nbsp; 8pm SGT &nbsp;|&nbsp; 1pm BST</span><span class="st-go">→</span></a>
-        <a href="#contact" class="session-row"><span class="st-title">AI or Your Students? You Don't Have...</span><span>Wednesday &nbsp;|&nbsp; 03 June 2026</span><span>4pm GST &nbsp;|&nbsp; 8pm SGT &nbsp;|&nbsp; 1pm BST</span><span class="st-go">→</span></a>
-        <a href="#contact" class="session-row"><span class="st-title">AI or Your Students? You Don't Have...</span><span>Wednesday &nbsp;|&nbsp; 03 June 2026</span><span>4pm GST &nbsp;|&nbsp; 8pm SGT &nbsp;|&nbsp; 1pm BST</span><span class="st-go">→</span></a>
+        <a href="#contact" class="session-row"><span class="st-title">AI or Your Students? You Don't Have to Choose</span><span>Wednesday &nbsp;|&nbsp; 03 June 2026</span><span>4pm GST &nbsp;|&nbsp; 8pm SGT &nbsp;|&nbsp; 1pm BST</span><span class="st-go"></span></a>
+        <a href="#contact" class="session-row"><span class="st-title">AI or Your Students? You Don't Have...</span><span>Wednesday &nbsp;|&nbsp; 03 June 2026</span><span>4pm GST &nbsp;|&nbsp; 8pm SGT &nbsp;|&nbsp; 1pm BST</span><span class="st-go"></span></a>
+        <a href="#contact" class="session-row"><span class="st-title">AI or Your Students? You Don't Have...</span><span>Wednesday &nbsp;|&nbsp; 03 June 2026</span><span>4pm GST &nbsp;|&nbsp; 8pm SGT &nbsp;|&nbsp; 1pm BST</span><span class="st-go"></span></a>
+        <a href="#contact" class="session-row"><span class="st-title">AI or Your Students? You Don't Have...</span><span>Wednesday &nbsp;|&nbsp; 03 June 2026</span><span>4pm GST &nbsp;|&nbsp; 8pm SGT &nbsp;|&nbsp; 1pm BST</span><span class="st-go"></span></a>
+        <a href="#contact" class="session-row"><span class="st-title">AI or Your Students? You Don't Have...</span><span>Wednesday &nbsp;|&nbsp; 03 June 2026</span><span>4pm GST &nbsp;|&nbsp; 8pm SGT &nbsp;|&nbsp; 1pm BST</span><span class="st-go"></span></a>
       </div>
     </div>
   </div>
@@ -580,7 +592,6 @@ h1,h2,h3,h4{color:var(--ink);}
 <!-- ================= COMMUNITY ================= -->
 <section class="section-pad" id="community">
   <div class="container community-wrap">
-    <!-- path enters from the right edge behind the card, drops out of its base and exits right -->
     <svg class="path-svg path-draw" style="left:0;top:0;width:100px;height:100px;" viewBox="0 0 100 100" aria-hidden="true" overflow="visible">
       <path d="M 4000 356 H 1175 V 833 H 4000"/>
     </svg>
@@ -589,10 +600,13 @@ h1,h2,h3,h4{color:var(--ink);}
         <img src="assets/img/community.jpg" alt="Educators meeting and talking at a community event" loading="lazy" data-parallax>
       </div>
       <div class="community-body">
-        <p class="kicker">McGraw Hill Educator Community</p>
-        <h2 class="section-title">Teaching is easier when you're not doing it alone</h2>
-        <p class="section-lede">Connect with educators around the world using the same programs. Ask questions, share what works, and pick up ideas you can use in your classroom tomorrow. Free to join, open to all McGraw Hill schools.</p>
-        <p><a href="#contact" class="link-arrow">Join the Community <span class="arr">→</span></a></p>
+        <div class="community-body-inner">
+          <p class="kicker">McGraw Hill Educator Community</p>
+          <div class="kicker-dash"></div>
+          <h2 class="section-title">Teaching is easier when you're not doing it alone</h2>
+          <p class="section-lede">Connect with educators around the world using the same programs. Ask questions, share what works, and pick up ideas you can use in your classroom tomorrow. Free to join, open to all McGraw Hill schools.</p>
+          <p><a href="#contact" class="link-dash">Join the Community <span class="dash"></span></a></p>
+        </div>
       </div>
     </div>
   </div>
@@ -615,32 +629,32 @@ h1,h2,h3,h4{color:var(--ink);}
       <article class="person-card" data-reveal>
         <img src="assets/img/avatar-ramy.jpg" alt="Ramy Azab">
         <div><h4>Ramy Azab</h4><p class="role">Int'l Customer Success Manager</p><p class="region">K-12 &nbsp;|&nbsp; EMEA</p>
-        <a href="mailto:hammad.khilji@mheducation.com" class="link-arrow">Email Me <span class="arr">→</span></a></div>
+        <a href="mailto:hammad.khilji@mheducation.com" class="link-dash">Email Me <span class="dash"></span></a></div>
       </article>
       <article class="person-card" data-reveal>
         <img src="assets/img/avatar-kaofang.jpg" alt="Kaofang Ratanapapat">
         <div><h4>Kaofang Ratanapapat</h4><p class="role">Digital Learning Consultant</p><p class="region">ASIA</p>
-        <a href="mailto:hammad.khilji@mheducation.com" class="link-arrow">Email Me <span class="arr">→</span></a></div>
+        <a href="mailto:hammad.khilji@mheducation.com" class="link-dash">Email Me <span class="dash"></span></a></div>
       </article>
       <article class="person-card" data-reveal>
         <img src="assets/img/avatar-jamie.jpg" alt="Jamie Rufe">
         <div><h4>Jamie Rufe</h4><p class="role">Digital Learning Consultant</p><p class="region">ASIA</p>
-        <a href="mailto:hammad.khilji@mheducation.com" class="link-arrow">Email Me <span class="arr">→</span></a></div>
+        <a href="mailto:hammad.khilji@mheducation.com" class="link-dash">Email Me <span class="dash"></span></a></div>
       </article>
       <article class="person-card" data-reveal>
         <img src="assets/img/avatar-daniel.jpg" alt="Daniel Saad">
         <div><h4>Daniel Saad</h4><p class="role">Customer Success Consultant</p><p class="region">MEA &nbsp;|&nbsp; EMEA</p>
-        <a href="mailto:hammad.khilji@mheducation.com" class="link-arrow">Email Me <span class="arr">→</span></a></div>
+        <a href="mailto:hammad.khilji@mheducation.com" class="link-dash">Email Me <span class="dash"></span></a></div>
       </article>
       <article class="person-card" data-reveal>
         <img src="assets/img/avatar-rawan.jpg" alt="Rawan Alatassi">
         <div><h4>Rawan Alatassi</h4><p class="role">Digital Integrations Consultant</p><p class="region">MEA</p>
-        <a href="mailto:hammad.khilji@mheducation.com" class="link-arrow">Email Me <span class="arr">→</span></a></div>
+        <a href="mailto:hammad.khilji@mheducation.com" class="link-dash">Email Me <span class="dash"></span></a></div>
       </article>
       <article class="person-card" data-reveal>
         <img src="assets/img/avatar-mohd.jpg" alt="Mohd Alshammari">
         <div><h4>Mohd Alshammari</h4><p class="role">Customer Success Consultant</p><p class="region">MEA</p>
-        <a href="mailto:hammad.khilji@mheducation.com" class="link-arrow">Email Me <span class="arr">→</span></a></div>
+        <a href="mailto:hammad.khilji@mheducation.com" class="link-dash">Email Me <span class="dash"></span></a></div>
       </article>
     </div>
 
@@ -648,17 +662,17 @@ h1,h2,h3,h4{color:var(--ink);}
       <article class="person-card">
         <img src="assets/img/avatar-kaofang.jpg" alt="Kaofang Ratanapapat">
         <div><h4>Kaofang Ratanapapat</h4><p class="role">Digital Learning Consultant</p><p class="region">ASIA</p>
-        <a href="mailto:hammad.khilji@mheducation.com" class="link-arrow">Email Me <span class="arr">→</span></a></div>
+        <a href="mailto:hammad.khilji@mheducation.com" class="link-dash">Email Me <span class="dash"></span></a></div>
       </article>
       <article class="person-card">
         <img src="assets/img/avatar-jamie.jpg" alt="Jamie Rufe">
         <div><h4>Jamie Rufe</h4><p class="role">Digital Learning Consultant</p><p class="region">ASIA</p>
-        <a href="mailto:hammad.khilji@mheducation.com" class="link-arrow">Email Me <span class="arr">→</span></a></div>
+        <a href="mailto:hammad.khilji@mheducation.com" class="link-dash">Email Me <span class="dash"></span></a></div>
       </article>
       <article class="person-card">
         <img src="assets/img/avatar-rawan.jpg" alt="Rawan Alatassi">
         <div><h4>Rawan Alatassi</h4><p class="role">Digital Integrations Consultant</p><p class="region">MEA</p>
-        <a href="mailto:hammad.khilji@mheducation.com" class="link-arrow">Email Me <span class="arr">→</span></a></div>
+        <a href="mailto:hammad.khilji@mheducation.com" class="link-dash">Email Me <span class="dash"></span></a></div>
       </article>
     </div>
   </div>
@@ -667,7 +681,7 @@ h1,h2,h3,h4{color:var(--ink);}
 <!-- ================= OPEN TO ALL EDUCATORS ================= -->
 <section class="section-pad" id="open-webinars">
   <div class="container">
-    <p class="kicker" data-reveal>Open to All Educators</p>
+    <p class="kicker" data-reveal>Open to all educators</p>
     <div class="kicker-dash" data-reveal></div>
     <h2 class="section-title" data-reveal>Don't use a McGraw Hill program?<br>These webinars are still for you</h2>
     <p class="section-lede" data-reveal>Sessions on teaching, learning, and professional growth. No program required. Led by leading voices in education. Join live or catch the recording.</p>
@@ -679,7 +693,7 @@ h1,h2,h3,h4{color:var(--ink);}
           <dt>Date:</dt><dd>Thu 17 Sep</dd>
           <dt>Time:</dt><dd>4:00pm London</dd>
         </dl>
-        <a href="#contact" class="link-arrow">Watch Recording <span class="arr">→</span></a>
+        <a href="#contact" class="link-dash">Watch Recording <span class="dash"></span></a>
       </article>
       <article class="recording-card" data-reveal>
         <h3>Improving education</h3>
@@ -688,7 +702,7 @@ h1,h2,h3,h4{color:var(--ink);}
           <dt>Date:</dt><dd>Mon 13 Oct</dd>
           <dt>Time:</dt><dd>4:00pm London</dd>
         </dl>
-        <a href="#contact" class="link-arrow">Watch Recording <span class="arr">→</span></a>
+        <a href="#contact" class="link-dash">Watch Recording <span class="dash"></span></a>
       </article>
     </div>
   </div>
@@ -705,17 +719,17 @@ h1,h2,h3,h4{color:var(--ink);}
       <article class="activity-card" data-reveal>
         <h3>Creating Classroom Rules</h3>
         <p>Work with students to set clear, shared expectations that support positive behavior and a respectful learning environment.</p>
-        <a href="#contact" class="link-arrow">Download PDF <span class="arr">→</span></a>
+        <a href="#contact" class="link-dash">Download PDF <span class="dash"></span></a>
       </article>
       <article class="activity-card" data-reveal>
         <h3>Creating Classroom Rules</h3>
         <p>Work with students to set clear, shared expectations that support positive behavior and a respectful learning environment.</p>
-        <a href="#contact" class="link-arrow">Download PDF <span class="arr">→</span></a>
+        <a href="#contact" class="link-dash">Download PDF <span class="dash"></span></a>
       </article>
       <article class="activity-card" data-reveal>
         <h3>Creating Classroom Rules</h3>
         <p>Work with students to set clear, shared expectations that support positive behavior and a respectful learning environment.</p>
-        <a href="#contact" class="link-arrow">Download PDF <span class="arr">→</span></a>
+        <a href="#contact" class="link-dash">Download PDF <span class="dash"></span></a>
       </article>
     </div>
   </div>
@@ -730,7 +744,6 @@ h1,h2,h3,h4{color:var(--ink);}
     <p class="section-lede" data-reveal>Writing for teachers and school leaders. No generic tips. Just what actually happens in classrooms and what to do about it.</p>
 
     <div class="ic-wrap">
-      <!-- path drops out of the activities card above, steps right, dives into the carousel and exits left -->
       <svg class="path-svg path-draw" style="left:0;top:0;width:100px;height:100px;" viewBox="0 0 100 100" aria-hidden="true" overflow="visible">
         <path d="M 668 -560 V -322 H 1101 V 147 H -3000"/>
       </svg>
@@ -744,7 +757,7 @@ h1,h2,h3,h4{color:var(--ink);}
           <h3 id="icTitle">The two weeks before school starts — what the best-prepared teachers do differently</h3>
           <p id="icExcerpt">The quiet weeks before students arrive. What separates the teachers who feel ready from those who don't.</p>
           <div class="ic-foot">
-            <a href="#contact" class="link-arrow">Read More <span class="arr">→</span></a>
+            <a href="#contact" class="link-dash">Read More <span class="dash"></span></a>
             <div class="ic-arrows">
               <button id="icPrev" aria-label="Previous article">←</button>
               <button id="icNext" aria-label="Next article">→</button>
@@ -761,7 +774,7 @@ h1,h2,h3,h4{color:var(--ink);}
   <div class="container">
     <div class="case-grid">
       <div>
-        <p class="kicker" data-reveal>Case Study</p>
+        <p class="kicker" data-reveal>Case study</p>
         <div class="kicker-dash" data-reveal></div>
         <h2 class="section-title" data-reveal>Five years. Same school. Same partnership</h2>
         <p class="section-lede" data-reveal>Renaissance International School, UAE has been running Inspire Science, Reveal Math, and Reading Wonders for five years. Here's what that looks like in practice.</p>
@@ -779,9 +792,9 @@ h1,h2,h3,h4{color:var(--ink);}
   <div class="container">
     <div class="contact-grid">
       <aside class="contact-aside">
-        <p class="kicker" data-reveal>Contact Us</p>
+        <p class="kicker" data-reveal>Contact&nbsp;us</p>
         <div class="kicker-dash" data-reveal></div>
-        <h2 data-reveal>We're right<br>beside you</h2>
+        <h2 data-reveal>We're&nbsp;right<br>beside you</h2>
         <p data-reveal>Whether you're already a McGraw Hill school or just exploring your options, get in touch and the right person will come back to you.</p>
         <p class="contact-tagline" data-reveal>Beside every path to growth.<br>You run the classroom.</p>
       </aside>
@@ -803,7 +816,7 @@ h1,h2,h3,h4{color:var(--ink);}
           <span class="cube"></span> Thank you — the right person will come back to you.
         </div>
         <div class="form-submit">
-          <button type="submit" class="submit-link">Submit <span class="arr" aria-hidden="true">→</span></button>
+          <button type="submit" class="submit-link">Submit <span class="dash" aria-hidden="true"></span></button>
         </div>
       </form>
     </div>
@@ -816,8 +829,8 @@ h1,h2,h3,h4{color:var(--ink);}
 <footer class="site-footer">
   <div class="container">
     <div class="footer-inner">
-      <p><a href="#top">Terms of Use</a> &nbsp;|&nbsp; <a href="#top">Privacy</a></p>
-      <p>©2025 McGraw-Hill. All Rights Reserved.</p>
+      <p class="f-links"><a href="#top">Terms of Use</a> &nbsp;|&nbsp; <a href="#top">Privacy</a></p>
+      <p class="f-copy">©2025 McGraw-Hill. All Rights Reserved.</p>
     </div>
   </div>
 </footer>
@@ -960,7 +973,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
   gsap.registerPlugin(ScrollTrigger);
 
-  /* ---------- Hero intro: card, then the path draws ---------- */
+  /* ---------- Hero intro: card first, then the path draws around it ---------- */
   var heroPaths = gsap.utils.toArray('.path-hero path');
   heroPaths.forEach(function(p){
     var len = p.getTotalLength();
@@ -969,11 +982,10 @@ document.addEventListener('DOMContentLoaded', function(){
   var intro = gsap.timeline({defaults:{ease:'power3.out'}});
   intro
     .from('#heroCard', {opacity:0, y:36, duration:.85}, .1)
-    .to(heroPaths[0], {strokeDashoffset:0, duration:1.1, ease:'power2.inOut'}, .45)
-    .to(heroPaths[1], {strokeDashoffset:0, duration:.5, ease:'power1.inOut'}, '>-.05')
-    .to(heroPaths[2], {strokeDashoffset:0, duration:.45, ease:'power1.out'}, '>-.02');
+    .to(heroPaths[0], {strokeDashoffset:0, duration:1.5, ease:'power2.inOut'}, .45)
+    .to(heroPaths[1], {strokeDashoffset:0, duration:.4, ease:'power1.out'}, '>-.02');
 
-  /* hero parallax: the whole composition drifts as you scroll past */
+  /* hero parallax: the composition drifts as you scroll past */
   gsap.to('#heroStage', {
     y: 110, ease: 'none',
     scrollTrigger: {trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true}
