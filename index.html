@@ -100,8 +100,8 @@ section{position:relative;}
 .link-dash{display:inline-flex;align-items:center;gap:11px;font-size:18px;font-weight:600;text-transform:uppercase;color:var(--red);line-height:27px;}
 .link-dash .dash,.submit-link .dash,.session-row .st-go{
   display:inline-block;width:23px;height:14px;background:currentColor;
-  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 23 14'%3E%3Cpath d='M0 7h20.5M14 1.2l6 5.8-6 5.8' fill='none' stroke='%23000' stroke-width='2.3'/%3E%3C/svg%3E") no-repeat center/contain;
-  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 23 14'%3E%3Cpath d='M0 7h20.5M14 1.2l6 5.8-6 5.8' fill='none' stroke='%23000' stroke-width='2.3'/%3E%3C/svg%3E") no-repeat center/contain;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 23 14'%3E%3Cpath d='M0 7h20.5M14 1.2l6 5.8-6 5.8' fill='none' stroke='%23000' stroke-width='1.8'/%3E%3C/svg%3E") no-repeat center/contain;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 23 14'%3E%3Cpath d='M0 7h20.5M14 1.2l6 5.8-6 5.8' fill='none' stroke='%23000' stroke-width='1.8'/%3E%3C/svg%3E") no-repeat center/contain;
   transition:transform .25s ease;
 }
 .link-dash:hover .dash{transform:translateX(5px);}
@@ -193,6 +193,7 @@ section{position:relative;}
 .tab-btn.is-active{border-bottom-color:var(--red);}
 .tab-btn:hover{color:var(--red);}
 .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+.team-grid[hidden]{display:none;}
 .person-card{border:1px solid var(--line);background:var(--white);padding:28px;display:flex;gap:22px;align-items:center;min-height:180px;}
 .person-card>div{min-width:0;}
 .person-card img{width:72px;height:72px;flex:0 0 72px;border-radius:50%;object-fit:cover;}
@@ -374,8 +375,8 @@ section{position:relative;}
     </svg>
     <!-- The Cubic Path: one continuous line framing the card, weaving beside the figures -->
     <svg class="path-hero" viewBox="0 0 1728 924" aria-hidden="true" overflow="visible">
-      <path class="hp" d="M -2 191 H 655 V 645 H 904 V 387 H 1032"/>
-      <path class="hp" d="M 1368 387 H 1740"/>
+      <path class="hp" d="M -2 194 H 657.5 V 645 H 904 V 387 H 1032"/>
+      <path class="hp" d="M 1326 387 H 1740"/>
     </svg>
     <div class="hero-card" id="heroCard">
       <p class="kicker">Back to School 2026</p>
