@@ -49,7 +49,8 @@ button{font-family:inherit;cursor:pointer;}
 .site-header.is-stuck{box-shadow:0 2px 16px rgba(0,0,0,.08);}
 .header-inner{max-width:1328px;margin:0 auto;padding:0 32px;height:102px;display:flex;align-items:center;gap:28px;}
 @media (min-width:1392px){.header-inner{padding:0;}}
-.mh-logo{display:flex;flex-direction:column;justify-content:center;width:58px;height:58px;flex:0 0 58px;background:var(--red);color:#fff;font-weight:700;font-size:12px;line-height:1.1;padding:0 7px;letter-spacing:.01em;}
+.mh-logo{display:block;width:58px;height:58px;flex:0 0 58px;}
+.mh-logo img{width:100%;height:100%;object-fit:contain;display:block;}
 .main-nav{margin-left:auto;}
 .main-nav ul{display:flex;list-style:none;align-items:center;}
 .main-nav li{display:flex;align-items:center;}
@@ -80,8 +81,8 @@ button{font-family:inherit;cursor:pointer;}
 .hero-canvas{position:absolute;inset:0;display:block;}
 .path-hero{position:absolute;top:0;left:0;width:1728px;height:924px;z-index:3;pointer-events:none;overflow:visible;}
 .path-hero path{fill:none;stroke:var(--red);stroke-width:15;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;}
-.hero-card{position:absolute;left:200px;top:303px;width:465px;z-index:2;background:var(--white);padding:34px 47px 38px;box-shadow:0 14px 44px rgba(0,0,0,.13);}
-.kicker{font-size:18px;font-weight:600;letter-spacing:3.6px;text-transform:uppercase;color:var(--eyebrow);line-height:1;}
+.hero-card{position:absolute;left:200px;top:201px;width:465px;z-index:2;background:var(--white);padding:34px 47px 38px;box-shadow:0 14px 44px rgba(0,0,0,.13);}
+.kicker{font-size:18px;font-weight:400;letter-spacing:3.6px;text-transform:uppercase;color:var(--eyebrow);line-height:1;}
 .kicker-dash{width:58px;height:3px;background:var(--red);margin-top:16px;}
 .hero-title{font-size:60px;font-weight:300;line-height:63px;color:var(--ink);letter-spacing:-1.2px;margin-top:28px;}
 .hero-title strong{font-weight:600;color:var(--red);}
@@ -95,10 +96,15 @@ section{position:relative;}
 .section-title{font-size:60px;font-weight:300;line-height:60px;letter-spacing:-1.2px;margin:47px 0 0;max-width:900px;color:var(--ink);}
 .section-title-gap{margin-top:36px;}
 .section-lede{max-width:860px;font-size:18px;font-weight:300;line-height:27px;margin-top:34px;}
-/* text link with the 17x2 dash (the design's "arrow") */
-.link-dash{display:inline-flex;align-items:center;gap:9px;font-size:18px;font-weight:600;text-transform:uppercase;color:var(--red);line-height:27px;}
-.link-dash .dash{display:inline-block;width:17px;height:2px;background:var(--red);transition:width .25s ease;}
-.link-dash:hover .dash{width:26px;}
+/* text link with the design's red arrow (shaft + chevron head) */
+.link-dash{display:inline-flex;align-items:center;gap:11px;font-size:18px;font-weight:600;text-transform:uppercase;color:var(--red);line-height:27px;}
+.link-dash .dash,.submit-link .dash,.session-row .st-go{
+  display:inline-block;width:23px;height:14px;background:currentColor;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 23 14'%3E%3Cpath d='M0 7h20.5M14 1.2l6 5.8-6 5.8' fill='none' stroke='%23000' stroke-width='2.3'/%3E%3C/svg%3E") no-repeat center/contain;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 23 14'%3E%3Cpath d='M0 7h20.5M14 1.2l6 5.8-6 5.8' fill='none' stroke='%23000' stroke-width='2.3'/%3E%3C/svg%3E") no-repeat center/contain;
+  transition:transform .25s ease;
+}
+.link-dash:hover .dash{transform:translateX(5px);}
 
 /* ---------- What's new cards ---------- */
 .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:78px;position:relative;}
@@ -160,8 +166,8 @@ section{position:relative;}
 .st-head{font-size:18px;font-weight:600;color:var(--ink);border-bottom:1px solid #D8D8D8;padding:22px 8px 12px;}
 .session-row{border-bottom:1px solid var(--line);font-size:18px;font-weight:300;color:var(--ink);padding:18px 8px;transition:background .2s ease;}
 .session-row:hover{background:#FAFAFA;}
-.session-row .st-go{justify-self:end;width:17px;height:2px;background:var(--red);transition:width .25s ease;}
-.session-row:hover .st-go{width:26px;}
+.session-row .st-go{justify-self:end;color:var(--red);}
+.session-row:hover .st-go{transform:translateX(5px);}
 .session-row.is-hidden{display:none;}
 .load-more-wrap{display:flex;justify-content:center;margin-top:44px;}
 .sub-block{margin-top:100px;}
@@ -187,12 +193,13 @@ section{position:relative;}
 .tab-btn.is-active{border-bottom-color:var(--red);}
 .tab-btn:hover{color:var(--red);}
 .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
-.person-card{border:1px solid var(--line);background:var(--white);padding:32px 30px;display:flex;gap:22px;align-items:flex-start;}
+.person-card{border:1px solid var(--line);background:var(--white);padding:28px;display:flex;gap:22px;align-items:center;min-height:180px;}
+.person-card>div{min-width:0;}
 .person-card img{width:72px;height:72px;flex:0 0 72px;border-radius:50%;object-fit:cover;}
 .person-card h4{font-size:24px;font-weight:600;line-height:30px;}
 .person-card .role{font-size:18px;font-weight:300;line-height:27px;margin-top:2px;}
 .person-card .region{font-size:18px;font-weight:300;line-height:27px;}
-.person-card .link-dash{margin-top:10px;}
+.person-card .link-dash{margin-top:4px;}
 
 /* ---------- Open webinars ---------- */
 .recording-grid{display:grid;grid-template-columns:repeat(2,310px);gap:30px;margin-top:78px;}
@@ -254,9 +261,8 @@ section{position:relative;}
 .form-message{grid-column:1/-1;}
 .form-message textarea{min-height:120px;resize:vertical;}
 .form-submit{grid-column:1/-1;display:flex;justify-content:flex-end;}
-.submit-link{background:none;border:none;display:inline-flex;align-items:center;gap:9px;font-size:18px;font-weight:600;text-transform:uppercase;color:var(--red);line-height:27px;}
-.submit-link .dash{display:inline-block;width:17px;height:2px;background:var(--red);transition:width .25s ease;}
-.submit-link:hover .dash{width:26px;}
+.submit-link{background:none;border:none;display:inline-flex;align-items:center;gap:11px;font-size:18px;font-weight:600;text-transform:uppercase;color:var(--red);line-height:27px;}
+.submit-link:hover .dash{transform:translateX(5px);}
 .form-success{grid-column:1/-1;display:none;align-items:center;gap:14px;border:1px solid var(--red);padding:16px 20px;color:var(--ink);font-weight:600;font-size:16px;}
 .form-success .cube{width:13px;height:13px;background:var(--red);flex:0 0 13px;}
 
@@ -332,7 +338,7 @@ section{position:relative;}
 <!-- ================= HEADER ================= -->
 <header class="site-header">
   <div class="header-inner">
-    <a href="#top" class="mh-logo" aria-label="McGraw Hill — home"><span>Mc</span><span>Graw</span><span>Hill</span></a>
+    <a href="#top" class="mh-logo" aria-label="McGraw Hill — home"><img src="assets/img/mh-logo.png" alt="McGraw Hill" width="58" height="58"></a>
     <nav class="main-nav" id="mainNav" aria-label="Primary">
       <ul>
         <li><a href="#program">Program</a></li>
